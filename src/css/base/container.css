@@ -1,0 +1,38 @@
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+}
+
+@media screen and (max-width: 374px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .container {
+    width: 375px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 736px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 1408px;
+  }
+}
