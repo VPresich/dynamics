@@ -1,5 +1,25 @@
 .exercises-gallery {
   padding: 8px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.exercise-card {
+  width: 424px;
+  height: 141px;
+  border-radius: 15px;
+  background: #fff;
+}
+
+.exercise-param {
+  color: #1b1b1b;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 150% */
 }
 
 @media screen and (min-width: 375px) {

@@ -11,7 +11,6 @@ async function getFiltersData(filter) {
   };
 
   const endPoint = `filters?${new URLSearchParams(requestParam).toString()}`;
-  console.log();
 
   try {
     return await apiInst.objectGetRequest(endPoint);
