@@ -1,7 +1,57 @@
 .exercise-filters-section {
-  /* TODO */
   padding-top: 8px;
 }
+
+.exercise-filter-title {
+  margin-bottom: 24px;
+}
+
+.filters-buttons {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.filters-buttons button {
+  width: 100px;
+}
+
+.exercise-filters-list {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 40px;
+  column-gap: 20px;
+}
+
+.filter-card {
+  position: relative;
+  width: 313px;
+  height: 250px;
+}
+
+.filter-label {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  color: var(--primary-color);
+}
+
+.filter-name {
+  color: #f6f6f6;
+  text-align: center;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.filter-type {
+  font-size: 12px;
+}
+
 @media screen and (min-width: 375px) {
 }
 

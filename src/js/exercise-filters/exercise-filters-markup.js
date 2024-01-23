@@ -1,22 +1,17 @@
-function exerciseFiltersMarkup(books) {
-  return books.reduce(
-    (strMarkup, { id, title, titleimage, author, price, pointer }) =>
+function exerciseFiltersMarkup(filters = []) {
+  return filters.reduce(
+    (strMarkup, { imgUrl, name, filter }) =>
       strMarkup +
       `
-      <li class="" data-id="${id}">
+      <li class="filter-card">
             <img
-              src="${titleimage}"
-              alt="book "
-              width="400"
-            />
-            <p class="book-title">${title}</p>
-            <p class="book-author">${author}</p>
-            <p class="book-price">${price}</p>
-            <div class="pointer-block">
-              <input type="number" placeholder="${pointer}" />
-              <button class="save" type="submit" data-id="${id}">Save</button>
+          src="${imgUrl}"
+          alt="Image of: ${filter}"         
+        />
+            <div class="filter-label">
+            <p class="filter-name">${name}</p>
+            <p class="filter-type">${filter}</p>            
             </div>
-            <button class="delete" data-id="${id}">X</button>
           </li>
       `,
     ''
