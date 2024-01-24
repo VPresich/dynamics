@@ -13,12 +13,13 @@
 @import url('./layout/hero.css');
 @import url('./layout/quote.css');
 @import url('./layout/exercise-filters.css');
-@import url('./layout/exercises-gallery.css');
-@import url('./layout/exercise-modal.css');
+
 @import url('./layout/about.css');
 @import url('./layout/pagination.css');
 
+@import url('./layout/exercise-modal.css');
 @import url('./layout/footer.css');
+@import url('./layout/exercises-gallery.css');
 
 :root {
   font-synthesis: none;
