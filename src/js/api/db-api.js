@@ -5,22 +5,23 @@ class DbApi {
     this.#baseURL = baseURL;
   }
 
-  #dbRequest(endPoint, attr = {}) {
-    return fetch(this.#baseURL + endPoint, attr)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(response.status);
-        }
-        return response.json();
-      })
-      .catch(error => console.log(error.message));
+  async #dbRequest(endPoint, attr = {}) {
+    try {
+      const response = await fetch(this.#baseURL + endPoint, attr);
+      if (!response.ok) {
+        throw new Error(`HTTP error, status: ${response.status}`);
+      }
+      return response.json();
+    } catch (error) {
+      console.log(error.message);
+    }
   }
 
-  objectGetRequest(endPoint) {
+  async objectGetRequest(endPoint) {
     return this.#dbRequest(endPoint);
   }
 
-  objectCreateRequest(endPoint, obj) {
+  async objectCreateRequest(endPoint, obj) {
     return this.#dbRequest(endPoint, {
       method: 'POST',
       body: JSON.stringify(obj),
@@ -28,13 +29,13 @@ class DbApi {
     });
   }
 
-  objectDeleteRequest(endPoint, id) {
+  async objectDeleteRequest(endPoint, id) {
     return this.#dbRequest(`${endPoint}/${id}`, {
       method: 'DELETE',
     });
   }
 
-  ojectUpdateRequest(endPoint, obj) {
+  async ojectUpdateRequest(endPoint, obj) {
     return this.#dbRequest(`${endPoint}/${obj.id}`, {
       method: 'PUT',
       body: JSON.stringify(obj),

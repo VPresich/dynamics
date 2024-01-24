@@ -3,7 +3,7 @@ function exerciseFiltersMarkup(filters = []) {
     (strMarkup, { imgUrl, name, filter }) =>
       strMarkup +
       `
-      <li class="filter-card data-filter">
+      <li class="filter-card" data-filter">
           <img src="${imgUrl}" alt="Image of: ${filter}"/>
           <div class="filter-label">
           <p class="filter-name">${name}</p>

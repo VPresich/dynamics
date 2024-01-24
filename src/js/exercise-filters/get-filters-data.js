@@ -3,11 +3,11 @@ import DbApi from '../api/db-api';
 
 const apiInst = new DbApi(BASE_URL);
 
-async function getFiltersData(filter) {
+async function getFiltersData(filter, numPage, perPages) {
   const requestParam = {
     filter: filter,
-    page: 1,
-    per_page: 12,
+    page: numPage,
+    limit: perPages,
   };
 
   const endPoint = `filters?${new URLSearchParams(requestParam).toString()}`;
