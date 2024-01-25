@@ -1,9 +1,7 @@
 import exercisesGalleryMarkup from './exercises-gallery-markup';
+import galleryCreate from '../common/gallery-create';
 
-const exercisesFiltersCreate = (galleryContainer, exercises) => {
-  const strMarkup = exercisesGalleryMarkup(exercises, galleryContainer);
-  galleryContainer.innerHTML = '';
-  galleryContainer.insertAdjacentHTML('beforeend', strMarkup);
-};
+const exercisesGalleryCreate = (exercisesContainer, exercises) =>
+  galleryCreate(exercises, exercisesContainer, exercisesGalleryMarkup);
 
-export default exercisesFiltersCreate;
+export default exercisesGalleryCreate;

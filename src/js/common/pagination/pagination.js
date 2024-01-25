@@ -1,67 +1,97 @@
 class Pagination {
-  #currentPage = 0;
-  #totalPages = 0;
+  currentPage = 1;
+  totalPages = 0;
   #dotsRef;
-  #dotDefaultClass = '';
-  #dotActiveClass = '';
-  #galleryHandle;
-  #filter = 'Muscles';
+  #maxPages = 10;
+  #dotDefaultClass = 'pagination-dot';
+  #dotActiveClass = 'active-paggination-dot';
+  galleryHandle;
+  filter;
 
   constructor({
     galleryHandle,
+    filter,
     dotsSelector,
     dotDefaultClass,
     dotActiveClass,
   }) {
-    this.#dotDefaultClass = dotDefaultClass;
+    this.galleryHandle = galleryHandle;
+    this.filter = filter;
     this.#dotActiveClass = dotActiveClass;
-    this.#galleryHandle = galleryHandle;
+    this.#dotDefaultClass = dotDefaultClass;
     this.#dotsRef = document.querySelector(dotsSelector);
+    this.#dotsRef.addEventListener('click', this.onDotsClick.bind(this));
+  }
+
+  init(galleryHandle, filter, totalPages = 0) {
+    this.galleryHandle = galleryHandle;
+    this.totalPages = totalPages > this.#maxPages ? this.#maxPages : totalPages;
+    console.log('Pagination:', totalPages);
+    this.filter = filter;
+    this.#createDots();
+  }
+
+  reset(galleryHandle, filter, currPage = 1, totalPages = 0) {
+    this.galleryHandle = galleryHandle;
+    this.totalPages = totalPages;
+    this.currentPage = currPage;
+    this.filter = filter;
+    this.#deleteDots();
   }
 
   destroy() {
     this.#dotsRef.removeEventListener('click', this.onDotsClick.bind(this));
+    this.deleteDots();
   }
 
   async updateGallery() {
+    console.log('current', this.currentPage);
+    console.log('filter', this.filter);
     try {
-      this.#totalPages = await this.#galleryHandle(
-        this.#filter,
-        this.#currentPage
-      );
+      await this.galleryHandle(this.filter, this.currentPage, 12);
     } catch (error) {
       console.log(error.message);
     }
   }
 
-  createDots(totalPages) {
+  #createDots() {
     this.#dotsRef.innerHTML = '';
-    this.#totalPages = totalPages;
+
     let strMarkup = '';
-    for (let ind = 0; ind < totalPages; ind += 1) {
+    for (let ind = 0; ind < this.totalPages; ind += 1) {
       strMarkup += `
-       <span class="pagination-dot" data-ind="${ind + 1}">${ind + 1}</span>
+       <li class="${this.#dotDefaultClass}" data-ind="${ind + 1}">${
+        ind + 1
+      }</li>
       `;
-      this.#dotsRef.innerHTML = strMarkup;
     }
-    this.#dotsRef.addEventListener('click', this.onDotsClick.bind(this));
+    this.#dotsRef.innerHTML = strMarkup;
+    this.#dotsRef.children[this.currentPage - 1].classList.add(
+      this.#dotActiveClass
+    );
+  }
+
+  #deleteDots() {
+    this.#dotsRef.innerHTML = '';
   }
 
   onDotsClick(event) {
-    const dot = event.target;
-    const index = parseInt(dot.dataset.ind, 10);
-    this.#currentPage = index;
+    const element = event.target;
+    if (!element.classList.contains(this.#dotDefaultClass)) return;
+    const index = parseInt(element.dataset.ind, 10);
+    this.currentPage = index;
+    this.updateDisplayDots();
     this.updateGallery();
-    this.updateDisplayDots(event.target);
   }
 
-  updateDisplayDots(activeDot) {
-    const children = this.#dotsRef.children;
-    for (let i = 0; i < children.length; i++) {
-      children[i].classList.remove(this.#dotActiveClass);
-    }
-    console.log(activeDot);
-    activeDot.classList.add(this.#dotActiveClass);
+  updateDisplayDots() {
+    const dots = this.#dotsRef.querySelectorAll('li');
+    console.log(dots);
+    dots.forEach(element => {
+      element.classList.remove(this.#dotActiveClass);
+    });
+
+    dots[this.currentPage - 1].classList.add(this.#dotActiveClass);
   }
 }
 
