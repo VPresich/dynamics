@@ -41,7 +41,7 @@ class Pagination {
 
   destroy() {
     this.#dotsRef.removeEventListener('click', this.onDotsClick.bind(this));
-    this.deleteDots();
+    this.#deleteDots();
   }
 
   async updateGallery() {

@@ -5,14 +5,14 @@ import { createErrMsg, createOkMsg } from '../common/create-msg';
 import getExercisesData from '../exercises-gallery/get-exercises-data';
 import exercisesGalleryCreate from '../exercises-gallery/exercises-gallery-create';
 import Pagination from '../common/pagination/pagination';
-import galleryDelete from '../common/gallery-delete';
+
+const activeBtnClass = 'filter-button-active';
+let activeBtn;
 
 const filtersRef = document.querySelector('.filters-buttons');
-let activeFilter = document.querySelector('button[data-filter="Muscles"]');
-activeFilter.classList.add('filter-button-active');
+// let activeFilter = document.querySelector('button[data-filter="Muscles"]');
 
 const filtersListRef = document.querySelector('.exercise-filters-list');
-const exercisesGalleryRef = document.querySelector('.exercises-gallery');
 
 filtersRef.addEventListener('click', onFiltersBtnsClick);
 filtersListRef.addEventListener('click', onFiltersListClick);
@@ -30,12 +30,9 @@ function onFiltersBtnsClick(event) {
   const filterValue = event.target.dataset.filter;
 
   pagination.reset(filtersHandler, filterValue, 1, 0);
-  galleryDelete(exercisesGalleryRef);
-
   filtersHandler({ filter: filterValue });
-  activeFilter.classList.remove('filter-button-active');
-  activeFilter = event.target;
-  activeFilter.classList.add('filter-button-active');
+
+  changeBtnActive(event.target);
 }
 
 function filtersHandler(filterValue = { filter: DEFAULT_FILTER }) {
@@ -77,8 +74,7 @@ function onFiltersListClick(event) {
 function exercisesHandler(filterParam) {
   getExercisesData(filterParam, pagination.currentPage)
     .then(data => {
-      galleryDelete(filtersListRef);
-      exercisesGalleryCreate(exercisesGalleryRef, data.results);
+      exercisesGalleryCreate(filtersListRef, data.results);
       console.log(data.totalPages);
       console.log(filterParam);
       pagination.init(exercisesHandler, filterParam, data.totalPages);
@@ -89,4 +85,16 @@ function exercisesHandler(filterParam) {
     });
 }
 
+function setActiveFilter() {
+  activeBtn = filtersRef.querySelector('BUTTON');
+  activeBtn && activeBtn.classList.add(activeBtnClass);
+}
+
+function changeBtnActive(btn) {
+  activeBtn && activeBtn.classList.remove(activeBtnClass);
+  btn && btn.classList.add(activeBtnClass);
+  activeBtn = btn;
+}
+
+setActiveFilter();
 filtersHandler();

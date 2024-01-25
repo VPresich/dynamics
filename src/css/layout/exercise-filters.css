@@ -20,11 +20,6 @@
   gap: 8px;
 }
 
-.filter-button-active {
-  background-color: var(--accent-color);
-  color: var(--section-white-bgr-color);
-}
-
 .filter-button {
   color: var(--secondary-color);
   font-size: 16px;
@@ -45,6 +40,11 @@
   background-color: var(--section-white-bgr-color);
   border-radius: 30px;
   border: 1px solid #1b1b1b;
+}
+
+.filter-button-active {
+  background-color: var(--accent-color);
+  color: var(--section-white-bgr-color);
 }
 
 .filter-button:hover,
