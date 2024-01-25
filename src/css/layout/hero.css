@@ -2,11 +2,144 @@
   /* TODO */
   padding-top: 8px;
 }
-@media screen and (min-width: 375px) {
+
+.hero-banner{
+  position: relative;
+  height: 387px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: url(../img/hero/hero-mobile@1x.jpg) no-repeat;
+  border-radius: 30px;
+  background-position: top center;
+  background-size: cover;
+}
+
+.hero-hashtags{
+  width: 141px;
+  padding: 0;
+  margin: 20px 5px;
+  list-style: none; 
+  position: absolute;
+  bottom: 0; 
+  left: 0; 
+  color: #F6F6F6;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.hero-hashtags-item{
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  border: 1px solid #7E847F;
+  border-radius: 30px;
+  padding: 4px 10px 4px 10px;
+}
+
+.hero-text{
+  padding: 60px 20px;
+  margin-bottom: 20px;
+  background-color: #FFFFFF;
+  border-radius: 30px;
+}
+
+.hero-body{
+  color: #7E847F;
+  font-style: italic;
+}
+
+.hero-title{
+  margin-bottom: 20px;
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 0.9;
+}
+
+.hero-subtitle{
+  width: 295px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.3;
 }
 
 @media screen and (min-width: 768px) {
+.hero{
+  height: 900px;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-gap: 0; 
+}
+
+.hero-banner{
+  height: 100%;
+  margin: 0;
+  border-top-right-radius: 0;
+}
+
+.hero-text{
+  height: 100%;
+  padding: 0 32px;
+  border-top-left-radius: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-title{
+  font-size: 98px;
+  font-weight: 400;
+  line-height: 0.9;
+}
+
+.hero-subtitle{
+  width: 396px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.hero-hashtags{
+  width: auto;
+  gap: 8px;
+}
+
+.hero-hashtags-item{
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 4px 16px 4px 16px;
+}
 }
 
 @media screen and (min-width: 1440px) {
+  .hero {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+
+  .hero-banner,
+  .hero-text {
+    width: 100%; 
+  }
+
+  .hero-banner{
+  }
+
+  .hero-title{
+    font-size: 120px;
+    font-weight: 400;
+    line-height: 0.9;
+  }
+  
+  .hero-subtitle{
+    width: 528px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.3;
+  }
+
+  .hero-hashtags{
+    width: 216px;
+    gap: 10px;
+  }
 }
