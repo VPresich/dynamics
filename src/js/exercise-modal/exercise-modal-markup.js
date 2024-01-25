@@ -14,23 +14,89 @@
 //   },
 // ];
 
-function modalWindowMarkup(exercise = []) {
-  const {
-    _id,
-    bodyPart,
-    equipment,
-    gifUrl,
-    name,
-    target,
-    description,
-    rating,
-    burnedCalories,
-    time,
-    popularity,
-  } = exercise;
-  return `
-     
-      `;
+function modalWindowMarkup(filters = []) {
+  return filters.reduce(
+    (
+      strMarkup,
+      {
+        _id,
+        bodyPart,
+        equipment,
+        time,
+        target,
+        burnedCalories,
+        gifUrl,
+        name,
+        filter,
+        popularity,
+        rating,
+      }
+    ) =>
+      strMarkup +
+      `
+      <div class="modal-backdrop">
+        <div class="exercise-window">
+          <div class="exercise-container">
+            <button class="exercise-close-btn" type="button">
+              <svg
+                class="exercise-close-icon"
+                width="28"
+                height="28"
+                aria-label="Close icon"
+              >
+                <use href="../img/icons/symbols.svg#icon-icon"></use>
+              </svg>
+            </button>
+            <div class="exercise-image-wrapper">
+              <img
+                src="https://ftp.goit.study/img/power-pulse/gifs/0022.gif"
+                alt=""
+              />
+            </div>
+            <div class="exercise-info-wrapper">
+              <p class="exercise-name">${name}</p>
+              <p class="modal-rating">Rating</p>
+              <ul class="exercise-params">
+                <li class="exercise-params-card">
+                  <p class="exercise-param-name">Target</p>
+                  <p class="exercise-param-value">${target}</p>
+                </li>
+                <li class="exercise-params-card">
+                  <p class="exercise-param-name">Body part</p>
+                  <p class="exercise-param-value">${bodyPart}</p>
+                </li>
+                <li class="exercise-params-card">
+                  <p class="exercise-param-name">Equipment</p>
+                  <p class="exercise-param-value">${equipment}</p>
+                </li>
+                <li class="exercise-params-card">
+                  <p class="exercise-param-name">Popular</p>
+                  <p class="exercise-param-value">${popularity}</p>
+                </li>
+              </ul>
+              <p class="exercise-calories">Burned calories</p>
+              <p class="exercise-calories-value">${burnedCalories}</p>
+              <p class="exercise-description">${description}</p>
+              <div class="exercise-buttons">
+                <button
+                  class="exercise-favorite-btn"
+                  type="submit"
+                  data="exercise-id"
+                >
+                  Add to favorites
+                </button>
+                <button class="exercise-raiting-btn" type="submit" data="">
+                  Give a rating
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      `,
+    ''
+  );
 }
 
 export default modalWindowMarkup;
