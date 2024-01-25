@@ -8,7 +8,7 @@ var j=Object.defineProperty;var B=(t,e,s)=>e in t?j(t,e,{enumerable:!0,configura
       </li>
       `,"")}const M=(t,e,s)=>{e.innerHTML="",t.length||console.log("Sorry, there are no data matching your search query. Please, try again!");const r=s(t);e.innerHTML="",e.insertAdjacentHTML("beforeend",r)},Q=(t,e)=>M(e,t,J),W="/dynamics/assets/bi-x-octagon-73f29380.svg";function X(t){I.show({message:t,messageColor:"#fafafb",messageSize:"16px",backgroundColor:"#fc5a5a",position:"topRight",closeOnEscape:!0,close:!0,icon:"Icomoon",iconUrl:`${W}`,iconColor:"#fafafb"})}async function Y(t={},e=1,s=""){const r=new R(q),i=H($,t,e,s);try{return await r.objectGetRequest(i)}catch{}}function K(t=[]){return t.reduce((e,{_id:s,bodyPart:r,equipment:i,time:a,target:l,burnedCalories:A,gifUrl:re,name:F,filter:ae,popularity:ne,rating:O})=>e+`
       <ul class="exercises-gallery">
-        <li class="exercise-card data-id="${s}">
+        <li class="exercise-card" data-id="${s}">
           <div class="exercice-card-top-line">
             <div class="ex-card-top-left-part">
               <p class="ex-card-workout exercise-param">workout</p>
