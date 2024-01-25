@@ -3,17 +3,13 @@ https://energyflow.b.goit.study/api/exercises?bodypart=back&muscles=lats&equipme
 */
 import { BASE_URL } from '../api/api-constants';
 import DbApi from '../api/db-api';
+import queryEndPoint from '../exercise-filters/query-endpoint';
+import { QUERY_EXERCISES } from '../exercise-filters/constants';
 
-async function getExercisesData(filters = {}, searchExample = '') {
+async function getExercisesData(filters = {}, currentPage = 1, search = '') {
   const apiInst = new DbApi(BASE_URL);
-  const requestParam = {
-    ...filters,
-    page: 1,
-    limit: 12,
-  };
 
-  const endPoint = `exercises?${new URLSearchParams(requestParam).toString()}`;
-  console.log(endPoint);
+  const endPoint = queryEndPoint(QUERY_EXERCISES, filters, currentPage, search);
 
   try {
     return await apiInst.objectGetRequest(endPoint);
