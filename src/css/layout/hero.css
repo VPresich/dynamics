@@ -157,6 +157,6 @@
   screen and (min-resolution: 2dppx) and (min-width: 1440px),
   screen and (min-device-pixel-ratio: 2) and (min-width: 1440px) {
   .order-green-girl {
-    background-image: url(..img/hero/hero-tablet@1x.jpg);
+    background-image: url(..img/hero/hero-tablet@2x.jpg);
   }
 }
