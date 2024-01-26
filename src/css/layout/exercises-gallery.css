@@ -114,6 +114,19 @@
   border-radius: 50%;
 }
 
+.ex-no-elements {
+  color: var(--secondary-color);
+  text-align: center;
+  line-height: 1.28; /* 128.571% */
+  letter-spacing: -0.14px;
+}
+.error-message {
+  margin-left: auto;
+  margin-right: auto;
+}
+.grey-text {
+  color: var(--accent-color);
+}
 @media screen and (min-width: 375px) {
   .exercises-gallery {
     row-gap: 20px;
@@ -125,6 +138,11 @@
     padding: 16px;
     border-radius: 15px;
     background: #fff;
+  }
+  .ex-no-elements {
+    width: 295px;
+    padding-top: 164px;
+    padding-bottom: 320px;
   }
 }
 
@@ -153,6 +171,11 @@
   .ex-card-name-container {
     margin-bottom: 8px;
   }
+  .ex-no-elements {
+    width: 536px;
+    padding-top: 222px;
+    padding-bottom: 585px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -167,5 +190,11 @@
   }
   .ex-card-name {
     width: 100%;
+  }
+
+  .ex-no-elements {
+    width: 684px;
+    padding-top: 227px;
+    padding-bottom: 350px;
   }
 }
