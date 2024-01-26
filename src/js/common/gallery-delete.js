@@ -1,6 +1,6 @@
 const galleryDelete = galleryRef => {
   galleryRef.innerHTML = '';
-  galleryRef.classList.add('isually-hidden');
+  galleryRef.classList.add('visually-hidden');
 };
 
 export default galleryDelete;
