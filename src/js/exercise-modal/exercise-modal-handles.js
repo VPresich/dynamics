@@ -1,4 +1,3 @@
-import galleryDelete from '../common/gallery-delete.js';
 import {
   KEY_CODE_ESC,
   CLASS_BACKDROP,
@@ -11,12 +10,10 @@ import {
 import exerciseModalCreate from './exercise-modal-create';
 import getExerciseById from './exercise-modal-get-id';
 
-let modalBackdrop = document.querySelector('.' + CLASS_BACKDROP);
+createContainerForModal();
 
-if (!modalBackdrop) {
-  createContainerForModal();
-  modalBackdrop = document.querySelector('.' + CLASS_BACKDROP);
-}
+const modalBackdrop = document.querySelector('.' + CLASS_BACKDROP);
+console.log(modalBackdrop);
 
 const galleryRef = document.querySelector(SELECTOR_GALLERY);
 let closeBtn;
@@ -52,7 +49,6 @@ function openModalWindow() {
 function onCloseBtn(event) {
   window.removeEventListener('keydown', onWindowKeydown);
   modalBackdrop.classList.remove(MODAL_VISIBILITY);
-  galleryDelete(galleryRef);
 }
 
 function onWindowKeydown(event) {
