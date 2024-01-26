@@ -4,54 +4,54 @@ import 'izitoast/dist/css/iziToast.min.css';
 
 const listExercises = document.querySelector('.list-exercises');
 const butRemovExercises = document.querySelector('.favorites-button-remove');
-// const listExercises = document.querySelector('.list-exercises');
-
-// console.log(axios);
+const favoritesQuoteDayTitle = document.querySelector(
+    '.favorites-quote-day-title'
+);
 
 const instance = axios.create({
     baseURL: 'https://energyflow.b.goit.study/api',
-    params: {
-        // filter: 'Equipment',
-        // page: 1,
-        // limit: 12,
-        // id: '64f389465ae26083f39b17a4',
-    },
 });
+
+const quote = instance
+    .get('/quote ')
+    .then(resault => {
+        favoritesQuoteDayTitle.insertAdjacentHTML(
+            'beforeend',
+            ` <p class="favorites-quote-day-text">
+                ${resault.data.quote}
+                </p>
+                    <p class="favorites-quote-day-text-autor">${resault.data.author}</p>`
+        );
+    })
+    .catch(error => console.log(error));
 
 const returnsLocalStorage = [];
 
 instance
     .get('/exercises/64f389465ae26083f39b17a4')
-    .then(res =>
-        // localStorage.setItem('settings', JSON.stringify(arr))
-
-        localStorage.setItem('settings', JSON.stringify(res.data))
-    )
+    .then(res => localStorage.setItem('settings', JSON.stringify(res.data)))
     .catch(error => console.log(error));
 
 instance
     .get('/exercises/64f389465ae26083f39b17a7')
-    .then(res =>
-        // localStorage.setItem('settings', JSON.stringify(arr))
-
-        localStorage.setItem('set', JSON.stringify(res.data))
-    )
+    .then(res => localStorage.setItem('set', JSON.stringify(res.data)))
     .catch(error => console.log(error));
 
-// console.log(localStorage.length);
-
 if (localStorage.length) {
-    // console.log(localStorage.length);
     try {
         returnsLocalStorage.push(JSON.parse(localStorage.getItem('settings')));
         returnsLocalStorage.push(JSON.parse(localStorage.getItem('set')));
-        // console.log(returnsLocalStorage);
-        // Array.from(form.elements).forEach(element => {
-        //     const storageValue = returnsLocalStorage[element.name];
-        //     if (storageValue) {
-        //         element.value = storageValue;
-        //     }
-        // });
+
+        listExercises.addEventListener('click', event => {
+            const deleteId = event.target.id;
+            if (deleteId) {
+                document
+                    .querySelector(
+                        `.list-exercises-favorites[data-listId="${deleteId}"]`
+                    )
+                    .remove();
+            }
+        });
     } catch (error) {
         console.log('Parse form storage error');
     }
@@ -71,28 +71,6 @@ if (localStorage.length) {
     });
 }
 
-listExercises.addEventListener('click', event => {
-    console.log(event.target);
-    // event.preventDefault();
-    // if (email.value && message.value) {
-    //     const savedForm = localStorage.getItem('feedback-form-state');
-    //     console.log(JSON.parse(savedForm));
-    //     localStorage.removeItem('feedback-form-state');
-    //     form.reset();
-    // } else {
-    //     alert('Please fill in the form field');
-    // }
-});
-
-// console.log(returnsLocalStorage);
-// const parsedSettings = JSON.parse(localStorage.getItem('settings'));
-// const parsSet = JSON.parse(localStorage.getItem('set'));
-// console.log(parsSet);
-// console.log(parsedSettings);
-// arr.push(parsedSettings);
-// returnsLocalStorage.push(parsSet);
-// console.log(arr);
-
 function renderElement(params) {
     const render = params.reduce(
         (
@@ -111,15 +89,13 @@ function renderElement(params) {
             }
         ) =>
             html +
-            ` <li id="${_id}" class="list-exercises-favorites">
+            ` <li data-listId="${_id}" class="list-exercises-favorites">
             <div class="list-exercises-favorites-category">
                 <div>
-                    <p class="exercises-favorites-name-category">
-                        WORKOUT
-                    </p>
+                    <p class="exercises-favorites-name-category">WORKOUT</p>
                     <button id="${_id}" class="favorites-button-remove" type="button">
-                    <svg class="icon icon-trash">
-                    <use
+                    <svg id="${_id}" class="icon icon-trash">
+                    <use id="${_id}"
                         xlink:href="./img/icons/symbols.svg#icon-trash"
                     ></use>
                 </svg>
@@ -173,21 +149,3 @@ function renderElement(params) {
 const galleryMarkup = renderElement(returnsLocalStorage);
 
 listExercises.insertAdjacentHTML('beforeend', galleryMarkup);
-
-// instance
-
-//     .get('/exercises/64f389465ae26083f39b17a7')
-//     .then(res => arr.push(res.data))
-//     .catch(error => console.log(error));
-// const responseData = response.data;
-// responseData.then(res => arr.push(res)).catch(error => console.log(error));
-// console.log(responseData);
-// const mapArr = arr.map(resault => console.log(resault));
-// console.log(arr);
-// console.log(localStorage);
-// return response.data;
-
-// localStorage.getItem('settings', JSON.stringify(arr));
-
-// https://energyflow.b.goit.study/api/exercises?filter=Equipment&page=1&limit=12&id=64f389465ae26083f39b17a4
-// https://energyflow.b.goit.study/api/exercises/ exerciseID
