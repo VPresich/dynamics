@@ -1,14 +1,10 @@
 .hero-section {
-  /* TODO */
   padding-top: 8px;
-}
-
-@media screen and (min-width: 375px) {
 }
 
 .quote{
   position: relative;
-  padding: 20px;
+  padding: 20px 20px 20px 32px;
   background-color: #7E847F;
   border-radius: 30px;
   height: 272px;
@@ -20,13 +16,20 @@
 .quote-head{
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding-bottom: 20px;
+}
+
+.svg-position{
+  left: 20px;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 255px;
 }
 
 .quote-running-man{
   width: 32px;
   height: 32px;
+  
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -34,21 +37,15 @@
   background-color:#F6F6F61A;
 }
 
-.svg-double-quotes{
-  fill: #F6F6F699;
-  width: 28px;
-  height: 28px;
-}
-
 .quote-content{
-  display: flex;
-  align-items: center;
-  gap: 40px;
+  padding-left: 32px;
 }
 
 .quote-title{
   color:  #F6F6F6;
+  margin-bottom: 20px;
   font-size: 20px;
+  line-height: 1.4;
   font-weight: 500;
 }
 
@@ -56,7 +53,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-left: 66px;
 }
 
 .quote-text{
@@ -76,26 +72,34 @@
 
 .quote-photo{
   background: url(../img/quote/quote-mobile@1x.jpg) no-repeat;
+  background-size: cover;
   border-radius: 30px;
   height: 272px;
+}
+
+@media screen and (max-width: 767px) and (min-resolution: 192dpi),
+  screen and (max-width: 767px) and (min-resolution: 2dppx),
+  screen and (max-width: 767px) and (min-device-pixel-ratio: 2) {
+  .quote-photo {
+    background-image: url(../img/quote/quote-mobile@2x.jpg);
+  }
 }
 
 @media screen and (min-width: 768px) {
 .quote{
   position: relative;
-  width: 736px;
   height: 302px;
   border-radius: 50px;
+  padding: 20px 60px 20px 32px;
 }
 
 .quote-running-man{
   position: absolute;
-  left: 80px;
-  top: 64px;
+  left: 65px;
 }
 
 .quote-content{
-  padding-left: 130px;
+  padding-left: 95px;
 }
 
 .quote-title{
@@ -106,15 +110,13 @@
 
 .svg-double-quotes{
   position: absolute;
-  top: 32px;
-  left: 608px;
+  top: -32px;
+  left: 516px;
   width: 48px;
   height: 48px;
 }
 
 .quote-unfold{
-  width: 526px;
-  padding-left: 130px;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
@@ -122,10 +124,18 @@
 
 .quote-photo{
   background: url(../img/quote/quote-tablet@1x.jpg) no-repeat;
+  background-size: cover;
   border-radius: 50px;
-  width: 736px;
   height: 302px;
 }
+}
+
+@media screen and (min-resolution: 192dpi) and (min-width: 768px),
+  screen and (min-resolution: 2dppx) and (min-width: 768px),
+  screen and (min-device-pixel-ratio: 2) and (min-width: 768px) {
+  .quote-photo {
+    background-image: url(../img/quote/quote-tablet@2x.jpg);
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -145,6 +155,15 @@
 
 .quote-photo{
   background: url(../img/quote/quote-desktop@1x.jpg) no-repeat;
+  background-size: cover;
   width: 50%;
 }
+}
+
+@media screen and (min-resolution: 192dpi) and (min-width: 1440px),
+  screen and (min-resolution: 2dppx) and (min-width: 1440px),
+  screen and (min-device-pixel-ratio: 2) and (min-width: 1440px) {
+  .quote-photo {
+    background-image: url(../img/quote/quote-desktop@2x.jpg);
+  }
 }
