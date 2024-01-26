@@ -1,15 +1,11 @@
-.exercises-gallery {
-  padding: 8px;
+.exercise-gallery {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
+  justify-content: start;
 }
 
 .exercise-card {
-  width: 424px;
-  height: 141px;
   border-radius: 15px;
   background: var(--section-white-bgr-color);
 }
@@ -108,7 +104,18 @@
   color: var(--secondary-color);
 }
 
+.runner-icon-container {
+  width: 24px;
+  height: 24px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+}
+
 @media screen and (min-width: 375px) {
+  .exercise-gallery {
+    row-gap: 20px;
+  }
+
   .exercise-card {
     width: 295px;
     height: 165px;
@@ -119,6 +126,10 @@
 }
 
 @media screen and (min-width: 768px) {
+  .exercise-gallery {
+    column-gap: 14px;
+  }
+
   .exercise-card {
     width: 313px;
     height: 165px;
@@ -142,6 +153,11 @@
 }
 
 @media screen and (min-width: 1440px) {
+  .exercise-gallery {
+    row-gap: 28px;
+    column-gap: 20px;
+  }
+
   .exercise-card {
     width: 424px;
     height: 141px;

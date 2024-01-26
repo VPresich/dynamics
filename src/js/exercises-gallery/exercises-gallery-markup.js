@@ -34,8 +34,7 @@ function exercisesGalleryMarkup(filters = []) {
     ) =>
       strMarkup +
       `
-      <ul class="exercises-gallery">
-        <li class="exercise-card" data-id="${_id}">
+        <li class="exercise-card data-id="${_id}">
           <div class="exercice-card-top-line">
             <div class="ex-card-top-left-part">
               <p class="ex-card-workout exercise-param">workout</p>
@@ -47,7 +46,7 @@ function exercisesGalleryMarkup(filters = []) {
                   height="18"
                   aria-label="star icon"
                 >
-                  <use href="../img/icons/symbols.svg#icon-Star"></use>
+                  <use href="../img/icons/symbols.svg#icon-star"></use>
                 </svg>
               </div>
             </div>
@@ -67,9 +66,11 @@ function exercisesGalleryMarkup(filters = []) {
           </div>
 
           <div class="ex-card-name-container">
-            <svg class="runner-icon" width="24" height="24" aria-label="runner icon">
-              <use href="./img/icons/symbols.svg#icon-icon"></use>
-            </svg>
+            <div class="runner-icon-container">
+              <svg class="runner-icon" width="24" height="24" aria-label="runner icon">
+                <use href="./img/icons/symbols.svg#icon-running-man"></use>
+              </svg>
+            </div>
             <h3 class="ex-card-name exercise-param">${name}</h3>
           </div>
 
@@ -96,8 +97,6 @@ function exercisesGalleryMarkup(filters = []) {
             </ul>
           </div>
         </li>
-      </ul>
-
       `,
     ''
   );
