@@ -61,8 +61,11 @@
 
   background-color: transparent;
   border: none;
-
+  border-radius: 8px;
   padding: 0;
+}
+.ex-card-start-btn:hover {
+  box-shadow: 5px 5px 5px rgba(126, 132, 127, 0.3);
 }
 .arrow-icon-span {
   display: flex;
