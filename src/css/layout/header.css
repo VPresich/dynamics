@@ -4,41 +4,218 @@
 
 
 
- .nav-list { 
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  gap: 40px; 
-} 
 
- .nav-link { 
-  font-weight: 500; 
-   letter-spacing: 0.02em; 
-  line-height: 1.5; 
- } 
-
-.nav-link:hover,
-.nav-link:focus { 
-  color: var(--accent-color); 
- } 
+button {
+  border: none;
+}
 
 @media screen and (min-width: 375px) {
   .header-section {
     padding: 20px 0;
   }
-  
- .logotype{
-  color: #1B1B1B;
-font-size: 28px;
-font-style: normal;
-font-weight: 700;
-line-height: 28px; /* 100% */
-letter-spacing: -0.56px;
- } 
+
+  .header-section-container {
+    margin: 0;
+    padding: 20px;
+    border-radius: 30px;
+    background-image: url(../img/hero/hero-mobile@1x.jpg );
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: dimgray;
+  }
+
+  .logotype {
+    width: 86px;
+    height: 18px;
+    color: var(--secondary-color);
+    font-size: 16px;
+    letter-spacing: -0.32px;
+    font-weight: 700;
+    line-height: 1.13
+      /* 112.5% */
+
+  }
+
+  .nav {
+    display: none;
+  }
+
+
+  .header-page {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .social-list-header {
+    display: none;
+  }
+
+  .icon-align-justify {
+    width: 32px;
+    height: 16px;
+    stroke: #7E847F;
+    border: none;
+
+  }
+
+  .hashtag {
+    padding-top: 285px;
+    display: flex;
+    width: 141px;
+    align-items: center;
+    align-content: center;
+    gap: 4px;
+    flex-wrap: wrap;
+
+  }
+
+  .hashtag-search {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.17;
+    /* 116.667% */
+    border: 1px solid rgba(246, 246, 246, 0.30);
+    border-radius: 30px;
+    color: var(--primary-color);
+
+  }
 }
 
+
 @media screen and (min-width: 768px) {
+  .header-section {
+    padding: 16px 0;
+  }
+
+  .button-align-justify {
+    display: none;
+  }
+
+  .nav {
+    display: flex;
+    border-radius: 60px;
+    background: var(--btn-accent-color);
+    width: 211px;
+    height: 52px;
+  }
+
+  .nav-link {
+
+    color: var(--secondary-color);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  .button-home {
+    display: flex;
+    padding: 6px 26px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 30px;
+    background: var(--section-white-bgr-color);
+  }
+
+  .favorites-button-nav{
+    color: var(--primary-color);
+    width: 67px;
+    height: 24px;
+  }
+
+  .button-favorites {
+    color: var(--primary-color);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    background: var(--btn-accent-color);
+    padding: 0;
+
+  }
+
+  .nav-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    gap: 16px;
+  }
+
+  .social-list-header {
+    display: flex;
+    gap: 12px;
+  }
+
+  .social-list-header:hover,
+  .social-list-header:focus {
+    stroke: #5F6560;
+    fill: #5F6560;
+  }
+
+  .social-list-item {
+    border-radius: 10px;
+    border: 1px solid rgba(126, 132, 127, 0.20);
+    display: flex;
+    padding: 8px;
+    align-items: flex-start;
+    gap: 8px;
+
+  }
+
+  .social-list-icon {
+    display: flex;
+    width: 28px;
+    height: 28px;
+    justify-content: center;
+    align-items: center;
+    stroke: var(--accent-color);
+    fill: var(--accent-color);
+  }
+
+  .header-section-container {
+    padding: 32px;
+    
+
+    border-radius: 30px;
+    background-image: none;
+    background: var(--primary-color);
+
+  }
+
+
+  .logotype {
+    
+    width: 150px;
+    height: 28px;
+    color: var(--secondary-color);
+    font-size: 28px;
+
+    font-weight: 700;
+    line-height: 1.0;
+    /* 100% */
+    letter-spacing: -0.56px;
+  }
+
+  .header-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+
+
+
 }
 
 @media screen and (min-width: 1440px) {
+  .header-section-container {
+    padding: 24px 48px;
+  }
 }
