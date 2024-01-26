@@ -26,7 +26,6 @@ class Pagination {
   init(galleryHandle, filter, totalPages = 0) {
     this.galleryHandle = galleryHandle;
     this.totalPages = totalPages > this.#maxPages ? this.#maxPages : totalPages;
-    console.log('Pagination:', totalPages);
     this.filter = filter;
     this.#createDots();
   }
@@ -45,8 +44,6 @@ class Pagination {
   }
 
   async updateGallery() {
-    console.log('current', this.currentPage);
-    console.log('filter', this.filter);
     try {
       await this.galleryHandle(this.filter, this.currentPage, 12);
     } catch (error) {
@@ -86,7 +83,6 @@ class Pagination {
 
   updateDisplayDots() {
     const dots = this.#dotsRef.querySelectorAll('li');
-    console.log(dots);
     dots.forEach(element => {
       element.classList.remove(this.#dotActiveClass);
     });

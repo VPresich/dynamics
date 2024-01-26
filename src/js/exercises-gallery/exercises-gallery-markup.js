@@ -51,7 +51,7 @@ function exercisesGalleryMarkup(filters = []) {
                 </svg>
               </div>
             </div>
-            <button type="button" class="ex-card-start-btn">
+            <button type="submit" class="ex-card-start-btn" data-id="${_id}">
               Start
               <span class="arrow-icon-span">
                 <svg
@@ -105,16 +105,15 @@ function exercisesGalleryMarkup(filters = []) {
 
 export default exercisesGalleryMarkup;
 
-
-      // <li class="exercise-card" data-id="${_id}">          
-      //       <p class="exercise-name">${name}</p>
-      //       <p class="body-part">${bodyPart}</p>
-      //       <p class="body-equipment">${equipment}</p>
-      //       <div class="exercise-param">
-      //           <p class="exercise-burnedCalories">${burnedCalories}</p>
-      //           <p class="exercise-time">${time}</p>  
-      //           <p class="exercise-target">${target}</p>                  
-      //       </div>
-      //      <p class="exercise-rating">${rating}</p>  
-      //      <p class="exercise-popularity">${popularity}</p>
-      // </li>
+// <li class="exercise-card" data-id="${_id}">
+//       <p class="exercise-name">${name}</p>
+//       <p class="body-part">${bodyPart}</p>
+//       <p class="body-equipment">${equipment}</p>
+//       <div class="exercise-param">
+//           <p class="exercise-burnedCalories">${burnedCalories}</p>
+//           <p class="exercise-time">${time}</p>
+//           <p class="exercise-target">${target}</p>
+//       </div>
+//      <p class="exercise-rating">${rating}</p>
+//      <p class="exercise-popularity">${popularity}</p>
+// </li>

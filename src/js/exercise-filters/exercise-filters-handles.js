@@ -5,18 +5,18 @@ import { createErrMsg, createOkMsg } from '../common/create-msg';
 import getExercisesData from '../exercises-gallery/get-exercises-data';
 import exercisesGalleryCreate from '../exercises-gallery/exercises-gallery-create';
 import Pagination from '../common/pagination/pagination';
+import galleryDelete from '../common/gallery-delete';
 
 const activeBtnClass = 'filter-button-active';
-let activeBtn;
+let activeBtn = {};
 
 const filtersRef = document.querySelector('.filters-buttons');
-// let activeFilter = document.querySelector('button[data-filter="Muscles"]');
 
 const filtersListRef = document.querySelector('.exercise-filters-list');
+const galleryRef = document.querySelector('.exercises-gallery');
 
 filtersRef.addEventListener('click', onFiltersBtnsClick);
 filtersListRef.addEventListener('click', onFiltersListClick);
-
 const pagination = new Pagination({
   galleryHandle: filtersHandler,
   dotsSelector: '.pagination-dots',
@@ -39,9 +39,7 @@ function filtersHandler(filterValue = { filter: DEFAULT_FILTER }) {
   getFiltersData(filterValue, pagination.currentPage)
     .then(data => {
       const filters = data.results;
-
-      console.log(data.totalPages);
-      console.log(filterValue);
+      galleryDelete(galleryRef);
       exerciseFiltersCreate(filtersListRef, filters);
       pagination.init(filtersHandler, filterValue, data.totalPages);
     })
@@ -67,6 +65,7 @@ function onFiltersListClick(event) {
     if (filterType === '') return;
     filter[filterType] = filterName;
   }
+
   pagination.reset(exercisesHandler, filter, 1, 0);
   exercisesHandler(filter);
 }
@@ -74,9 +73,8 @@ function onFiltersListClick(event) {
 function exercisesHandler(filterParam) {
   getExercisesData(filterParam, pagination.currentPage)
     .then(data => {
-      exercisesGalleryCreate(filtersListRef, data.results);
-      console.log(data.totalPages);
-      console.log(filterParam);
+      galleryDelete(filtersListRef);
+      exercisesGalleryCreate(galleryRef, data.results);
       pagination.init(exercisesHandler, filterParam, data.totalPages);
     })
     .catch(error => {

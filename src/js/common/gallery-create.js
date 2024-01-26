@@ -9,6 +9,7 @@ const galleryCreate = (data, galleryRef, markupFn) => {
   const strMarkup = markupFn(data);
   galleryRef.innerHTML = '';
   galleryRef.insertAdjacentHTML('beforeend', strMarkup);
+  galleryRef.classList.remove('visually-hidden');
 };
 
 export default galleryCreate;

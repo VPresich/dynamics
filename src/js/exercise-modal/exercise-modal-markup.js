@@ -14,27 +14,23 @@
 //   },
 // ];
 
-function modalWindowMarkup(filters = []) {
-  return filters.reduce(
-    (
-      strMarkup,
-      {
-        _id,
-        bodyPart,
-        equipment,
-        time,
-        target,
-        burnedCalories,
-        gifUrl,
-        name,
-        filter,
-        popularity,
-        rating,
-      }
-    ) =>
-      strMarkup +
-      `
-      <div class="modal-backdrop">
+function modalWindowMarkup(filters = {}) {
+  const {
+    _id,
+    bodyPart,
+    equipment,
+    time,
+    target,
+    burnedCalories,
+    gifUrl,
+    name,
+    filter,
+    popularity,
+    rating,
+    description,
+  } = filters;
+
+  return `
         <div class="exercise-window">
           <div class="exercise-container">
             <button class="exercise-close-btn" type="button">
@@ -49,13 +45,13 @@ function modalWindowMarkup(filters = []) {
             </button>
             <div class="exercise-image-wrapper">
               <img
-                src="https://ftp.goit.study/img/power-pulse/gifs/0022.gif"
+                src="${gifUrl}"
                 alt=""
               />
             </div>
             <div class="exercise-info-wrapper">
               <p class="exercise-name">${name}</p>
-              <p class="modal-rating">Rating</p>
+              <p class="modal-rating">${rating}</p>
               <ul class="exercise-params">
                 <li class="exercise-params-card">
                   <p class="exercise-param-name">Target</p>
@@ -75,7 +71,7 @@ function modalWindowMarkup(filters = []) {
                 </li>
               </ul>
               <p class="exercise-calories">Burned calories</p>
-              <p class="exercise-calories-value">${burnedCalories}</p>
+              <p class="exercise-calories-value">${burnedCalories}/${time} m</p>
               <p class="exercise-description">${description}</p>
               <div class="exercise-buttons">
                 <button
@@ -85,18 +81,15 @@ function modalWindowMarkup(filters = []) {
                 >
                   Add to favorites
                 </button>
-                <button class="exercise-raiting-btn" type="submit" data="">
+                <button class="exercise-raiting-btn" type="submit" data="${_id}">
                   Give a rating
                 </button>
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </div>   
 
-      `,
-    ''
-  );
+      `;
 }
 
 export default modalWindowMarkup;
