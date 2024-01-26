@@ -5,7 +5,7 @@ import { createErrMsg, createOkMsg } from '../common/create-msg';
 import getExercisesData from '../exercises-gallery/get-exercises-data';
 import exercisesFiltersCreate from '../exercises-gallery/exercises-gallery-create';
 import Pagination from '../common/pagination/pagination';
-
+import { buttonMenuRef,buttonCloseMenuRef } from "./exercise-filters-handles";
 const filtersRef = document.querySelector('.filters-buttons');
 let activeFilter = document.querySelector('button[data-filter="Muscles"]');
 activeFilter.classList.add('filter-button-active');
