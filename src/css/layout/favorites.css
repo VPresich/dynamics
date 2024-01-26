@@ -7,12 +7,6 @@
 @media screen and (min-width: 1440px) {
 } */
 
-body {
-  max-width: 1440px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 /* =============== favorites-motivation-ports ======================*/
 .favorites-motivation-ports {
   display: flex;
@@ -137,7 +131,7 @@ body {
   margin-bottom: 32px;
 }
 
-.list-exercises {
+.favorites-list-exercises-likes {
   display: flex;
   flex-wrap: wrap;
 
