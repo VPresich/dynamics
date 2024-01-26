@@ -81,7 +81,7 @@ function modalWindowMarkup(filters = {}) {
                 >
                   Add to favorites
                 </button>
-                <button class="exercise-raiting-btn" type="submit" data="${_id}">
+                <button class="exercise-raiting-btn" type="submit" data-id ="${_id}">
                   Give a rating
                 </button>
               </div>

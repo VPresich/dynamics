@@ -37,11 +37,6 @@
   border: none;
 }
 
-.first-filter-button { 
-  background-color: #7E847F;
-  color: #F6F6F6;
-}
-
 .filter-button-active {
   background-color: var(--accent-color);
   color: var(--section-white-bgr-color);
@@ -90,22 +85,22 @@
   font-size: 12px;
 }
 
-.form-for-searching-input { 
+.form-for-searching-input {
   width: 295px;
   position: relative;
   margin-bottom: 40px;
 }
 
-.searching-input { 
+.searching-input {
   border: none;
   padding-left: 14px;
   padding-top: 12px;
   padding-bottom: 12px;
   padding-right: 12px;
-  color: #1B1B1B;
+  color: #1b1b1b;
   border-radius: 30px;
   width: 100%;
-  font-family: "DM Sans", sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
@@ -114,9 +109,9 @@
   outline: none;
 }
 
-.searching-input::placeholder { 
-  color: #1B1B1B;
-  font-family: "DM Sans", sans-serif;
+.searching-input::placeholder {
+  color: #1b1b1b;
+  font-family: 'DM Sans', sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
@@ -124,12 +119,12 @@
   text-align: left;
 }
 
-.searching-icon { 
-  stroke: #1B1B1B;
-  fill: #F6F6F6;
+.searching-icon {
+  stroke: #1b1b1b;
+  fill: #f6f6f6;
 }
 
-.searching-btn { 
+.searching-btn {
   border: none;
   position: absolute;
   background-color: inherit;
@@ -143,52 +138,51 @@
 }
 
 @media screen and (min-width: 768px) {
-  .exercise-filters-section { 
+  .exercise-filters-section {
     padding-left: 16px;
     padding-right: 16px;
   }
 
-  .filters-buttons { 
+  .filters-buttons {
     margin-bottom: 32px;
     gap: 8px;
   }
-  
-  .filters-buttons:last-child { 
+
+  .filters-buttons:last-child {
     margin-left: 35px;
   }
 
-  .form-for-searching-input { 
+  .form-for-searching-input {
     margin-bottom: 0;
   }
 
-  .filter-button { 
+  .filter-button {
     font-size: 16px;
     padding: 10px 20px;
     margin-bottom: 0;
   }
 
-  .form-for-searching-input { 
+  .form-for-searching-input {
     width: 246px;
     margin-left: 27px;
   }
 
-  .exercise-filters-list { 
+  .exercise-filters-list {
     column-gap: 14px;
   }
 
-  .filter-card { 
+  .filter-card {
     width: 313px;
   }
 }
 
 @media screen and (min-width: 1440px) {
-  .form-for-searching-input { 
+  .form-for-searching-input {
     margin-left: 672px;
     width: 273px;
   }
 
-  .exercise-filters-list { 
+  .exercise-filters-list {
     column-gap: 20px;
   }
 }
-

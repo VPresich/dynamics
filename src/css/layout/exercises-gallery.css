@@ -1,4 +1,4 @@
-.exercise-gallery {
+.exercises-gallery {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -112,7 +112,7 @@
 }
 
 @media screen and (min-width: 375px) {
-  .exercise-gallery {
+  .exercises-gallery {
     row-gap: 20px;
   }
 
@@ -126,7 +126,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .exercise-gallery {
+  .exercises-gallery {
     column-gap: 14px;
   }
 
@@ -153,7 +153,7 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .exercise-gallery {
+  .exercises-gallery {
     row-gap: 28px;
     column-gap: 20px;
   }
