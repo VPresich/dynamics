@@ -40,38 +40,53 @@ function modalWindowMarkup(filters = {}) {
                 height="28"
                 aria-label="Close icon"
               >
-                <use href="../img/icons/symbols.svg#icon-icon"></use>
+                <use href="../img/icons/symbols.svg#icon-cross"></use>
               </svg>
             </button>
             <div class="exercise-image-wrapper">
               <img
                 src="${gifUrl}"
                 alt=""
+                class="exercise-image-modal"
               />
             </div>
             <div class="exercise-info-wrapper">
-              <p class="exercise-name">${name}</p>
-              <p class="modal-rating">${rating}</p>
-              <ul class="exercise-params">
-                <li class="exercise-params-card">
-                  <p class="exercise-param-name">Target</p>
-                  <p class="exercise-param-value">${target}</p>
-                </li>
-                <li class="exercise-params-card">
-                  <p class="exercise-param-name">Body part</p>
-                  <p class="exercise-param-value">${bodyPart}</p>
-                </li>
-                <li class="exercise-params-card">
-                  <p class="exercise-param-name">Equipment</p>
-                  <p class="exercise-param-value">${equipment}</p>
-                </li>
-                <li class="exercise-params-card">
-                  <p class="exercise-param-name">Popular</p>
-                  <p class="exercise-param-value">${popularity}</p>
-                </li>
-              </ul>
-              <p class="exercise-calories">Burned calories</p>
-              <p class="exercise-calories-value">${burnedCalories}/${time} m</p>
+              <div class="exercise-name-and-rating-container">
+                <p class="exercise-name">${name}</p>
+                <p class="modal-rating">${rating}
+                  <svg class="exercise-star" width="18" height="18" aria-label="Star icon">
+                    <use href="../img/icons/symbols.svg#icon-star"></use>
+                 </svg>
+                </p>
+              </div>
+              <svg class="exercise-line-svg" aria-label="Line">
+               <use href="../img/icons/symbols.svg#line-svg"></use>
+              </svg>
+              <div class="exercise-params-container">
+                <ul class="exercise-params">
+                  <li class="exercise-params-card">
+                    <p class="exercise-param-name">Target</p>
+                    <p class="exercise-param-value">${target}</p>
+                  </li>
+                  <li class="exercise-params-card">
+                    <p class="exercise-param-name">Body part</p>
+                    <p class="exercise-param-value">${bodyPart}</p>
+                  </li>
+                  <li class="exercise-params-card">
+                    <p class="exercise-param-name">Equipment</p>
+                    <p class="exercise-param-value">${equipment}</p>
+                  </li>
+                  <li class="exercise-params-card">
+                    <p class="exercise-param-name">Popular</p>
+                    <p class="exercise-param-value">${popularity}</p>
+                  </li>
+                </ul>
+                <p class="exercise-calories">Burned calories</p>
+                <p class="exercise-calories-value">${burnedCalories}/${time} m</p>
+              </div>
+              <svg class="exercise-line-svg" aria-label="Line">
+               <use href="../img/icons/symbols.svg#line-svg"></use>
+              </svg>
               <p class="exercise-description">${description}</p>
               <div class="exercise-buttons">
                 <button
@@ -80,6 +95,12 @@ function modalWindowMarkup(filters = {}) {
                   data="exercise-id"
                 >
                   Add to favorites
+                  <svg
+                  class="exercise-fav-icon"
+                  aria-label="Heart icon"
+                  >
+                  <use href="../img/icons/symbols.svg#icon-heart"></use>
+                  </svg>
                 </button>
                 <button class="exercise-raiting-btn" type="submit" data="${_id}">
                   Give a rating
