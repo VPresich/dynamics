@@ -1,31 +1,17 @@
 /* TODO */
 
-
-
-
-
-
-button {
-  border: none;
-}
-
 @media screen and (min-width: 375px) {
-  .header-section {
-    padding: 20px 0;
+  button {
+    border: none;
   }
 
-  .header-section-container {
-    margin: 0;
+  .header-section {
+    position: absolute;
     padding: 20px;
-    border-radius: 30px;
-    background-image: url(../img/hero/hero-mobile@1x.jpg );
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    background-color: dimgray;
+    width: 375px;
+    left:10%;
+    right: 50%;
+
   }
 
   .logotype {
@@ -36,8 +22,6 @@ button {
     letter-spacing: -0.32px;
     font-weight: 700;
     line-height: 1.13
-      /* 112.5% */
-
   }
 
   .nav {
@@ -57,19 +41,8 @@ button {
   .icon-align-justify {
     width: 32px;
     height: 16px;
-    stroke: #7E847F;
+    stroke: var(--accent-color);
     border: none;
-
-  }
-
-  .hashtag {
-    padding-top: 285px;
-    display: flex;
-    width: 141px;
-    align-items: center;
-    align-content: center;
-    gap: 4px;
-    flex-wrap: wrap;
 
   }
 
@@ -78,7 +51,6 @@ button {
     font-style: normal;
     font-weight: 400;
     line-height: 1.17;
-    /* 116.667% */
     border: 1px solid rgba(246, 246, 246, 0.30);
     border-radius: 30px;
     color: var(--primary-color);
@@ -89,13 +61,26 @@ button {
 
 @media screen and (min-width: 768px) {
   .header-section {
-    padding: 16px 0;
+    position: absolute;
+    padding-top: 56px 48px;
+    left:5%;
+right: 50%;
+ width: 736px;
+
   }
 
   .button-align-justify {
     display: none;
   }
-
+  .logotype {
+    width: 86px;
+    height: 18px;
+    color: var(--secondary-color);
+    font-size: 28px;
+    letter-spacing: -0.32px;
+    font-weight: 700;
+    line-height: 1.0;
+  }
   .nav {
     display: flex;
     border-radius: 60px;
@@ -105,8 +90,6 @@ button {
   }
 
   .nav-link {
-
-    color: var(--secondary-color);
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -121,13 +104,9 @@ button {
     gap: 10px;
     border-radius: 30px;
     background: var(--section-white-bgr-color);
+    color: var(--secondary-color);
   }
 
-  .favorites-button-nav{
-    color: var(--primary-color);
-    width: 67px;
-    height: 24px;
-  }
 
   .button-favorites {
     color: var(--primary-color);
@@ -136,6 +115,8 @@ button {
     line-height: 1.5;
     background: var(--btn-accent-color);
     padding: 0;
+    width: 67px;
+    height: 24px;
 
   }
 
@@ -178,29 +159,6 @@ button {
     fill: var(--accent-color);
   }
 
-  .header-section-container {
-    padding: 32px;
-    
-
-    border-radius: 30px;
-    background-image: none;
-    background: var(--primary-color);
-
-  }
-
-
-  .logotype {
-    
-    width: 150px;
-    height: 28px;
-    color: var(--secondary-color);
-    font-size: 28px;
-
-    font-weight: 700;
-    line-height: 1.0;
-    /* 100% */
-    letter-spacing: -0.56px;
-  }
 
   .header-page {
     display: flex;
@@ -208,14 +166,11 @@ button {
     align-items: center;
   }
 
-
-
-
-
 }
 
 @media screen and (min-width: 1440px) {
-  .header-section-container {
-    padding: 24px 48px;
+  .header-section {
+    position: absolute;
+    padding: 40px 64px;
   }
 }
