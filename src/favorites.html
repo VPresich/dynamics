@@ -1,20 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Favorites</title>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Favorites</title>
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css"
-    />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css"
+        />
 
-    <link rel="stylesheet" href="./css/styles.css" />
-  </head>
-  <body>
-    <load src="partials/header.html" />
-  </body>
+        <link rel="stylesheet" href="./css/styles.css" />
+    </head>
+    <body>
+        <load src="partials/header.html" />
+
+        <section class="favorites-motivation-ports">
+            <div class="favorites-quote-day">
+                <div>
+                    <svg class="social-icon-run-titel" width="34" height="32">
+                        <use href="./img/icons/symbols.svg#icon-run"></use>
+                    </svg>
+                </div>
+                <div>
+                    <h2 class="favorites-quote-day-title">Quote of the day</h2>
+                    <p class="favorites-quote-day-text">
+                        A lot of times I find that people who are blessed with
+                        the most talent don't ever develop that attitude, and
+                        the ones who aren't blessed in that way are the most
+                        competitive and have the biggest heart.
+                    </p>
+                    <p class="favorites-quote-day-text-autor">Tom Brady</p>
+                </div>
+                <div class="favorites-motivation-inverted-commas">
+                    <svg class="icon-inverted icon-inverted-commas">
+                        <use
+                            xlink:href="./img/icons/symbols.svg#icon-inverted-commas"
+                        ></use>
+                    </svg>
+                </div>
+            </div>
+            <div class="favorites-motivation-image">
+                <img
+                    src="./img/favorite/favorite-desktop@1x.jpg"
+                    alt="motivation-image"
+                />
+            </div>
+            <div class="favorites-motivation-block">
+                <div class="favorites-motivation-conteiner">
+                    <p class="favorites-motivation-block-img">
+                        <img
+                            src="./img/favorite/fluent_food-24-filled.jpg"
+                            alt="img-dumbbell"
+                        />
+                    </p>
+                    <p class="favorites-motivation-block-time">110 min</p>
+                    <p class="favorites-motivation-block-inform">
+                        Daily norm of sports
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="conteiner-favorites-exercises">
+            <h2 class="favorites-exercises-titel">Favorites</h2>
+            <ul class="list-exercises">
+                <li id="" class="list-exercises-favorites">
+                    <div class="list-exercises-favorites-category">
+                        <div>
+                            <p class="exercises-favorites-name-category">
+                                WORKOUT
+                            </p>
+                            <button
+                                class="favorites-button-remove"
+                                type="button"
+                            >
+                                <svg class="icon icon-trash">
+                                    <use
+                                        xlink:href="./img/icons/symbols.svg#icon-trash"
+                                    ></use>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="exercises-favorites-but-start"
+                        >
+                            Start<svg class="icon icon-arrow">
+                                <use
+                                    xlink:href="./img/icons/symbols.svg#icon-arrow"
+                                ></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="list-exercises-favorites-name">
+                        <svg class="social-icon-run" width="24" height="24">
+                            <use
+                                href="./img/icons/symbols.svg#icon-run-exercises"
+                            ></use>
+                        </svg>
+                        <p class="exercises-favorites-name">Air bike</p>
+                    </div>
+                    <div class="list-exercises-favorites-conteiner">
+                        <ul class="list-exercises-favorites-characteristic">
+                            <li class="list-characteristic">
+                                <span class="characteristic-criteria"
+                                    >Burned calories: </span
+                                >312 / 3 min
+                            </li>
+                            <li class="list-characteristic">
+                                <span class="characteristic-criteria"
+                                    >Body part: </span
+                                >Waist
+                            </li>
+                            <li class="list-characteristic">
+                                <span class="characteristic-criteria"
+                                    >Target: </span
+                                >Abs
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <script
+            type="module"
+            src="./js/favorites/my-favorites-exercises.js"
+        ></script>
+    </body>
 </html>
