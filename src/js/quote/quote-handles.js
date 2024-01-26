@@ -9,6 +9,7 @@ const api = new DbApi(BASE_URL);
 
 quote();
 
+
 async function quote() {
   try {
     const { quote, author } = await getOrFetchQuote();
@@ -43,11 +44,13 @@ async function fetchQuoteFromBackend() {
 }
 
 function displayQuote({ quote, author }) {
+
   quoteOfTheDay.innerHTML = `
     <p class="quote-text">${quote}</p>
     <h3 class="quote-author">${author}</h3>
   `;
 }
+
 
 
 
