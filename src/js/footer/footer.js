@@ -44,7 +44,9 @@ function handleSubmit(event) {
 
     const options = {
         method: "POST",
-        body: JSON.stringify(footerEmailValue),
+        body: {
+            "email": "test@gmail.com"
+    },
         headers: {
             "Content-Type": "application/json"
     },
