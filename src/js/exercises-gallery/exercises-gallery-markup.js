@@ -34,21 +34,86 @@ function exercisesGalleryMarkup(filters = []) {
     ) =>
       strMarkup +
       `
-      <li class="exercise-card" data-id="${_id}">          
-            <p class="exercise-name">${name}</p>
-            <p class="body-part">${bodyPart}</p>
-            <p class="body-equipment">${equipment}</p>
-            <div class="exercise-param">
-                <p class="exercise-burnedCalories">${burnedCalories}</p>
-                <p class="exercise-time">${time}</p>  
-                <p class="exercise-target">${target}</p>                  
+      <ul class="exercises-gallery">
+        <li class="exercise-card" data-id="${_id}">
+          <div class="exercice-card-top-line">
+            <div class="ex-card-top-left-part">
+              <p class="ex-card-workout exercise-param">workout</p>
+              <div class="rating-container">
+                <p class="ex-card-rating">${rating}</p>
+                <svg
+                  class="rating-star-icon"
+                  width="18"
+                  height="18"
+                  aria-label="star icon"
+                >
+                  <use href="../img/icons/symbols.svg#icon-Star"></use>
+                </svg>
+              </div>
             </div>
-           <p class="exercise-rating">${rating}</p>  
-           <p class="exercise-popularity">${popularity}</p>
-      </li>
+            <button type="submit" class="ex-card-start-btn" data-id="${_id}">
+              Start
+              <span class="arrow-icon-span">
+                <svg
+                  class="arrow-icon"
+                  width="16"
+                  height="16"
+                  aria-label="arrow icon"
+                  stroke="black"
+                >
+                  <use href="./img/icons/symbols.svg#icon-arrow"></use></svg
+              ></span>
+            </button>
+          </div>
+
+          <div class="ex-card-name-container">
+            <svg class="runner-icon" width="24" height="24" aria-label="runner icon">
+              <use href="./img/icons/symbols.svg#icon-icon"></use>
+            </svg>
+            <h3 class="ex-card-name exercise-param">${name}</h3>
+          </div>
+
+          <div class="ex-card-details">
+            <ul class="ex-card-details-list">
+              <li class="ex-card-details-item">
+                <p class="ex-card-details-text exercise-param">
+                  Burned calories:
+                  <span class="ex-card-text-part">${burnedCalories}</span>
+                </p>
+              </li>
+              <li class="ex-card-details-item exercise-param">
+                <p class="ex-card-details-text">
+                  Body part:
+                  <span class="ex-card-text-part">${bodyPart}</span>
+                </p>
+              </li>
+              <li class="ex-card-details-item exercise-param">
+                <p class="ex-card-details-text">
+                  Target:
+                  <span class="ex-card-text-part">${target}</span>
+                </p>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+
       `,
     ''
   );
 }
 
 export default exercisesGalleryMarkup;
+
+// <li class="exercise-card" data-id="${_id}">
+//       <p class="exercise-name">${name}</p>
+//       <p class="body-part">${bodyPart}</p>
+//       <p class="body-equipment">${equipment}</p>
+//       <div class="exercise-param">
+//           <p class="exercise-burnedCalories">${burnedCalories}</p>
+//           <p class="exercise-time">${time}</p>
+//           <p class="exercise-target">${target}</p>
+//       </div>
+//      <p class="exercise-rating">${rating}</p>
+//      <p class="exercise-popularity">${popularity}</p>
+// </li>
