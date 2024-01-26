@@ -6,8 +6,9 @@ const quoteOfTheDay = document.querySelector('.js-quote');
 quote();
 
 function displayQuote({ author, quote }) {
-    quoteOfTheDay.innerHTML = `
+  quoteOfTheDay.innerHTML = `
     <p class="quote-text">${quote}</p>
     <h3 class="quote-author">${author}</h3>
-      `;
-  }
+  `;
+}
+
