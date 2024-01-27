@@ -15,6 +15,8 @@ const filtersRef = document.querySelector('.filters-buttons');
 const filtersListRef = document.querySelector('.exercise-filters-list');
 const galleryRef = document.querySelector('.exercises-gallery');
 
+const formForSearching = document.querySelector('.form-for-searching-input');
+
 filtersRef.addEventListener('click', onFiltersBtnsClick);
 filtersListRef.addEventListener('click', onFiltersListClick);
 const pagination = new Pagination({
@@ -28,6 +30,8 @@ function onFiltersBtnsClick(event) {
   if (event.target.tagName !== 'BUTTON') return;
   event.preventDefault();
   const filterValue = event.target.dataset.filter;
+
+  formForSearching.classList.add("visually-hidden");
 
   pagination.reset(filtersHandler, filterValue, 1, 0);
   filtersHandler({ filter: filterValue });
@@ -58,6 +62,8 @@ function onFiltersListClick(event) {
   const filter = {};
   const filterNameElem = closestLi.querySelector('.filter-name');
   const filterTypeElem = closestLi.querySelector('.filter-type');
+
+  formForSearching.classList.remove("visually-hidden");
 
   if (filterTypeElem && filterTypeElem) {
     const filterName = filterNameElem.textContent.toLowerCase();

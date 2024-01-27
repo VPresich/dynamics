@@ -88,7 +88,6 @@
 .form-for-searching-input {
   width: 295px;
   position: relative;
-  margin-bottom: 40px;
 }
 
 .searching-input {
@@ -134,6 +133,12 @@
   height: 18px;
 }
 
+.wrapper-for-buttons-and-form { 
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
 @media screen and (min-width: 375px) {
 }
 
@@ -144,16 +149,7 @@
   }
 
   .filters-buttons {
-    margin-bottom: 32px;
     gap: 8px;
-  }
-
-  .filters-buttons:last-child {
-    margin-left: 35px;
-  }
-
-  .form-for-searching-input {
-    margin-bottom: 0;
   }
 
   .filter-button {
@@ -164,7 +160,11 @@
 
   .form-for-searching-input {
     width: 246px;
-    margin-left: 27px;
+    margin-left: 35px;
+  }
+
+  .wrapper-for-buttons-and-form { 
+    margin-bottom: 55px;
   }
 
   .exercise-filters-list {
@@ -178,7 +178,7 @@
 
 @media screen and (min-width: 1440px) {
   .form-for-searching-input {
-    margin-left: 672px;
+    margin-left: 680px;
     width: 273px;
   }
 
