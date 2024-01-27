@@ -1,5 +1,3 @@
-
-
 const iconFacebookUrl = "https://www.facebook.com/goITclub/";
 const iconInstagramUrl = "https://www.instagram.com/goitclub/";
 const iconYoutubeUrl = "https://www.youtube.com/c/GoIT";
@@ -17,9 +15,7 @@ function createIconMarkup(url, label) {
 }
 
 const socialList = document.querySelector('.social-list-menu');
-// const socialListFooter = document.querySelector('.social-list');
 const ulElement = document.querySelector('.social-list-header');
-
 
 const iconsMarkup = `
   ${createIconMarkup(iconFacebookUrl, "Facebook")}
@@ -29,7 +25,3 @@ const iconsMarkup = `
 
 ulElement.insertAdjacentHTML('beforeend', iconsMarkup);
 socialList.insertAdjacentHTML('beforeend', iconsMarkup);
-// socialListFooter.insertAdjacentHTML('beforeend', iconsMarkup);
-
-
-

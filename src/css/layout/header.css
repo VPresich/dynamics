@@ -146,6 +146,8 @@ right: 50%;
     padding: 8px;
     align-items: flex-start;
     gap: 8px;
+    stroke: #5F6560;
+    fill: #5F6560;
 
   }
 
