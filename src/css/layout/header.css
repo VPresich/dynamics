@@ -61,7 +61,7 @@
 
 @media screen and (min-width: 768px) {
   .header-section {
-    position: absolute;
+    
     padding-top: 56px 48px;
     left:5%;
 right: 50%;
@@ -73,6 +73,7 @@ right: 50%;
     display: none;
   }
   .logotype {
+     
     width: 86px;
     height: 18px;
     color: var(--secondary-color);
@@ -80,6 +81,7 @@ right: 50%;
     letter-spacing: -0.32px;
     font-weight: 700;
     line-height: 1.0;
+    padding-left: 50px;
   }
   .nav {
     display: flex;
