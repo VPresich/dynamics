@@ -1,15 +1,37 @@
 <header class="header-section">
-  <div class="container">
-    <nav class="nav">
-      <ul class="nav-list">
-        <li class="nav-item">
-          <a href="./index.html" class="nav-link">Home</a>
-        </li>
+  <div class="container header-section-container ">
+    <div class="header-page">
 
-        <li class="nav-item">
-          <a href="./favorites.html" class="nav-link">Favorites</a>
-        </li>
-      </ul>
-    </nav>
+      <a class="logotype " href="./index.html">energy.flow</a>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <button class="button-home" type="button">
+              <a href="./index.html" class="nav-link ">Home</a>
+            </button>
+
+          </li>
+
+          <li class="nav-item">
+            <button class="button-favorites" type="button">
+              <a href="./favorites.html" class="nav-link ">Favorites</a>
+            </button>
+
+          </li>
+        </ul>
+      </nav>
+      <div class="contacts-social-list-header">
+        <ul class="social-list-header list">
+        </ul>
+      </div>
+      <button class="button-align-justify js-open-menu-btn">
+
+        <svg class="icon-align-justify" width="28" height="28" aria-label="icon-align-justify">
+          <use href="../img/icons/symbols.svg#icon-align-justify"></use>
+        </svg>
+      </button>
+    </div>
   </div>
+  <script type="module" src="../js/exercise-modal/social-list.js"></script>
+  <script type="module" src="../js/exercise-modal/burger-modal-menu.js"></script>
 </header>
