@@ -5,91 +5,89 @@ import 'izitoast/dist/css/iziToast.min.css';
 const listExercises = document.querySelector('.list-exercises');
 const butRemovExercises = document.querySelector('.favorites-button-remove');
 const favoritesQuoteDayTitle = document.querySelector(
-    '.favorites-quote-day-title'
+  '.favorites-quote-day-title'
 );
 
 const instance = axios.create({
-    baseURL: 'https://energyflow.b.goit.study/api',
+  baseURL: 'https://energyflow.b.goit.study/api',
 });
 
-const quote = instance
-    .get('/quote ')
-    .then(resault => {
-        favoritesQuoteDayTitle.insertAdjacentHTML(
-            'beforeend',
-            ` <p class="favorites-quote-day-text">
+const favoritesQuote = instance
+  .get('/quote ')
+  .then(resault => {
+    favoritesQuoteDayTitle.insertAdjacentHTML(
+      'beforeend',
+      ` <p class="favorites-quote-day-text">
                 ${resault.data.quote}
                 </p>
                     <p class="favorites-quote-day-text-autor">${resault.data.author}</p>`
-        );
-    })
-    .catch(error => console.log(error));
+    );
+  })
+  .catch(error => console.log(error));
 
 const returnsLocalStorage = [];
 
 instance
-    .get('/exercises/64f389465ae26083f39b17a4')
-    .then(res => localStorage.setItem('settings', JSON.stringify(res.data)))
-    .catch(error => console.log(error));
+  .get('/exercises/64f389465ae26083f39b17a4')
+  .then(res => localStorage.setItem('settings', JSON.stringify(res.data)))
+  .catch(error => console.log(error));
 
 instance
-    .get('/exercises/64f389465ae26083f39b17a7')
-    .then(res => localStorage.setItem('set', JSON.stringify(res.data)))
-    .catch(error => console.log(error));
+  .get('/exercises/64f389465ae26083f39b17a7')
+  .then(res => localStorage.setItem('set', JSON.stringify(res.data)))
+  .catch(error => console.log(error));
 
 if (localStorage.length) {
-    try {
-        returnsLocalStorage.push(JSON.parse(localStorage.getItem('settings')));
-        returnsLocalStorage.push(JSON.parse(localStorage.getItem('set')));
+  try {
+    returnsLocalStorage.push(JSON.parse(localStorage.getItem('settings')));
+    returnsLocalStorage.push(JSON.parse(localStorage.getItem('set')));
 
-        listExercises.addEventListener('click', event => {
-            const deleteId = event.target.id;
-            if (deleteId) {
-                document
-                    .querySelector(
-                        `.list-exercises-favorites[data-listId="${deleteId}"]`
-                    )
-                    .remove();
-            }
-        });
-    } catch (error) {
-        console.log('Parse form storage error');
-    }
-} else {
-    iziToast.show({
-        message:
-            "It appears that you haven't added any exercises to your favorites yet. To get started, you can add exercises that you like to your favorites for easier access in the future.",
-        messageColor: '#fafafb',
-        messageSize: '16px',
-        backgroundColor: '#82C43C',
-        position: 'topRight',
-        closeOnEscape: true,
-        close: true,
-        icon: 'Icomoon',
-        iconUrl: `${iconOkUrl}`,
-        iconColor: '#fafafb',
+    listExercises.addEventListener('click', event => {
+      const deleteId = event.target.id;
+      if (deleteId) {
+        document
+          .querySelector(`.list-exercises-favorites[data-listId="${deleteId}"]`)
+          .remove();
+      }
     });
+  } catch (error) {
+    console.log('Parse form storage error');
+  }
+} else {
+  iziToast.show({
+    message:
+      "It appears that you haven't added any exercises to your favorites yet. To get started, you can add exercises that you like to your favorites for easier access in the future.",
+    messageColor: '#fafafb',
+    messageSize: '16px',
+    backgroundColor: '#82C43C',
+    position: 'topRight',
+    closeOnEscape: true,
+    close: true,
+    icon: 'Icomoon',
+    iconUrl: `${iconOkUrl}`,
+    iconColor: '#fafafb',
+  });
 }
 
 function renderElement(params) {
-    const render = params.reduce(
-        (
-            html,
-            {
-                bodyPart,
-                burnedCalories,
-                equipment,
-                description,
-                gifUrl,
-                name,
-                popularity,
-                rating,
-                target,
-                _id,
-            }
-        ) =>
-            html +
-            ` <li data-listId="${_id}" class="list-exercises-favorites">
+  const render = params.reduce(
+    (
+      html,
+      {
+        bodyPart,
+        burnedCalories,
+        equipment,
+        description,
+        gifUrl,
+        name,
+        popularity,
+        rating,
+        target,
+        _id,
+      }
+    ) =>
+      html +
+      ` <li data-listId="${_id}" class="list-exercises-favorites">
             <div class="list-exercises-favorites-category">
                 <div>
                     <p class="exercises-favorites-name-category">WORKOUT</p>
@@ -141,9 +139,9 @@ function renderElement(params) {
                 </ul>
             </div>
         </li>`,
-        ''
-    );
-    return render;
+    ''
+  );
+  return render;
 }
 
 const galleryMarkup = renderElement(returnsLocalStorage);
