@@ -1,15 +1,11 @@
 .exercises-gallery {
-  padding: 8px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
+  justify-content: start;
 }
 
 .exercise-card {
-  width: 424px;
-  height: 141px;
   border-radius: 15px;
   background: var(--section-white-bgr-color);
 }
@@ -65,8 +61,11 @@
 
   background-color: transparent;
   border: none;
-
+  border-radius: 8px;
   padding: 0;
+}
+.ex-card-start-btn:hover {
+  box-shadow: 5px 5px 5px rgba(126, 132, 127, 0.3);
 }
 .arrow-icon-span {
   display: flex;
@@ -108,7 +107,31 @@
   color: var(--secondary-color);
 }
 
+.runner-icon-container {
+  width: 24px;
+  height: 24px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+}
+
+.ex-no-elements {
+  color: var(--secondary-color);
+  text-align: center;
+  line-height: 1.28; /* 128.571% */
+  letter-spacing: -0.14px;
+}
+.error-message {
+  margin-left: auto;
+  margin-right: auto;
+}
+.grey-text {
+  color: var(--accent-color);
+}
 @media screen and (min-width: 375px) {
+  .exercises-gallery {
+    row-gap: 20px;
+  }
+
   .exercise-card {
     width: 295px;
     height: 165px;
@@ -116,9 +139,18 @@
     border-radius: 15px;
     background: #fff;
   }
+  .ex-no-elements {
+    width: 295px;
+    padding-top: 164px;
+    padding-bottom: 320px;
+  }
 }
 
 @media screen and (min-width: 768px) {
+  .exercises-gallery {
+    column-gap: 14px;
+  }
+
   .exercise-card {
     width: 313px;
     height: 165px;
@@ -139,11 +171,30 @@
   .ex-card-name-container {
     margin-bottom: 8px;
   }
+  .ex-no-elements {
+    width: 536px;
+    padding-top: 222px;
+    padding-bottom: 585px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
+  .exercises-gallery {
+    row-gap: 28px;
+    column-gap: 20px;
+  }
+
   .exercise-card {
     width: 424px;
     height: 141px;
+  }
+  .ex-card-name {
+    width: 100%;
+  }
+
+  .ex-no-elements {
+    width: 684px;
+    padding-top: 227px;
+    padding-bottom: 350px;
   }
 }

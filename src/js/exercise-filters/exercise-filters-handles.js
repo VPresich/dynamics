@@ -3,19 +3,22 @@ import getFiltersData from './get-filters-data';
 import exerciseFiltersCreate from './exercise-filters-create';
 import { createErrMsg, createOkMsg } from '../common/create-msg';
 import getExercisesData from '../exercises-gallery/get-exercises-data';
-import exercisesFiltersCreate from '../exercises-gallery/exercises-gallery-create';
+import exercisesGalleryCreate from '../exercises-gallery/exercises-gallery-create';
 import Pagination from '../common/pagination/pagination';
+import galleryDelete from '../common/gallery-delete';
+
+const activeBtnClass = 'filter-button-active';
+let activeBtn = {};
 
 const filtersRef = document.querySelector('.filters-buttons');
-let activeFilter = document.querySelector('button[data-filter="Muscles"]');
-activeFilter.classList.add('filter-button-active');
 
 const filtersListRef = document.querySelector('.exercise-filters-list');
-const exercisesGalleryRef = document.querySelector('.exercises-gallery');
+const galleryRef = document.querySelector('.exercises-gallery');
+
+const formForSearching = document.querySelector('.form-for-searching-input');
 
 filtersRef.addEventListener('click', onFiltersBtnsClick);
 filtersListRef.addEventListener('click', onFiltersListClick);
-
 const pagination = new Pagination({
   galleryHandle: filtersHandler,
   dotsSelector: '.pagination-dots',
@@ -25,32 +28,28 @@ const pagination = new Pagination({
 
 function onFiltersBtnsClick(event) {
   if (event.target.tagName !== 'BUTTON') return;
+  event.preventDefault();
   const filterValue = event.target.dataset.filter;
-  filtersHandler(filterValue, 1);
-  activeFilter.classList.remove('filter-button-active');
-  activeFilter = event.target;
-  activeFilter.classList.add('filter-button-active');
+
+  formForSearching.classList.add("visually-hidden");
+
+  pagination.reset(filtersHandler, filterValue, 1, 0);
+  filtersHandler({ filter: filterValue });
+
+  changeBtnActive(event.target);
 }
 
-function filtersHandler(
-  filterValue = DEFAULT_FILTER,
-  pageNum = 1,
-  perPage = 12
-) {
-  getFiltersData(filterValue, pageNum, perPage)
+function filtersHandler(filterValue = { filter: DEFAULT_FILTER }) {
+  getFiltersData(filterValue, pagination.currentPage)
     .then(data => {
       const filters = data.results;
-      if (!filters.length) {
-        //TODO Default image
-        console.log(
-          'Sorry, there are no data matching your search query. Please, try again!'
-        );
-      }
+      galleryDelete(galleryRef);
       exerciseFiltersCreate(filtersListRef, filters);
-      pagination.createDots(data.totalPages);
+      pagination.init(filtersHandler, filterValue, data.totalPages);
     })
     .catch(error => {
-      createErrMsg(`Error fetching images: ${error.message}`);
+      console.log(error.message);
+      // createErrMsg(`Error fetching images: ${error.message}`);
     });
 }
 
@@ -61,9 +60,10 @@ function onFiltersListClick(event) {
   if (!closestLi) return;
 
   const filter = {};
-
   const filterNameElem = closestLi.querySelector('.filter-name');
   const filterTypeElem = closestLi.querySelector('.filter-type');
+
+  formForSearching.classList.remove("visually-hidden");
 
   if (filterTypeElem && filterTypeElem) {
     const filterName = filterNameElem.textContent.toLowerCase();
@@ -71,11 +71,34 @@ function onFiltersListClick(event) {
     if (filterType === '') return;
     filter[filterType] = filterName;
   }
-  getExercisesData(filter)
-    .then(data => {
-      exercisesFiltersCreate(exercisesGalleryRef, data.results);
-    })
-    .catch(error => console.log(error));
+
+  pagination.reset(exercisesHandler, filter, 1, 0);
+  exercisesHandler(filter);
 }
 
+function exercisesHandler(filterParam) {
+  getExercisesData(filterParam, pagination.currentPage)
+    .then(data => {
+      galleryDelete(filtersListRef);
+      exercisesGalleryCreate(galleryRef, data.results);
+      pagination.init(exercisesHandler, filterParam, data.totalPages);
+    })
+    .catch(error => {
+      console.log(error.message);
+      createErrMsg(`Error fetching images: ${error.message}`);
+    });
+}
+
+function setActiveFilter() {
+  activeBtn = filtersRef.querySelector('BUTTON');
+  activeBtn && activeBtn.classList.add(activeBtnClass);
+}
+
+function changeBtnActive(btn) {
+  activeBtn && activeBtn.classList.remove(activeBtnClass);
+  btn && btn.classList.add(activeBtnClass);
+  activeBtn = btn;
+}
+
+setActiveFilter();
 filtersHandler();
