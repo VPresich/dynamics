@@ -149,19 +149,18 @@ function searchHandler(filterParam, searchQuery) {
         galleryCreate([], galleryRef, handleNoElements);
         return;
       }
+      return data;
     })
     .then(data => {
       galleryDelete(filtersListRef);
       exercisesGalleryCreate(galleryRef, data.results);
-      
     })
     .catch(error => {
-      galleryCreate([], galleryRef, handleNoElements);
       console.log(error.message);
     })
-    .finally(()=>{
-      pagination.destroy();
-    });
+    // .finally(()=>{
+    //   pagination.destroy();
+    // });
 }
 
 // import { DEFAULT_FILTER } from './constants';
