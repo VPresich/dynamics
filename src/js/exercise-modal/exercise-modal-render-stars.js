@@ -1,6 +1,5 @@
-function renderRatingStars(ratingElement) { //сюди треба інформацію з .modal-rating
+function renderRatingStars(ratingElement) { //сюди треба подавати .modal-rating
     const rating = parseInt(ratingElement.textContent);
-    ratingElement.innerHTML = '';
   
     for (let i = 0; i < 5; i++) {
       const starIcon = document.createElement('svg');
