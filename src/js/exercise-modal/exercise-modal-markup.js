@@ -66,19 +66,19 @@ function modalWindowMarkup(filters = {}) {
                 <ul class="exercise-params">
                   <li class="exercise-params-card">
                     <p class="exercise-param-name">Target</p>
-                    <p class="exercise-param-value">${target}</p>
+                    <p class="exercise-param-value exercise-param-target">${target}</p>
                   </li>
                   <li class="exercise-params-card">
                     <p class="exercise-param-name">Body part</p>
-                    <p class="exercise-param-value">${bodyPart}</p>
+                    <p class="exercise-param-value exercise-param-bodypart">${bodyPart}</p>
                   </li>
                   <li class="exercise-params-card">
                     <p class="exercise-param-name">Equipment</p>
-                    <p class="exercise-param-value">${equipment}</p>
+                    <p class="exercise-param-value exercise-param-equipment">${equipment}</p>
                   </li>
                   <li class="exercise-params-card">
                     <p class="exercise-param-name">Popular</p>
-                    <p class="exercise-param-value">${popularity}</p>
+                    <p class="exercise-param-value exercise-param-popularuty">${popularity}</p>
                   </li>
                 </ul>
                 <p class="exercise-calories">Burned calories</p>

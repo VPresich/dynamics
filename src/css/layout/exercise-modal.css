@@ -80,12 +80,6 @@
     border-radius: 12px;
   }
 
-
-
-  .exercise-info-wrapper {
-    /* width: 382px; */
-  }
-
   .exercise-name-and-rating-container {
     margin-top: 20px;
   }
@@ -218,6 +212,11 @@
     align-items: center;
   }
 
+  .exercise-favorite-btn:hover,
+  .exercise-favorite-btn:focus {
+    background: #5F6560;
+  }
+
   .exercise-fav-icon {
     width: 16px;
     height: 16px;
@@ -237,6 +236,11 @@
     border-radius: 30px;
     border: 1px solid black;
   }
+}
+
+.exercise-raiting-btn:hover,
+.exercise-raiting-btn:focus {
+  border: 1px solid #7E847F;
 }
 
 @media screen and (min-width: 768px) {
