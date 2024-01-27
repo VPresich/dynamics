@@ -128,7 +128,7 @@ function getSearch() {
 }
 
 function formReset() {
-  searchForm.value = '';
+  searchInput.value = '';
 }
 
 function onSearchSubmit(event) {
