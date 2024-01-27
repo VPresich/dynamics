@@ -1,4 +1,4 @@
-function renderRatingStars(ratingElement) {
+function renderRatingStars(ratingElement) { //сюди треба інформацію з .modal-rating
     const rating = parseInt(ratingElement.textContent);
     ratingElement.innerHTML = '';
   
@@ -20,8 +20,8 @@ function renderRatingStars(ratingElement) {
       ratingElement.appendChild(starIcon);
     }
   }
-  window.onload = function() {
-    const ratingElement = document.querySelector('.modal-rating');
-    renderRatingStars(ratingElement);
-  };
+//   window.onload = function() {
+//     const ratingElement = document.querySelector('.modal-rating');
+//     renderRatingStars(ratingElement);
+//   };
   
