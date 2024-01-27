@@ -34,8 +34,7 @@ function exercisesGalleryMarkup(filters = []) {
     ) =>
       strMarkup +
       `
-      <ul class="exercises-gallery">
-        <li class="exercise-card" data-id="${_id}">
+       <li class="exercise-card data-id="${_id}">
           <div class="exercice-card-top-line">
             <div class="ex-card-top-left-part">
               <p class="ex-card-workout exercise-param">workout</p>
@@ -47,7 +46,7 @@ function exercisesGalleryMarkup(filters = []) {
                   height="18"
                   aria-label="star icon"
                 >
-                  <use href="../img/icons/symbols.svg#icon-Star"></use>
+                  <use href="../img/icons/symbols.svg#icon-star"></use>
                 </svg>
               </div>
             </div>
@@ -67,9 +66,11 @@ function exercisesGalleryMarkup(filters = []) {
           </div>
 
           <div class="ex-card-name-container">
-            <svg class="runner-icon" width="24" height="24" aria-label="runner icon">
-              <use href="./img/icons/symbols.svg#icon-icon"></use>
-            </svg>
+            <div class="runner-icon-container">
+              <svg class="runner-icon" width="24" height="24" aria-label="runner icon">
+                <use href="./img/icons/symbols.svg#icon-running-man"></use>
+              </svg>
+            </div>
             <h3 class="ex-card-name exercise-param">${name}</h3>
           </div>
 
@@ -96,15 +97,26 @@ function exercisesGalleryMarkup(filters = []) {
             </ul>
           </div>
         </li>
-      </ul>
-
       `,
     ''
   );
 }
 
 export default exercisesGalleryMarkup;
-
+/* <section>
+      <div class="container">
+        <ul class="exercises-gallery">
+          <li class="error-message">
+            <p class="ex-no-elements">
+              Unfortunately, no <span class="grey-text">results</span> were
+              found. You may want to consider other search options to find the
+              exercise you are looking for. Our range is wide and you have the
+              opportunity to find more options that suit your needs.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section> */
 // <li class="exercise-card" data-id="${_id}">
 //       <p class="exercise-name">${name}</p>
 //       <p class="body-part">${bodyPart}</p>
