@@ -18,13 +18,13 @@ const filtersRef = document.querySelector('.filters-buttons');
 const filtersListRef = document.querySelector('.exercise-filters-list');
 const galleryRef = document.querySelector('.exercises-gallery');
 
-const searchForm = document.querySelector('.form-for-searching-input');
+const formForSearching = document.querySelector('.form-for-searching-input');
 const searchInput = document.querySelector('.searching-input');
 
 filtersRef.addEventListener('click', onFiltersBtnsClick);
 filtersListRef.addEventListener('click', onFiltersListClick);
 
-searchForm.addEventListener('submit', onSearchSubmit);
+formForSearching.addEventListener('submit', onSearchSubmit);
 
 const pagination = new Pagination({
   galleryHandle: filtersHandler,
