@@ -38,6 +38,8 @@ function onFiltersBtnsClick(event) {
   event.preventDefault();
   const filterValue = event.target.dataset.filter;
 
+  formForSearching.classList.add("visually-hidden");
+
   pagination.reset(filtersHandler, filterValue, 1, 0);
   deleteChapter();
   filtersHandler({ filter: filterValue });
@@ -68,6 +70,8 @@ function onFiltersListClick(event) {
   const filter = {};
   const filterNameElem = closestLi.querySelector('.filter-name');
   const filterTypeElem = closestLi.querySelector('.filter-type');
+
+  formForSearching.classList.remove("visually-hidden");
 
   if (filterTypeElem && filterTypeElem) {
     const filterName = filterNameElem.textContent.toLowerCase();
