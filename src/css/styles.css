@@ -22,7 +22,14 @@
 @import url('./layout/pagination.css');
 
 @import url('./layout/footer.css');
+<<<<<<< Updated upstream
 
+=======
+@import url('./layout/burger-modal-menu.css');
+@import url('./layout/exercises-gallery.css');
+>>>>>>> Stashed changes
+
+@import url('./layout/sport.css');
 
 :root {
   font-synthesis: none;
