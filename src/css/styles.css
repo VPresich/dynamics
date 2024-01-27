@@ -17,6 +17,8 @@
 @import url('./layout/about.css');
 @import url('./layout/pagination.css');
 
+@import url('./layout/favorites-exercises.css');
+
 @import url('./layout/exercise-modal.css');
 @import url('./layout/footer.css');
 @import url('./layout/exercises-gallery.css');
