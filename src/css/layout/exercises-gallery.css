@@ -13,6 +13,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: start;
+  padding-bottom: 20px;
 }
 
 .exercise-card {
@@ -159,6 +160,7 @@
 @media screen and (min-width: 768px) {
   .exercises-gallery {
     column-gap: 14px;
+    padding-bottom: 32px;
   }
 
   .exercise-card {
