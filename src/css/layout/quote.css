@@ -71,7 +71,7 @@
 }
 
 .quote-photo{
-  background: url(../img/quote/quote-mobile@1x.jpg) no-repeat;
+  background: url(/img/quote/quote-mobile@1x.jpg) no-repeat;
   background-size: cover;
   border-radius: 30px;
   height: 272px;
@@ -81,7 +81,7 @@
   screen and (max-width: 767px) and (min-resolution: 2dppx),
   screen and (max-width: 767px) and (min-device-pixel-ratio: 2) {
   .quote-photo {
-    background-image: url(../img/quote/quote-mobile@2x.jpg);
+    background-image: url(/img/quote/quote-mobile@2x.jpg);
   }
 }
 
@@ -123,7 +123,7 @@
 }
 
 .quote-photo{
-  background: url(../img/quote/quote-tablet@1x.jpg) no-repeat;
+  background: url(/img/quote/quote-tablet@1x.jpg) no-repeat;
   background-size: cover;
   border-radius: 50px;
   height: 302px;
@@ -134,7 +134,7 @@
   screen and (min-resolution: 2dppx) and (min-width: 768px),
   screen and (min-device-pixel-ratio: 2) and (min-width: 768px) {
   .quote-photo {
-    background-image: url(../img/quote/quote-tablet@2x.jpg);
+    background-image: url(/img/quote/quote-tablet@2x.jpg);
   }
 }
 
@@ -154,7 +154,7 @@
 }
 
 .quote-photo{
-  background: url(../img/quote/quote-desktop@1x.jpg) no-repeat;
+  background: url(/img/quote/quote-desktop@1x.jpg) no-repeat;
   background-size: cover;
   width: 50%;
 }
@@ -164,6 +164,6 @@
   screen and (min-resolution: 2dppx) and (min-width: 1440px),
   screen and (min-device-pixel-ratio: 2) and (min-width: 1440px) {
   .quote-photo {
-    background-image: url(../img/quote/quote-desktop@2x.jpg);
+    background-image: url(/img/quote/quote-desktop@2x.jpg);
   }
 }
