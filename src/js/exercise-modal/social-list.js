@@ -15,7 +15,9 @@ function createIconMarkup(url, label) {
 }
 
 const socialList = document.querySelector('.social-list-menu');
+// const socialListFooter = document.querySelector('.social-list');
 const ulElement = document.querySelector('.social-list-header');
+
 
 const iconsMarkup = `
   ${createIconMarkup(iconFacebookUrl, "Facebook")}
@@ -25,6 +27,7 @@ const iconsMarkup = `
 
 ulElement.insertAdjacentHTML('beforeend', iconsMarkup);
 socialList.insertAdjacentHTML('beforeend', iconsMarkup);
+// socialListFooter.insertAdjacentHTML('beforeend', iconsMarkup);
 
 
 export default sendRequest;
