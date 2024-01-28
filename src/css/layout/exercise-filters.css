@@ -47,6 +47,7 @@
 .filter-button:hover,
 .filter-button:focus {
   background: var(--btn-accent-color);
+  color: var(--section-white-bgr-color);
 }
 
 .exercise-filters-list {
