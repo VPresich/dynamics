@@ -91,7 +91,7 @@ function modalWindowMarkup(filters = {}) {
                   class="exercise-fav-icon"
                   aria-label="Heart icon"
                   >
-                  <use href=".img/icons/symbols.svg#icon-heart"></use>
+                  <use href="${iconURL}#icon-heart"></use>
                   </svg>
                 </button>
                 <button class="exercise-raiting-btn" type="submit" data="${_id}">
