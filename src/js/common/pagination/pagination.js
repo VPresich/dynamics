@@ -6,7 +6,8 @@ class Pagination {
   #dotDefaultClass = 'pagination-dot';
   #dotActiveClass = 'active-paggination-dot';
   galleryHandle;
-  filter;
+  filter = { filter: '' };
+  keyWord = '';
 
   constructor({
     galleryHandle,
@@ -30,11 +31,12 @@ class Pagination {
     this.#createDots();
   }
 
-  reset(galleryHandle, filter, currPage = 1, totalPages = 0) {
+  reset(galleryHandle, filter, currPage = 1, keyWord = '', totalPages = 0) {
     this.galleryHandle = galleryHandle;
     this.totalPages = totalPages;
     this.currentPage = currPage;
     this.filter = filter;
+    this.keyWord = keyWord;
     this.#deleteDots();
   }
 
@@ -45,7 +47,12 @@ class Pagination {
 
   async updateGallery() {
     try {
-      await this.galleryHandle(this.filter, this.currentPage, 12);
+      await this.galleryHandle(
+        this.filter,
+        this.currentPage,
+        this.keyWord,
+        this.totalPages
+      );
     } catch (error) {
       console.log(error.message);
     }
