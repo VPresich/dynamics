@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 8px;
-  margin: 0 auto;
+  margin: 20px auto 0;
 }
 
 .pagination-dot {
@@ -35,4 +35,13 @@
   border-radius: 18px;
   border: 1px solid var(--secondary-color);
   color: var(--secondary-color);
+}
+
+@media screen and (min-width: 768px) {
+  .pagination-dots {
+    margin: 32px auto 0;
+  }
+}
+
+@media screen and (min-width: 1440px) {
 }
