@@ -46,9 +46,10 @@ if (localStorage.length > 2) {
 
               favoriteslistExercises.insertAdjacentHTML(
                 'beforeend',
-                `<div class="favortes-no-exercises-found-img">
+                `<div>
+                <div class="favortes-no-exercises-found-img">
                 
-      </div>
+                    </div>
                 
                 <p class="favortes-no-exercises-found-text">
                   It appears that you haven't added any exercises to your favorites
@@ -68,18 +69,16 @@ if (localStorage.length > 2) {
 } else {
   favoriteslistExercises.insertAdjacentHTML(
     'beforeend',
-    `<div class="favortes-no-exercises-found">
-    <img
-      class="favortes-no-exercises-found-img"
-      src="./img/favorite/dumbbell-desktop@1x.jpg"
-      alt="dumbbell-desktop"
-    />
-    <p class="favortes-no-exercises-found-text">
-      It appears that you haven't added any exercises to your favorites
-      yet. To get started, you can add exercises that you like to your
-      favorites for easier access in the future.
-    </p>
-  </div>`
+    `<div class="favortes-no-exercises-found-img">
+                
+    </div>
+              
+              <p class="favortes-no-exercises-found-text">
+                It appears that you haven't added any exercises to your favorites
+                yet. To get started, you can add exercises that you like to your
+                favorites for easier access in the future.
+              </p>
+            </div>`
   );
 }
 
