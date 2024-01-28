@@ -13,6 +13,7 @@
 //     popularity: 168,
 //   },
 // ];
+import iconURL from '../../img/icons/symbols.svg';
 
 function exercisesGalleryMarkup(filters = []) {
   return filters.reduce(
@@ -45,8 +46,9 @@ function exercisesGalleryMarkup(filters = []) {
                   width="18"
                   height="18"
                   aria-label="star icon"
+                  fill = "#EEA10C";
                 >
-                  <use href="../img/icons/symbols.svg#icon-star"></use>
+                  <use href="${iconURL}#icon-star"></use>
                 </svg>
               </div>
             </div>
@@ -60,7 +62,7 @@ function exercisesGalleryMarkup(filters = []) {
                   aria-label="arrow icon"
                   stroke="black"
                 >
-                  <use href="./img/icons/symbols.svg#icon-arrow"></use></svg
+                  <use href="${iconURL}#icon-arrow"></use></svg
               ></span>
             </button>
           </div>
@@ -68,7 +70,7 @@ function exercisesGalleryMarkup(filters = []) {
           <div class="ex-card-name-container">
             <div class="runner-icon-container">
               <svg class="runner-icon" width="24" height="24" aria-label="runner icon">
-                <use href="./img/icons/symbols.svg#icon-running-man"></use>
+                <use href="${iconURL}#icon-running-man"></use>
               </svg>
             </div>
             <h3 class="ex-card-name exercise-param">${name}</h3>
