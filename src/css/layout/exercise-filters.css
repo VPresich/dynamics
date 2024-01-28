@@ -97,6 +97,7 @@
   font-size: 20px;
   font-weight: 400;
   line-height: 1;
+  text-transform: capitalize;
 }
 
 .filter-type {
@@ -159,6 +160,31 @@
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 40px;
+}
+
+.return-to-the-top-btn { 
+  padding: 0;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  z-index: 999;
+}
+
+.return-to-the-top-small-btn { 
+  width: 40px;
+  height: 40px;
+}
+
+.return-to-the-top-big-btn {
+  width: 100px;
+  height: 100px; 
+}
+
+.return-to-the-top-btn:hover,
+.return-to-the-top-btn:focus { 
+  background-color: rgba(95, 101, 96, 1);
 }
 
 @media screen and (min-width: 375px) {
