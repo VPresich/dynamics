@@ -94,7 +94,7 @@ function renderElement(params) {
                     <button id="${_id}" class="favorites-button-remove" type="button">
                     <svg id="${_id}" class="favorites-icon-trash">
                     <use id="${_id}"
-                        xlink:href="./img/icons/symbols.svg#icon-trash"
+                        xlink:href="./img/icons/symbols.svg#icon-trash-favotites"
                     ></use>
                 </svg>
                     </button>
