@@ -60,13 +60,9 @@
 
   .favorites-motivation-image-cont {
     border-radius: 30px;
-  }
-
-  .favorites-motivation-image {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    border-radius: 30px;
+    background: url(/img/favorite/favorite-mobile@2x.jpg) no-repeat;
+    background-size: cover;
+    height: 272px;
   }
 
   /*================== favorites-motivation-inform ==================== */

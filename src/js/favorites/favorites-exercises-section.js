@@ -5,7 +5,6 @@ import 'izitoast/dist/css/iziToast.min.css';
 const favoriteslistExercises = document.querySelector(
   '.favorites-list-exercises-likes'
 );
-const butRemovExercises = document.querySelector('.favorites-button-remove');
 
 const instance = axios.create({
   baseURL: 'https://energyflow.b.goit.study/api',
@@ -15,7 +14,7 @@ const newArrLocalStorage = [];
 
 if (localStorage.length > 2) {
   try {
-    newArrLocalStorage.push(JSON.parse(localStorage.getItem('')));
+    newArrLocalStorage.push(JSON.parse(localStorage.getItem('favorites')));
 
     const newArr = newArrLocalStorage.flatMap(res => res);
 
@@ -40,10 +39,10 @@ if (localStorage.length > 2) {
 
             newArr.splice(csdvs, 1);
 
-            localStorage.setItem('arr', JSON.stringify(newArr));
+            localStorage.setItem('favorites', JSON.stringify(newArr));
 
             if (!newArr.length) {
-              localStorage.removeItem('arr');
+              localStorage.removeItem('favorites');
 
               favoriteslistExercises.insertAdjacentHTML(
                 'beforeend',
@@ -117,7 +116,7 @@ function renderElement(params) {
             <div class="list-exercises-favorites-name">
                 <svg class="favorites-social-icon-run" width="24" height="24">
                 <use
-                href="./img/icons/symbols.svg#icon-run-exercises"
+                href="./img/icons/symbols.svg#favorites=icon-run-exercises"
             ></use>
                 </svg>
                 <p class="exercises-favorites-name">${name}</p>
