@@ -143,7 +143,7 @@ var oe=Object.defineProperty;var ce=(t,e,s)=>e in t?oe(t,e,{enumerable:!0,config
                 <button
                   class="exercise-favorite-btn"
                   type="submit"
-                  data="exercise-id"
+                  data="${e}"
                 >
                   Add to favorites
                   <svg
