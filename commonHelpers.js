@@ -1,4 +1,4 @@
-import"./assets/styles-898b8e78.js";import{a as l}from"./assets/vendor-0a7943b3.js";const d=document.querySelector(".favorites-quote-day-title"),f=l.create({baseURL:"https://energyflow.b.goit.study/api"});f.get("/quote ").then(e=>{d.insertAdjacentHTML("beforeend",` <p class="favorites-quote-day-text">
+import"./assets/styles-c3ebc9ef.js";import{a as l}from"./assets/vendor-0a7943b3.js";const d=document.querySelector(".favorites-quote-day-title"),f=l.create({baseURL:"https://energyflow.b.goit.study/api"});f.get("/quote ").then(e=>{d.insertAdjacentHTML("beforeend",` <p class="favorites-quote-day-text">
                 ${e.data.quote}
                 </p>
                     <p class="favorites-quote-day-text-autor">${e.data.author}</p>`)}).catch(e=>console.log(e));const i=document.querySelector(".favorites-list-exercises-likes");l.create({baseURL:"https://energyflow.b.goit.study/api"});const n=[];if(localStorage.length>2)try{n.push(JSON.parse(localStorage.getItem("favorites")));const e=n.flatMap(s=>s),c=u(e);i.insertAdjacentHTML("beforeend",c),e.map(s=>console.log(s._id)),i.addEventListener("click",s=>{const t=s.target.id;t&&(document.querySelector(`.list-exercises-favorites[data-listId="${t}"]`).remove(),e.map(a=>{if(a._id===t){const o=e.indexOf(a);e.splice(o,1),localStorage.setItem("favorites",JSON.stringify(e)),e.length||(localStorage.removeItem("favorites"),i.insertAdjacentHTML("beforeend",`<div class="favortes-no-exercises">
@@ -28,7 +28,7 @@ import"./assets/styles-898b8e78.js";import{a as l}from"./assets/vendor-0a7943b3.
                     <button id="${r}" class="favorites-button-remove" type="button">
                     <svg id="${r}" class="favorites-icon-trash">
                     <use id="${r}"
-                        xlink:href="./img/icons/symbols.svg#icon-trash"
+                        xlink:href="./img/icons/symbols.svg#icon-trash-favotites"
                     ></use>
                 </svg>
                     </button>
