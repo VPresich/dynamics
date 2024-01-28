@@ -14,7 +14,7 @@
 //   },
 // ];
 
-const iconUrl = `./img/icons/symbols.svg`;
+import iconURL from '../../img/icons/symbols.svg';
 
 function modalWindowMarkup(filters = {}) {
   const {
@@ -42,7 +42,7 @@ function modalWindowMarkup(filters = {}) {
                 height="28"
                 aria-label="Close icon"
               >
-                <use href="../img/icons/symbols.svg#icon-cross"></use>
+                <use href="${iconURL}#icon-cross"></use>
               </svg>
             </button>
             <div class="exercise-image-wrapper">
