@@ -68,20 +68,21 @@
   /*================== favorites-motivation-inform ==================== */
 
   .favorites-motivation-block {
-    /* height: 302px; */
     border-radius: 30px;
     position: relative;
     background-color: var(--section-white-bgr-color);
-    padding: 102px 96px;
+
+    width: 335px;
+    height: 272px;
   }
 
   .favorites-motivation-conteiner {
-    /* position: absolute; */
-    /* top: 50%; */
-    /* left: 50%; */
-    /* transform: translate(-50%, -50%); */
-    /* width: 132px; */
-    /* height: 91px; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 132px;
+    height: 91px;
   }
 
   .favorites-motivation-block-img {
@@ -107,7 +108,85 @@
   }
 }
 
+/*======================== screen 768 =========================== */
+
 @media screen and (min-width: 768px) {
+  .favorites-motivation-ports {
+    margin-top: 180px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .favorites-quote-day {
+    gap: 16px;
+    padding: 64px 80px;
+    border-radius: 50px;
+  }
+
+  .favorites-quote-day-title {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+
+  .favorites-quote-day-text {
+    margin-top: 16px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .favorites-quote-day-text-autor {
+    margin-top: 25px;
+  }
+
+  /* =============== favorites-motivation-inverted-commas ======================*/
+
+  .favorites-motivation-inverted-commas {
+    top: 32px;
+    right: 80px;
+  }
+
+  .favorites-icon-inverted {
+    width: 48px;
+    height: 48px;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+  }
+
+  /*================== favorites-motivation-image ==================== */
+
+  .favorites-motivation-image-cont {
+    display: inline-block;
+    border-radius: 50px;
+
+    background: url(/img/favorite/favorite-tablet@2x.jpg) no-repeat;
+    background-size: cover;
+    width: 366px;
+    height: 302px;
+  }
+
+  /*================== favorites-motivation-inform ==================== */
+
+  .favorites-motivation-block {
+    display: inline-block;
+    width: 365px;
+    height: 302px;
+    border-radius: 50px;
+  }
+
+  .favorites-motivation-conteiner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 132px;
+    height: 90px;
+  }
+
+  .favorites-motivation-block-time {
+    font-size: 24px;
+    line-height: 1.3;
+  }
 }
 
 @media screen and (min-width: 1440px) {
