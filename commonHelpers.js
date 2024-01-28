@@ -1,7 +1,7 @@
-import"./assets/styles-6d30f877.js";import{a as l}from"./assets/vendor-0a7943b3.js";const u=document.querySelector(".favorites-quote-day-title"),v=l.create({baseURL:"https://energyflow.b.goit.study/api"});v.get("/quote ").then(e=>{u.insertAdjacentHTML("beforeend",` <p class="favorites-quote-day-text">
+import"./assets/styles-a0af4dfd.js";import{a as l}from"./assets/vendor-0a7943b3.js";const v=document.querySelector(".favorites-quote-day-title"),f=l.create({baseURL:"https://energyflow.b.goit.study/api"});f.get("/quote ").then(e=>{v.insertAdjacentHTML("beforeend",` <p class="favorites-quote-day-text">
                 ${e.data.quote}
                 </p>
-                    <p class="favorites-quote-day-text-autor">${e.data.author}</p>`)}).catch(e=>console.log(e));const i=document.querySelector(".favorites-list-exercises-likes");document.querySelector(".favorites-button-remove");l.create({baseURL:"https://energyflow.b.goit.study/api"});const n=[];if(localStorage.length>2)try{n.push(JSON.parse(localStorage.getItem("")));const e=n.flatMap(s=>s),c=f(e);i.insertAdjacentHTML("beforeend",c),e.map(s=>console.log(s._id)),i.addEventListener("click",s=>{const t=s.target.id;t&&(document.querySelector(`.list-exercises-favorites[data-listId="${t}"]`).remove(),e.map(r=>{if(r._id===t){const o=e.indexOf(r);e.splice(o,1),localStorage.setItem("arr",JSON.stringify(e)),e.length||(localStorage.removeItem("arr"),i.insertAdjacentHTML("beforeend",`<div class="favortes-no-exercises-found">
+                    <p class="favorites-quote-day-text-autor">${e.data.author}</p>`)}).catch(e=>console.log(e));const i=document.querySelector(".favorites-list-exercises-likes");document.querySelector(".favorites-button-remove");l.create({baseURL:"https://energyflow.b.goit.study/api"});const n=[];if(localStorage.length>2)try{n.push(JSON.parse(localStorage.getItem("")));const e=n.flatMap(s=>s),c=u(e);i.insertAdjacentHTML("beforeend",c),e.map(s=>console.log(s._id)),i.addEventListener("click",s=>{const t=s.target.id;t&&(document.querySelector(`.list-exercises-favorites[data-listId="${t}"]`).remove(),e.map(r=>{if(r._id===t){const o=e.indexOf(r);e.splice(o,1),localStorage.setItem("arr",JSON.stringify(e)),e.length||(localStorage.removeItem("arr"),i.insertAdjacentHTML("beforeend",`<div class="favortes-no-exercises-found">
                 <img
                   class="favortes-no-exercises-found-img"
                   src="./img/favorite/dumbbell-desktop@1x.jpg"
@@ -23,12 +23,12 @@ import"./assets/styles-6d30f877.js";import{a as l}from"./assets/vendor-0a7943b3.
       yet. To get started, you can add exercises that you like to your
       favorites for easier access in the future.
     </p>
-  </div>`);function f(e){return e.reduce((s,{bodyPart:t,burnedCalories:r,name:o,target:d,_id:a})=>s+` <li data-listId="${a}" class="list-exercises-favorites">
+  </div>`);function u(e){return e.reduce((s,{bodyPart:t,burnedCalories:r,name:o,target:d,_id:a})=>s+` <li data-listId="${a}" class="list-exercises-favorites">
             <div class="list-exercises-favorites-category">
                 <div>
                     <p class="exercises-favorites-name-category">WORKOUT</p>
                     <button id="${a}" class="favorites-button-remove" type="button">
-                    <svg id="${a}" class="icon icon-trash">
+                    <svg id="${a}" class="favorites-icon-trash">
                     <use id="${a}"
                         xlink:href="./img/icons/symbols.svg#icon-trash"
                     ></use>
@@ -40,7 +40,7 @@ import"./assets/styles-6d30f877.js";import{a as l}from"./assets/vendor-0a7943b3.
                     type="submit"
                     class="exercises-favorites-but-start"
                 >
-                Start<svg class="icon icon-arrow">
+                Start<svg class="favorites-icon-arrow">
                 <use
                     xlink:href="./img/icons/symbols.svg#icon-arrow"
                 ></use>
@@ -48,7 +48,7 @@ import"./assets/styles-6d30f877.js";import{a as l}from"./assets/vendor-0a7943b3.
                 </button>
             </div>
             <div class="list-exercises-favorites-name">
-                <svg class="social-icon-run" width="24" height="24">
+                <svg class="favorites-social-icon-run" width="24" height="24">
                 <use
                 href="./img/icons/symbols.svg#icon-run-exercises"
             ></use>
@@ -58,17 +58,17 @@ import"./assets/styles-6d30f877.js";import{a as l}from"./assets/vendor-0a7943b3.
             <div class="list-exercises-favorites-conteiner">
                 <ul class="list-exercises-favorites-characteristic">
                     <li class="favorites-list-characteristic">
-                        <span class="characteristic-criteria"
+                        <span class="favorites-characteristic-criteria"
                             >Burned calories: </span
                         >${r} / 3 min
                     </li>
                     <li class="favorites-list-characteristic">
-                        <span class="characteristic-criteria"
+                        <span class="favorites-characteristic-criteria"
                             >Body part: </span
                         >${t}
                     </li>
                     <li class="favorites-list-characteristic">
-                        <span class="characteristic-criteria"
+                        <span class="favorites-characteristic-criteria"
                             >Target: </span
                         >${d}
                     </li>
