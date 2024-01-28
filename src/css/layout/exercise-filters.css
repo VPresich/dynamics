@@ -1,17 +1,21 @@
 .exercise-filters-section {
-  padding-top: 64px;
-  padding-bottom: 64px;
-  padding-right: 20px;
-  padding-left: 20px;
-  margin-bottom: 32px;
+  margin-bottom: 20px;
+}
+
+.container-exercises-home {
+  border-radius: 30px;
+  background: #e8e8e8;
+  padding: 40px 20px;
 }
 
 .exercise-filter-title {
   color: var(--secondary-color);
-  font-size: 44px;
-  line-height: 1.09;
-  letter-spacing: -0.22px;
-  margin-bottom: 32px;
+  font-size: 32px;
+  line-height: 1;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.64px;
+  margin-bottom: 20px;
 }
 
 .filters-buttons {
@@ -26,12 +30,10 @@
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 1.5;
-  margin-bottom: 20px;
+  line-height: 1.29;
   padding: 7px 14px;
   text-align: center;
   border: none;
-  gap: 10px;
   background-color: var(--section-white-bgr-color);
   border-radius: 30px;
   border: none;
@@ -49,16 +51,22 @@
 
 .exercise-filters-list {
   display: flex;
-  flex-wrap: wrap;
-  row-gap: 40px;
-  margin-bottom: 32px;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
 }
 
 .filter-card {
   position: relative;
-  width: 295px;
-  height: 250px;
   cursor: pointer;
+}
+
+.filter-card img {
+  width: 295px;
+  height: 232px;
+  border-radius: 12px;
+  border: 1px solid rgba(246, 246, 246, 0.3);
+  background: lightgray;
 }
 
 .filter-label {
@@ -70,19 +78,32 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: var(--primary-color);
+  gap: 2px;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(
+    0deg,
+    rgba(16, 16, 16, 0.7) 0%,
+    rgba(16, 16, 16, 0.7) 100%
+  );
 }
 
 .filter-name {
   color: #f6f6f6;
   text-align: center;
   font-feature-settings: 'clig' off, 'liga' off;
-  font-size: 24px;
+  font-size: 20px;
+  font-weight: 400;
   line-height: 1;
 }
 
 .filter-type {
+  color: rgba(246, 246, 246, 0.4);
+  font-feature-settings: 'clig' off, 'liga' off;
   font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 .form-for-searching-input {
@@ -133,7 +154,7 @@
   height: 18px;
 }
 
-.wrapper-for-buttons-and-form { 
+.wrapper-for-buttons-and-form {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 40px;
@@ -143,9 +164,16 @@
 }
 
 @media screen and (min-width: 768px) {
-  .exercise-filters-section {
-    padding-left: 16px;
-    padding-right: 16px;
+  .container-exercises-home {
+    border-radius: 50px;
+    padding: 64px 48px;
+  }
+
+  .exercise-filter-title {
+    font-size: 44px;
+    line-height: 1.09;
+    letter-spacing: -0.88px;
+    margin-bottom: 32px;
   }
 
   .filters-buttons {
@@ -154,8 +182,8 @@
 
   .filter-button {
     font-size: 16px;
+    line-height: 1.5;
     padding: 10px 20px;
-    margin-bottom: 0;
   }
 
   .form-for-searching-input {
@@ -163,16 +191,30 @@
     margin-left: 35px;
   }
 
-  .wrapper-for-buttons-and-form { 
-    margin-bottom: 55px;
+  .wrapper-for-buttons-and-form {
+    margin-bottom: 32px;
   }
 
   .exercise-filters-list {
     column-gap: 14px;
   }
 
-  .filter-card {
+  .exercise-filters-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .filter-card img {
     width: 313px;
+    height: 250px;
+  }
+
+  .filter-name {
+    font-size: 24px;
   }
 }
 
@@ -183,6 +225,7 @@
   }
 
   .exercise-filters-list {
+    row-gap: 40px;
     column-gap: 20px;
   }
 }
