@@ -156,7 +156,7 @@ function deleteChapter() {
 }
 
 function setChapter(chapter) {
-  const strMarkup = `/ 
+  const strMarkup = ` / 
   <span class="chapter-text">${chapter}</span>`;
   title.insertAdjacentHTML('beforeend', strMarkup);
 }
