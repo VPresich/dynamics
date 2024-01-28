@@ -24,12 +24,14 @@
   }
 
   .favortes-no-exercises-found-img {
-    display: block;
+    border-radius: 30px;
+    background: url(/img/favorite/dumbbell-mobile@2x.jpg) no-repeat;
+    background-size: cover;
+    width: 85px;
+    height: 52px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 28px;
-    width: 85px;
-    height: 52px;
   }
 
   .favortes-no-exercises-found-text {
