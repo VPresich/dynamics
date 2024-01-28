@@ -19,13 +19,14 @@
 
 @import url('./layout/favorites.css');
 @import url('./layout/favorites-quote.css');
+@import url('./layout/favorites-exercises.css');
 
 @import url('./layout/exercise-modal.css');
 @import url('./layout/footer.css');
 @import url('./layout/exercises-gallery.css');
 
 @import url('./layout/sport.css');
-
+@import url('./layout/rating-form.css');
 :root {
   font-synthesis: none;
   text-rendering: optimizeLegibility;

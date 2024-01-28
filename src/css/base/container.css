@@ -26,8 +26,8 @@ body {
 @media screen and (min-width: 768px) {
   .container {
     width: 736px;
-    padding-left: 48px;
-    padding-right: 48px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
 
