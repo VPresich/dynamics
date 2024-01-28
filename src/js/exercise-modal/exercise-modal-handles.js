@@ -9,17 +9,15 @@ import {
 
 import exerciseModalCreate from './exercise-modal-create';
 import getExerciseById from './exercise-modal-get-id';
+import galleryDelete from '../common/gallery-delete.js';
 
-createContainerForModal();
-
-const modalBackdrop = document.querySelector('.' + CLASS_BACKDROP);
-console.log(modalBackdrop);
+let modalBackdrop = document.querySelector('.' + CLASS_BACKDROP);
+modalBackdrop && modalBackdrop.addEventListener('click', onBackdropClick);
 
 const galleryRef = document.querySelector(SELECTOR_GALLERY);
 let closeBtn;
 
 galleryRef.addEventListener('click', onGalleryClick);
-modalBackdrop.addEventListener('click', onBackdropClick);
 
 async function onGalleryClick(event) {
   const targetRef = event.target;
@@ -34,6 +32,7 @@ async function onGalleryClick(event) {
     if (formData) {
       exerciseModalCreate(formData, modalBackdrop);
       closeBtn = document.querySelector(SELECTOR_CLOSEBTN);
+      closeBtn.addEventListener('click', onCloseBtn);
       openModalWindow();
     }
   } catch (error) {
@@ -49,6 +48,7 @@ function openModalWindow() {
 function onCloseBtn(event) {
   window.removeEventListener('keydown', onWindowKeydown);
   modalBackdrop.classList.remove(MODAL_VISIBILITY);
+  galleryDelete(modalBackdrop);
 }
 
 function onWindowKeydown(event) {
@@ -63,9 +63,11 @@ function onBackdropClick(event) {
   }
 }
 
-function createContainerForModal() {
-  const modalBackDrop = document.createElement('div');
-  modalBackDrop.classList.add(CLASS_BACKDROP);
-  document.body.appendChild(modalBackDrop);
-  console.log(modalBackDrop);
+function createConainer() {
+  modalBackdrop = document.createElement('div');
+  modalBackdrop && modalBackdrop.classList.add(CLASS_BACKDROP);
+  document.body.appendChild(modalBackdrop);
+  modalBackdrop.addEventListener('click', onBackdropClick);
 }
+
+if (!modalBackdrop) createConainer();

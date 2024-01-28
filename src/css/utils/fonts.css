@@ -6,6 +6,13 @@
 
 @font-face {
   font-family: 'DM Sans';
+  font-weight: 400;
+  font-style: italic;
+  src: url('../../fonts/static/DMSans-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DM Sans';
   font-weight: 500;
   src: url('../../fonts/static/DMSans-Medium.ttf') format('truetype');
 }

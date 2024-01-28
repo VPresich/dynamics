@@ -7,6 +7,10 @@
 }
 
 .pagination-dot {
+  color: rgba(27, 27, 27, 0.4);
+  font-size: 24px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
   width: 32px;
   height: 32px;
   cursor: pointer;
@@ -14,23 +18,21 @@
   justify-content: center;
   padding: 0px 12px;
   background-color: transparent;
-  color: rgba(27, 27, 27, 0.4);
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.active-pagination-dot {
+  color: var(--secondary-color);
   border: 1px solid var(--secondary-color);
   font-size: 24px;
   line-height: 1.33;
   letter-spacing: 0.04em;
   border-radius: 18px;
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-}
-
-.active-pagination-dot {
-  border: 1px solid #1b1b1b;
-  font-size: 24px;
-  line-height: 1.33;
-  letter-spacing: 0.04em;
-  background-color: var(--accent-color);
+  border: 1px solid var(--secondary-color);
 }
 
 .pagination-dot:hover() {
-  background-color: var(--btn-accent-color);
+  border-radius: 18px;
+  border: 1px solid var(--secondary-color);
+  color: var(--secondary-color);
 }

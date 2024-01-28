@@ -53,11 +53,7 @@ function modalWindowMarkup(filters = {}) {
             <div class="exercise-info-wrapper">
               <div class="exercise-name-and-rating-container">
                 <p class="exercise-name">${name}</p>
-                <p class="modal-rating">${rating}
-                  <svg class="exercise-star" width="18" height="18" aria-label="Star icon">
-                    <use href="../img/icons/symbols.svg#icon-star"></use>
-                 </svg>
-                </p>
+                <p class="modal-rating">${rating}</p>
               </div>
               <svg class="exercise-line-svg" aria-label="Line">
                <use href="../img/icons/symbols.svg#line-svg"></use>
@@ -99,7 +95,7 @@ function modalWindowMarkup(filters = {}) {
                   class="exercise-fav-icon"
                   aria-label="Heart icon"
                   >
-                  <use href="../img/icons/symbols.svg#icon-heart"></use>
+                  <use href=".img/icons/symbols.svg#icon-heart"></use>
                   </svg>
                 </button>
                 <button class="exercise-raiting-btn" type="submit" data="${_id}">

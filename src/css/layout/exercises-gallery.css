@@ -1,8 +1,19 @@
+.chapter-text {
+  color: rgba(27, 27, 27, 0.5);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 24px;
+  line-height: 1.33;
+  letter-spacing: -0.48px;
+  text-transform: capitalize;
+  font-weight: 400;
+}
+
 .exercises-gallery {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: start;
+  padding-bottom: 20px;
 }
 
 .exercise-card {
@@ -149,6 +160,7 @@
 @media screen and (min-width: 768px) {
   .exercises-gallery {
     column-gap: 14px;
+    padding-bottom: 32px;
   }
 
   .exercise-card {
