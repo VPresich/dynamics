@@ -88,7 +88,7 @@ function modalWindowMarkup(filters = {}) {
                 <button
                   class="exercise-favorite-btn"
                   type="submit"
-                  data="exercise-id"
+                  data="${_id}"
                 >
                   Add to favorites
                   <svg
