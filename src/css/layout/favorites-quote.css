@@ -121,6 +121,7 @@
     gap: 16px;
     padding: 64px 80px;
     border-radius: 50px;
+    margin-bottom: 16px;
   }
 
   .favorites-quote-day-title {
@@ -148,9 +149,6 @@
   .favorites-icon-inverted {
     width: 48px;
     height: 48px;
-    stroke-width: 0;
-    stroke: currentColor;
-    fill: currentColor;
   }
 
   /*================== favorites-motivation-image ==================== */
@@ -175,11 +173,6 @@
   }
 
   .favorites-motivation-conteiner {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 132px;
     height: 90px;
   }
 
