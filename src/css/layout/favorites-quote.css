@@ -1,4 +1,114 @@
 @media screen and (min-width: 375px) {
+  .favorites-motivation-ports {
+    margin-top: 96px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .favorites-quote-day {
+    position: relative;
+    display: flex;
+    gap: 12px;
+    flex-grow: 2;
+    padding: 40px 20px;
+    border-radius: 30px;
+    background-color: var(--accent-color);
+  }
+
+  .favorites-quote-day-title {
+    font-weight: 500;
+
+    font-size: 20px;
+    line-height: 1.4;
+    color: var(--primary-color);
+  }
+
+  .favorites-quote-day-text {
+    font-weight: 400;
+    margin-top: 14px;
+    font-size: 14px;
+    line-height: 1.28;
+    color: rgba(246, 246, 246, 0.6);
+  }
+
+  .favorites-quote-day-text-autor {
+    font-weight: 500;
+    margin-top: 14px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--primary-color);
+  }
+
+  /* =============== favorites-motivation-inverted-commas ======================*/
+
+  .favorites-motivation-inverted-commas {
+    position: absolute;
+    top: 40px;
+    right: 20px;
+  }
+
+  .favorites-icon-inverted {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+  }
+
+  /*================== favorites-motivation-image ==================== */
+
+  .favorites-motivation-image-cont {
+    border-radius: 30px;
+  }
+
+  .favorites-motivation-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 30px;
+  }
+
+  /*================== favorites-motivation-inform ==================== */
+
+  .favorites-motivation-block {
+    /* height: 302px; */
+    border-radius: 30px;
+    position: relative;
+    background-color: var(--section-white-bgr-color);
+    padding: 102px 96px;
+  }
+
+  .favorites-motivation-conteiner {
+    /* position: absolute; */
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    /* width: 132px; */
+    /* height: 91px; */
+  }
+
+  .favorites-motivation-block-img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .favorites-motivation-block-time {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1;
+    color: var(--secondary-color);
+
+    margin-top: 15px;
+    margin-bottom: 6px;
+  }
+
+  .favorites-motivation-block-inform {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.28;
+    color: rgb(27, 27, 27, 0.6);
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -7,7 +117,7 @@
 @media screen and (min-width: 1440px) {
 }
 
-.favorites-motivation-ports {
+/* .favorites-motivation-ports {
   display: flex;
   margin-top: 64px;
 }
@@ -41,39 +151,39 @@
   font-size: 16px;
   line-height: 1.5;
   color: var(--primary-color);
-}
+} */
 
 /* =============== favorites-motivation-inverted-commas ======================*/
 
-.favorites-motivation-inverted-commas {
+/* .favorites-motivation-inverted-commas {
   position: absolute;
   top: 32px;
   right: 64px;
-}
+} */
 
-.favorites-icon-inverted {
+/* .favorites-icon-inverted {
   display: inline-block;
   width: 48px;
   height: 48px;
   stroke-width: 0;
   stroke: currentColor;
   fill: currentColor;
-}
+} */
 
 /*================== favorites-motivation-image ==================== */
 
-.favorites-motivation-image {
-  /* flex-grow: 1; */
+/* .favorites-motivation-image {
+  
   flex-shrink: 0;
   width: 352px;
   height: 302px;
   border-radius: 50px;
-}
+} */
 
 /*================== favorites-motivation-inform ==================== */
 
-.favorites-motivation-block {
-  /* flex-grow: 1; */
+/* .favorites-motivation-block {
+  
   flex-shrink: 0;
   width: 352px;
   height: 302px;
@@ -110,4 +220,4 @@
   font-size: 14px;
   line-height: 1.28;
   color: rgb(27, 27, 27, 0.6);
-}
+} */
