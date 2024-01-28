@@ -1,3 +1,4 @@
+import scrollingDown from './scroll-window';
 const galleryCreate = (data, galleryRef, markupFn) => {
   galleryRef.innerHTML = '';
   if (!data.length) {
@@ -10,6 +11,7 @@ const galleryCreate = (data, galleryRef, markupFn) => {
   galleryRef.innerHTML = '';
   galleryRef.insertAdjacentHTML('beforeend', strMarkup);
   galleryRef.classList.remove('visually-hidden');
+  //   scrollingDown('.exercise-filters-list', '.filter-card', 40);
 };
 
 export default galleryCreate;
