@@ -5,7 +5,6 @@ import 'izitoast/dist/css/iziToast.min.css';
 const favoriteslistExercises = document.querySelector(
   '.favorites-list-exercises-likes'
 );
-const butRemovExercises = document.querySelector('.favorites-button-remove');
 
 const instance = axios.create({
   baseURL: 'https://energyflow.b.goit.study/api',
@@ -15,7 +14,7 @@ const newArrLocalStorage = [];
 
 if (localStorage.length > 2) {
   try {
-    newArrLocalStorage.push(JSON.parse(localStorage.getItem('')));
+    newArrLocalStorage.push(JSON.parse(localStorage.getItem('favorites')));
 
     const newArr = newArrLocalStorage.flatMap(res => res);
 
@@ -40,25 +39,24 @@ if (localStorage.length > 2) {
 
             newArr.splice(csdvs, 1);
 
-            localStorage.setItem('arr', JSON.stringify(newArr));
+            localStorage.setItem('favorites', JSON.stringify(newArr));
 
             if (!newArr.length) {
-              localStorage.removeItem('arr');
+              localStorage.removeItem('favorites');
 
               favoriteslistExercises.insertAdjacentHTML(
                 'beforeend',
-                `<div class="favortes-no-exercises-found">
-                <img
-                  class="favortes-no-exercises-found-img"
-                  src="./img/favorite/dumbbell-desktop@1x.jpg"
-                  alt="dumbbell-desktop"
-                />
-                <p class="favortes-no-exercises-found-text">
-                  It appears that you haven't added any exercises to your favorites
-                  yet. To get started, you can add exercises that you like to your
-                  favorites for easier access in the future.
-                </p>
-              </div>`
+                `<div class="favortes-no-exercises">
+                  <div class="favortes-no-exercises-found-img">
+                  
+                      </div>
+                  
+                  <p class="favortes-no-exercises-found-text">
+                    It appears that you haven't added any exercises to your favorites
+                    yet. To get started, you can add exercises that you like to your
+                    favorites for easier access in the future.
+                  </p>
+                </div>`
               );
             }
           }
@@ -71,12 +69,11 @@ if (localStorage.length > 2) {
 } else {
   favoriteslistExercises.insertAdjacentHTML(
     'beforeend',
-    `<div class="favortes-no-exercises-found">
-    <img
-      class="favortes-no-exercises-found-img"
-      src="./img/favorite/dumbbell-desktop@1x.jpg"
-      alt="dumbbell-desktop"
-    />
+    `<div class="favortes-no-exercises">
+    <div class="favortes-no-exercises-found-img">
+    
+        </div>
+    
     <p class="favortes-no-exercises-found-text">
       It appears that you haven't added any exercises to your favorites
       yet. To get started, you can add exercises that you like to your
@@ -117,7 +114,7 @@ function renderElement(params) {
             <div class="list-exercises-favorites-name">
                 <svg class="favorites-social-icon-run" width="24" height="24">
                 <use
-                href="./img/icons/symbols.svg#icon-run-exercises"
+                href="./img/icons/symbols.svg#favorites=icon-run-exercises"
             ></use>
                 </svg>
                 <p class="exercises-favorites-name">${name}</p>
