@@ -13,9 +13,9 @@
 
     
     <script type="module" crossorigin src="/dynamics/commonHelpers2.js"></script>
-    <link rel="modulepreload" crossorigin href="/dynamics/assets/styles-47d07ca3.js">
+    <link rel="modulepreload" crossorigin href="/dynamics/assets/styles-53c3a916.js">
     <link rel="modulepreload" crossorigin href="/dynamics/assets/vendor-0a7943b3.js">
-    <link rel="stylesheet" href="/dynamics/assets/styles-c69b0d90.css">
+    <link rel="stylesheet" href="/dynamics/assets/styles-80efe506.css">
     <link rel="stylesheet" href="/dynamics/assets/vendor-e5212ee8.css">
   </head>
   <body>
@@ -65,11 +65,11 @@
         <div class="svg-position">
           <div class="quote-running-man">
             <svg class="quote-svg" width="28" height="28">
-              <use href="/dynamics/assets/symbols-3439488a.svg#icon-running-man"></use>
+              <use href="/dynamics/assets/symbols-2e41c46a.svg#icon-running-man"></use>
             </svg>
           </div>
           <svg class="svg-double-quotes" width="28" height="28">
-            <use href="/dynamics/assets/symbols-3439488a.svg#icon-inverted-commas"></use>
+            <use href="/dynamics/assets/symbols-2e41c46a.svg#icon-inverted-commas"></use>
           </svg>
         </div>
         <div class="quote-content">
@@ -96,7 +96,11 @@
     <h2 class="exercise-filter-title">Exercices</h2>
     <div class="wrapper-for-buttons-and-form">
       <div class="filters-buttons">
-        <button class="filter-button first-filter-button" type="submit" data-filter="Muscles">
+        <button
+          class="filter-button first-filter-button"
+          type="submit"
+          data-filter="Muscles"
+        >
           Muscles
         </button>
         <button class="filter-button" type="submit" data-filter="Body parts">
@@ -107,8 +111,17 @@
         </button>
       </div>
       <form class="form-for-searching-input visually-hidden">
-        <input class="searching-input" type="text" name="searching-input" placeholder="Search"/>
-        <button class="searching-btn" type="submit"><svg class="searching-icon" width="18" height="18"><use href="../img/icons/symbols.svg#icon-search"></use></svg></button>
+        <input
+          class="searching-input"
+          type="text"
+          name="searching-input"
+          placeholder="Search"
+        />
+        <button class="searching-btn" type="submit">
+          <svg class="searching-icon" width="18" height="18">
+            <use href="/dynamics/assets/symbols-2e41c46a.svg#icon-search"></use>
+          </svg>
+        </button>
       </form>
     </div>
     <ul class="exercise-filters-list"></ul>
@@ -127,119 +140,6 @@
   </div>
 </section>
 
-    <!-- <div class="modal-backdrop">
-  <div class="exercise-window">
-    <div class="exercise-container">
-      <button class="exercise-close-btn" type="button">
-        <svg
-          class="exercise-close-icon"
-          width="28"
-          height="28"
-          aria-label="Close icon"
-        >
-          <use href="../img/icons/symbols.svg#icon-icon"></use>
-        </svg>
-      </button>
-      <div class="exercise-image-wrapper">
-        <img
-          src="https://ftp.goit.study/img/power-pulse/gifs/0022.gif"
-          alt=""
-        />
-      </div>
-      <div class="exercise-info-wrapper">
-        <p class="exercise-name">${name}</p>
-        <p class="modal-rating">Rating</p>
-        <ul class="exercise-params">
-          <li class="exercise-params-card">
-            <p class="exercise-param-name">Target</p>
-            <p class="exercise-param-value">${target}</p>
-          </li>
-          <li class="exercise-params-card">
-            <p class="exercise-param-name">Body part</p>
-            <p class="exercise-param-value">${bodyPart}</p>
-          </li>
-          <li class="exercise-params-card">
-            <p class="exercise-param-name">Equipment</p>
-            <p class="exercise-param-value">${equipment}</p>
-          </li>
-          <li class="exercise-params-card">
-            <p class="exercise-param-name">Popular</p>
-            <p class="exercise-param-value">${popularity}</p>
-          </li>
-        </ul>
-        <p class="exercise-calories">Burned calories</p>
-        <p class="exercise-calories-value">${burnedCalories}</p>
-        <p class="exercise-description">${description}</p>
-        <div class="exercise-buttons">
-          <button
-            class="exercise-favorite-btn"
-            type="submit"
-            data="exercise-id"
-          >
-            Add to favorites
-          </button>
-          <button class="exercise-raiting-btn" type="submit" data="">
-            Give a rating
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="exercise-window">
-  <div class="exercise-container">
-    <button class="exercise-close-btn" type="button">
-      <svg
-        class="exercise-close-icon"
-        width="28"
-        height="28"
-        aria-label="Close icon"
-      >
-        <use href="../img/icons/symbols.svg#icon-icon"></use>
-      </svg>
-    </button>
-    <div class="exercise-image-wrapper">
-      <img src="https://ftp.goit.study/img/power-pulse/gifs/0022.gif" alt="" />
-    </div>
-    <div class="exercise-info-wrapper">
-      <p class="exercise-name">${name}</p>
-      <p class="modal-rating">Rating
-        <svg class="exercise-star" width="18" height="18" aria-label="Close icon">
-          <use href="../img/icons/symbols.svg#icon-star"></use>
-        </svg>
-      </p>
-      <ul class="exercise-params">
-        <li class="exercise-params-card">
-          <p class="exercise-param-name">Target</p>
-          <p class="exercise-param-value">${target}</p>
-        </li>
-        <li class="exercise-params-card">
-          <p class="exercise-param-name">Body part</p>
-          <p class="exercise-param-value">${bodyPart}</p>
-        </li>
-        <li class="exercise-params-card">
-          <p class="exercise-param-name">Equipment</p>
-          <p class="exercise-param-value">${equipment}</p>
-        </li>
-        <li class="exercise-params-card">
-          <p class="exercise-param-name">Popular</p>
-          <p class="exercise-param-value">${popularity}</p>
-        </li>
-      </ul>
-      <p class="exercise-calories">Burned calories</p>
-      <p class="exercise-calories-value">${burnedCalories}</p>
-      <p class="exercise-description">${description}</p>
-      <div class="exercise-buttons">
-        <button class="exercise-favorite-btn" type="submit" data="exercise-id">
-          Add to favorites
-        </button>
-        <button class="exercise-raiting-btn" type="submit" data="">
-          Give a rating
-        </button>
-      </div>
-    </div>
-  </div>
-</div> -->
     <section class="about-section">
   <div class="container">
     <!-- TODO -->
@@ -307,14 +207,5 @@
 
 
     
-
-    <!-- <script src="../js/footer/footer.js" type="module"></script> -->
-    <!-- <script src="../js/footer/footer-icons.js" type="module"></script> -->
-
-    
-
-    
-
-    <!-- <script type="module" src="./main.js"></script> -->
   </body>
 </html>
