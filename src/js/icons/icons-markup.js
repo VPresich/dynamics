@@ -1,4 +1,3 @@
-// import iconURL from '../../img/icons/symbols.svg';
 function iconsListMarkup(iconAttr, icons = []) {
     const {
     iconURL,
