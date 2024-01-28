@@ -95,7 +95,7 @@ function renderElement(params) {
                 <div>
                     <p class="exercises-favorites-name-category">WORKOUT</p>
                     <button id="${_id}" class="favorites-button-remove" type="button">
-                    <svg id="${_id}" class="icon icon-trash">
+                    <svg id="${_id}" class="favorites-icon-trash">
                     <use id="${_id}"
                         xlink:href="./img/icons/symbols.svg#icon-trash"
                     ></use>
@@ -107,7 +107,7 @@ function renderElement(params) {
                     type="submit"
                     class="exercises-favorites-but-start"
                 >
-                Start<svg class="icon icon-arrow">
+                Start<svg class="favorites-icon-arrow">
                 <use
                     xlink:href="./img/icons/symbols.svg#icon-arrow"
                 ></use>
@@ -115,7 +115,7 @@ function renderElement(params) {
                 </button>
             </div>
             <div class="list-exercises-favorites-name">
-                <svg class="social-icon-run" width="24" height="24">
+                <svg class="favorites-social-icon-run" width="24" height="24">
                 <use
                 href="./img/icons/symbols.svg#icon-run-exercises"
             ></use>
@@ -125,17 +125,17 @@ function renderElement(params) {
             <div class="list-exercises-favorites-conteiner">
                 <ul class="list-exercises-favorites-characteristic">
                     <li class="favorites-list-characteristic">
-                        <span class="characteristic-criteria"
+                        <span class="favorites-characteristic-criteria"
                             >Burned calories: </span
                         >${burnedCalories} / 3 min
                     </li>
                     <li class="favorites-list-characteristic">
-                        <span class="characteristic-criteria"
+                        <span class="favorites-characteristic-criteria"
                             >Body part: </span
                         >${bodyPart}
                     </li>
                     <li class="favorites-list-characteristic">
-                        <span class="characteristic-criteria"
+                        <span class="favorites-characteristic-criteria"
                             >Target: </span
                         >${target}
                     </li>
