@@ -13,6 +13,10 @@
     transition: opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
+  .exercise-info-wrapper {
+    overflow: hidden;
+  }
+
   .modal-backdrop.is-open {
     opacity: 1;
     pointer-events: all;
@@ -96,13 +100,21 @@
     margin-bottom: 10px;
   }
 
-  .exercise-rating {
+  .modal-rating {
     font-feature-settings: 'clig' off, 'liga' off;
+    font-family: 'DM Sans';
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
     line-height: 1.5;
-    margin-bottom: 16px;
+  }
+
+  .modal-rating::after {
+    margin-top: 20px;
+    content: '';
+    background-color: rgba(27, 27, 27, 0.20);
+    height: 1px;
+    display: block;
   }
 
   /* ---------------------------------- */
@@ -127,9 +139,6 @@
   }
 
   .exercise-param-name {
-    /* color: rgba(27, 27, 27, 0.4);
-    font-size: 12px;
-    line-height: 1.5; */
     color: rgba(27, 27, 27, 0.4);
     font-feature-settings: 'clig' off, 'liga' off;
     font-family: 'DM Sans';
@@ -140,8 +149,6 @@
   }
 
   .exercise-param-value {
-    /* font-weight: 500;
-    line-height: 1.28px; */
     color: #1b1b1b;
     font-feature-settings: 'clig' off, 'liga' off;
     font-family: 'DM Sans';
@@ -161,10 +168,6 @@
   }
 
   .exercise-calories-value {
-    /* font-size: 14px;
-    font-weight: 500;
-    line-height: 1.28px;
-    margin-bottom: 24px; */
     color: #1b1b1b;
     font-feature-settings: 'clig' off, 'liga' off;
     font-family: 'DM Sans';
@@ -174,11 +177,18 @@
     line-height: 18px; /* 128.571% */
   }
 
+  .exercise-calories-value::after{
+    margin-top: 20px;
+    content: '';
+    background-color: rgba(27, 27, 27, 0.20);
+    height: 1px;
+    display: block;
+  }
+
   /* ------------------------------------------------------------------- */
 
   .exercise-description {
     margin-bottom: 40px;
-    margin-top: 20px;
     color: rgba(27, 27, 27, 0.6);
     font-family: 'DM Sans';
     font-size: 14px;
@@ -214,7 +224,7 @@
 
   .exercise-favorite-btn:hover,
   .exercise-favorite-btn:focus {
-    background: #5F6560;
+    background: #5f6560;
   }
 
   .exercise-fav-icon {
@@ -240,7 +250,7 @@
 
 .exercise-raiting-btn:hover,
 .exercise-raiting-btn:focus {
-  border: 1px solid #7E847F;
+  border: 1px solid #7e847f;
 }
 
 @media screen and (min-width: 768px) {
@@ -282,6 +292,14 @@
     margin-top: 16px;
   }
 
+  .exercise-calories-value::after{
+    margin-top: 8px;
+  }
+
+  .exercise-name-and-rating-container {
+    margin-top: 0px;
+  }
+
   .exercise-description {
     margin-bottom: 36px;
     margin-top: 16px;
@@ -312,7 +330,7 @@
     border: 1px solid #1b1b1b;
   }
 
-  .exercise-info-wrapper{
+  .exercise-info-wrapper {
     overflow: hidden;
   }
 }

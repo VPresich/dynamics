@@ -14,6 +14,8 @@
 //   },
 // ];
 
+const iconUrl = `./img/icons/symbols.svg`;
+
 function modalWindowMarkup(filters = {}) {
   const {
     _id,
@@ -55,9 +57,6 @@ function modalWindowMarkup(filters = {}) {
                 <p class="exercise-name">${name}</p>
                 <p class="modal-rating">${rating}</p>
               </div>
-              <svg class="exercise-line-svg" aria-label="Line">
-               <use href="../img/icons/symbols.svg#line-svg"></use>
-              </svg>
               <div class="exercise-params-container">
                 <ul class="exercise-params">
                   <li class="exercise-params-card">
@@ -80,9 +79,6 @@ function modalWindowMarkup(filters = {}) {
                 <p class="exercise-calories">Burned calories</p>
                 <p class="exercise-calories-value">${burnedCalories}/${time} m</p>
               </div>
-              <svg class="exercise-line-svg" aria-label="Line">
-               <use href="../img/icons/symbols.svg#line-svg"></use>
-              </svg>
               <p class="exercise-description">${description}</p>
               <div class="exercise-buttons">
                 <button
