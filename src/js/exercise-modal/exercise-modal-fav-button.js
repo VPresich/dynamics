@@ -7,7 +7,7 @@ function checkFavoriteStatus() {
     const favoriteButton = document.querySelector('.exercise-favorite-btn');
   
     if (isFavorite) {
-      favoriteButton.textContent = 'Remove from favorites';
+      favoriteButton.textContent = 'Remove from';
     } else {
       favoriteButton.textContent = 'Add to favorites';
     }
