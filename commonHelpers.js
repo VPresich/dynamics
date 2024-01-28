@@ -1,35 +1,33 @@
-import"./assets/styles-7cc64604.js";import{a as l}from"./assets/vendor-0a7943b3.js";const v=document.querySelector(".favorites-quote-day-title"),f=l.create({baseURL:"https://energyflow.b.goit.study/api"});f.get("/quote ").then(e=>{v.insertAdjacentHTML("beforeend",` <p class="favorites-quote-day-text">
+import"./assets/styles-8982717a.js";import{a as l}from"./assets/vendor-0a7943b3.js";const d=document.querySelector(".favorites-quote-day-title"),f=l.create({baseURL:"https://energyflow.b.goit.study/api"});f.get("/quote ").then(e=>{d.insertAdjacentHTML("beforeend",` <p class="favorites-quote-day-text">
                 ${e.data.quote}
                 </p>
-                    <p class="favorites-quote-day-text-autor">${e.data.author}</p>`)}).catch(e=>console.log(e));const i=document.querySelector(".favorites-list-exercises-likes");document.querySelector(".favorites-button-remove");l.create({baseURL:"https://energyflow.b.goit.study/api"});const n=[];if(localStorage.length>2)try{n.push(JSON.parse(localStorage.getItem("")));const e=n.flatMap(s=>s),c=u(e);i.insertAdjacentHTML("beforeend",c),e.map(s=>console.log(s._id)),i.addEventListener("click",s=>{const t=s.target.id;t&&(document.querySelector(`.list-exercises-favorites[data-listId="${t}"]`).remove(),e.map(r=>{if(r._id===t){const o=e.indexOf(r);e.splice(o,1),localStorage.setItem("arr",JSON.stringify(e)),e.length||(localStorage.removeItem("arr"),i.insertAdjacentHTML("beforeend",`<div class="favortes-no-exercises-found">
-                <img
-                  class="favortes-no-exercises-found-img"
-                  src="./img/favorite/dumbbell-desktop@1x.jpg"
-                  alt="dumbbell-desktop"
-                />
-                <p class="favortes-no-exercises-found-text">
-                  It appears that you haven't added any exercises to your favorites
-                  yet. To get started, you can add exercises that you like to your
-                  favorites for easier access in the future.
-                </p>
-              </div>`))}}))})}catch{console.log("Parse form storage error")}else i.insertAdjacentHTML("beforeend",`<div class="favortes-no-exercises-found">
-    <img
-      class="favortes-no-exercises-found-img"
-      src="./img/favorite/dumbbell-desktop@1x.jpg"
-      alt="dumbbell-desktop"
-    />
+                    <p class="favorites-quote-day-text-autor">${e.data.author}</p>`)}).catch(e=>console.log(e));const i=document.querySelector(".favorites-list-exercises-likes");l.create({baseURL:"https://energyflow.b.goit.study/api"});const n=[];if(localStorage.length>2)try{n.push(JSON.parse(localStorage.getItem("favorites")));const e=n.flatMap(s=>s),c=u(e);i.insertAdjacentHTML("beforeend",c),e.map(s=>console.log(s._id)),i.addEventListener("click",s=>{const t=s.target.id;t&&(document.querySelector(`.list-exercises-favorites[data-listId="${t}"]`).remove(),e.map(a=>{if(a._id===t){const o=e.indexOf(a);e.splice(o,1),localStorage.setItem("favorites",JSON.stringify(e)),e.length||(localStorage.removeItem("favorites"),i.insertAdjacentHTML("beforeend",`<div class="favortes-no-exercises">
+                  <div class="favortes-no-exercises-found-img">
+                  
+                      </div>
+                  
+                  <p class="favortes-no-exercises-found-text">
+                    It appears that you haven't added any exercises to your favorites
+                    yet. To get started, you can add exercises that you like to your
+                    favorites for easier access in the future.
+                  </p>
+                </div>`))}}))})}catch{console.log("Parse form storage error")}else i.insertAdjacentHTML("beforeend",`<div class="favortes-no-exercises">
+    <div class="favortes-no-exercises-found-img">
+    
+        </div>
+    
     <p class="favortes-no-exercises-found-text">
       It appears that you haven't added any exercises to your favorites
       yet. To get started, you can add exercises that you like to your
       favorites for easier access in the future.
     </p>
-  </div>`);function u(e){return e.reduce((s,{bodyPart:t,burnedCalories:r,name:o,target:d,_id:a})=>s+` <li data-listId="${a}" class="list-exercises-favorites">
+  </div>`);function u(e){return e.reduce((s,{bodyPart:t,burnedCalories:a,name:o,target:v,_id:r})=>s+` <li data-listId="${r}" class="list-exercises-favorites">
             <div class="list-exercises-favorites-category">
                 <div>
                     <p class="exercises-favorites-name-category">WORKOUT</p>
-                    <button id="${a}" class="favorites-button-remove" type="button">
-                    <svg id="${a}" class="favorites-icon-trash">
-                    <use id="${a}"
+                    <button id="${r}" class="favorites-button-remove" type="button">
+                    <svg id="${r}" class="favorites-icon-trash">
+                    <use id="${r}"
                         xlink:href="./img/icons/symbols.svg#icon-trash"
                     ></use>
                 </svg>
@@ -50,7 +48,7 @@ import"./assets/styles-7cc64604.js";import{a as l}from"./assets/vendor-0a7943b3.
             <div class="list-exercises-favorites-name">
                 <svg class="favorites-social-icon-run" width="24" height="24">
                 <use
-                href="./img/icons/symbols.svg#icon-run-exercises"
+                href="./img/icons/symbols.svg#favorites=icon-run-exercises"
             ></use>
                 </svg>
                 <p class="exercises-favorites-name">${o}</p>
@@ -60,7 +58,7 @@ import"./assets/styles-7cc64604.js";import{a as l}from"./assets/vendor-0a7943b3.
                     <li class="favorites-list-characteristic">
                         <span class="favorites-characteristic-criteria"
                             >Burned calories: </span
-                        >${r} / 3 min
+                        >${a} / 3 min
                     </li>
                     <li class="favorites-list-characteristic">
                         <span class="favorites-characteristic-criteria"
@@ -70,7 +68,7 @@ import"./assets/styles-7cc64604.js";import{a as l}from"./assets/vendor-0a7943b3.
                     <li class="favorites-list-characteristic">
                         <span class="favorites-characteristic-criteria"
                             >Target: </span
-                        >${d}
+                        >${v}
                     </li>
                 </ul>
             </div>
