@@ -5,3 +5,5 @@ export const SELECTOR_GALLERY = '.exercises-gallery';
 export const CLASS_GALLERYSTART = 'ex-card-start-btn';
 export const MODAL_QUERY = 'exercises';
 export const MODAL_VISIBILITY = 'is-open';
+export const SELECTOR_FAVORITS = '.exercise-favorite-btn';
+export const SELECTOR_RATING = '.exercise-raiting-btn';

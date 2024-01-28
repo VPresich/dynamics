@@ -29,15 +29,20 @@ class LocalStorageLib {
     if (!this.isObjSaved(obj.id)) {
       this.dataLibrary.addObj(obj);
       this.saveData();
-      console.log('Saved');
-    } else {
-      console.log('Not saved');
     }
   }
 
   isObjSaved(id) {
     this.getData();
     return this.dataLibrary.getObjById(id) !== undefined;
+  }
+
+  remove(obj) {
+    this.getData();
+    if (this.isObjSaved(obj.id)) {
+      this.dataLibrary.remove(obj.id);
+      this.saveData();
+    }
   }
 }
 

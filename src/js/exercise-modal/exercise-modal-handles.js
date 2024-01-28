@@ -5,34 +5,37 @@ import {
   SELECTOR_GALLERY,
   CLASS_GALLERYSTART,
   MODAL_VISIBILITY,
+  SELECTOR_FAVORITS,
+  SELECTOR_RATING,
 } from './constants.js';
 
 import exerciseModalCreate from './exercise-modal-create';
 import getExerciseById from './exercise-modal-get-id';
 import galleryDelete from '../common/gallery-delete.js';
 
+let closeBtn;
+let favoritsBtn;
+let ratingBtn;
+
 let modalBackdrop = document.querySelector('.' + CLASS_BACKDROP);
 modalBackdrop && modalBackdrop.addEventListener('click', onBackdropClick);
 
 const galleryRef = document.querySelector(SELECTOR_GALLERY);
-let closeBtn;
-
-galleryRef.addEventListener('click', onGalleryClick);
+galleryRef && galleryRef.addEventListener('click', onGalleryClick);
 
 async function onGalleryClick(event) {
-  const targetRef = event.target;
-  console.log(targetRef.dataset);
-  if (!targetRef.classList.contains(CLASS_GALLERYSTART)) return;
-
   event.preventDefault();
-  console.log(targetRef.dataset.id);
-
+  const targetRef = event.target;
+  if (!targetRef.classList.contains(CLASS_GALLERYSTART)) return;
+  const exerciseId = targetRef.dataset.id;
   try {
-    const formData = await getExerciseById(targetRef.dataset.id);
+    const formData = await getExerciseById(exerciseId);
     if (formData) {
       exerciseModalCreate(formData, modalBackdrop);
-      closeBtn = document.querySelector(SELECTOR_CLOSEBTN);
-      closeBtn.addEventListener('click', onCloseBtn);
+      closeBtnHandler();
+      favoritsBtnHandle();
+      ratingBtnHandle();
+
       openModalWindow();
     }
   } catch (error) {
@@ -40,15 +43,29 @@ async function onGalleryClick(event) {
   }
 }
 
-function openModalWindow() {
-  modalBackdrop.classList.add(MODAL_VISIBILITY);
-  window.addEventListener('keydown', onWindowKeydown);
+function closeBtnHandler() {
+  closeBtn = document.querySelector(SELECTOR_CLOSEBTN);
+  closeBtn && closeBtn.addEventListener('click', onCloseBtn);
 }
 
 function onCloseBtn(event) {
   window.removeEventListener('keydown', onWindowKeydown);
   modalBackdrop.classList.remove(MODAL_VISIBILITY);
-  galleryDelete(modalBackdrop);
+}
+
+function favoritsBtnHandle() {
+  favoritsBtn = document.querySelector(SELECTOR_FAVORITS);
+  favoritsBtn && favoritsBtn.addEventListener('click', onFavoritsBtn);
+}
+
+function ratingBtnHandle() {
+  ratingBtn = document.querySelector(SELECTOR_RATING);
+  ratingBtn && ratingBtn.addEventListener('click', onFavoritsBtn);
+}
+
+function openModalWindow() {
+  modalBackdrop.classList.add(MODAL_VISIBILITY);
+  window.addEventListener('keydown', onWindowKeydown);
 }
 
 function onWindowKeydown(event) {
@@ -63,11 +80,6 @@ function onBackdropClick(event) {
   }
 }
 
-function createConainer() {
-  modalBackdrop = document.createElement('div');
-  modalBackdrop && modalBackdrop.classList.add(CLASS_BACKDROP);
-  document.body.appendChild(modalBackdrop);
-  modalBackdrop.addEventListener('click', onBackdropClick);
-}
+function onFavoritsBtn(event) {}
 
-if (!modalBackdrop) createConainer();
+function onRatingBtn(event) {}
