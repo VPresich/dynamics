@@ -13,30 +13,54 @@
 
     
     <script type="module" crossorigin src="/dynamics/commonHelpers2.js"></script>
-    <link rel="modulepreload" crossorigin href="/dynamics/assets/styles-e42d0fb0.js">
+    <link rel="modulepreload" crossorigin href="/dynamics/assets/styles-b253cac5.js">
     <link rel="modulepreload" crossorigin href="/dynamics/assets/vendor-0a7943b3.js">
-    <link rel="stylesheet" href="/dynamics/assets/styles-fd3c8e42.css">
+    <link rel="stylesheet" href="/dynamics/assets/styles-e743472f.css">
     <link rel="stylesheet" href="/dynamics/assets/vendor-e5212ee8.css">
   </head>
   <body>
-    <header class="header-section">
-  <div class="container">
-    <nav class="nav">
-      <ul class="nav-list">
-        <li class="nav-item">
-          <a href="./index.html" class="nav-link">Home</a>
-        </li>
+    
+  <header class="header-section" style="position: absolute; top: 0; left: 0;">
+   
+ 
+  <div class="container header-section-container ">
+    <div class="header-page">
 
-        <li class="nav-item">
-          <a href="./favorites.html" class="nav-link">Favorites</a>
-        </li>
-      </ul>
-    </nav>
+      <a class="logotype " href="./index.html">energy.flow</a>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <button class="button-home" type="button">
+              <a href="./index.html" class="nav-link ">Home</a>
+            </button>
+
+          </li>
+
+          <li class="nav-item">
+            <button class="button-favorites" type="button">
+              <a href="./favorites.html" class="nav-link ">Favorites</a>
+            </button>
+
+          </li>
+        </ul>
+      </nav>
+      <div class="contacts-social-list-header">
+        <ul class="social-list-header list">
+          
+        </ul>
+      </div>
+      <button class="button-align-justify js-open-menu-btn">
+
+        <svg class="icon-align-justify" width="28" height="28" aria-label="icon-align-justify">
+          <use href="../img/icons/symbols.svg#icon-align-justify"></use>
+        </svg>
+      </button>
+    </div>
   </div>
+  
+  
 </header>
-
-
-    <section class="section hero-section">
+    <section class="hero-section">
   <div class="container hero">
     <div class="hero-banner">
       <ul class="hero-hashtags">
@@ -58,6 +82,7 @@
   </div>
 </section>
 
+
     <section class="section quote-section">
   <div class="container quote-container">
     <div class="quote">
@@ -65,11 +90,11 @@
         <div class="svg-position">
           <div class="quote-running-man">
             <svg class="quote-svg" width="28" height="28">
-              <use href="/dynamics/assets/symbols-2e41c46a.svg#icon-running-man"></use>
+              <use href="/dynamics/assets/symbols-5f7d318b.svg#icon-running-man"></use>
             </svg>
           </div>
           <svg class="svg-double-quotes" width="28" height="28">
-            <use href="/dynamics/assets/symbols-2e41c46a.svg#icon-inverted-commas"></use>
+            <use href="/dynamics/assets/symbols-5f7d318b.svg#icon-inverted-commas"></use>
           </svg>
         </div>
         <div class="quote-content">
@@ -119,7 +144,7 @@
         />
         <button class="searching-btn" type="submit">
           <svg class="searching-icon" width="18" height="18">
-            <use href="/dynamics/assets/symbols-2e41c46a.svg#icon-search"></use>
+            <use href="/dynamics/assets/symbols-5f7d318b.svg#icon-search"></use>
           </svg>
         </button>
       </form>
@@ -205,6 +230,39 @@
   </div>
 </footer>
 
+    
+<div class="mobile-menu js-mobile-menu">
+    <div class="mobile-menu-container">
+        <div class="logotype-menu">
+            <a class="logotype-menu-link" href="./index.html">energy.flow</a>
+        </div>
+        <button class="mobile-menu-close-btn js-mobile-menu-close-btn">
+            <svg class="mobile-menu-close-icon" width="20" height="20" aria-label="mobile menu close icon">
+                <use href="../img/icons/symbols.svg#icon-x"></use>
+            </svg>
+        </button>
+        <nav class="nav-menu">
+            <ul class="nav-list-menu">
+                <li class="nav-item">
+                    <button class="button-home-menu" type="button">
+                        <a href="./index.html" class="nav-link">Home</a>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="button-favorites-menu" type="button">
+                        <a href="./favorites.html" class="nav-link nav-link-favorites">Favorites</a>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="contacts-social-list-menu">
+            <ul class="social-list-menu list">
+                
+            </ul>
+        </div>
+    </div>
+</div>
     <section class="rating-form-section">
   <div class="container">
     <div class="rating-form-container modal-backdrop">
@@ -314,7 +372,7 @@
     </div>
   </div>
 </section>
-
+ 
     
     
   </body>
