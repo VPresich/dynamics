@@ -42,6 +42,15 @@ class DbApi {
       headers: { 'Content-Type': 'application/json' },
     });
   }
+
+  async objectPatchRequest(endPoint, obj) {
+    const { id, ...rest } = obj;
+    return this.#dbRequest(`${endPoint}/${id}/rating`, {
+      method: 'PATCH',
+      body: JSON.stringify(rest),
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
 }
 
 export default DbApi;
