@@ -42,7 +42,7 @@ function modalWindowMarkup(filters = {}) {
                 height="28"
                 aria-label="Close icon"
               >
-                <use href="${iconURL}#icon-close"></use>
+                <use href="${iconURL}#icon-close-modal"></use>
               </svg>
             </button>
             <div class="exercise-image-wrapper">
