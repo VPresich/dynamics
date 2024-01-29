@@ -126,18 +126,27 @@
 }
 
 .ex-no-elements {
+  width: 295px;
+  padding-top: 124px;
+  padding-bottom: 320px;
   color: var(--secondary-color);
   text-align: center;
-  line-height: 1.28; /* 128.571% */
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.29;
   letter-spacing: -0.14px;
 }
+
 .error-message {
   margin-left: auto;
   margin-right: auto;
 }
+
 .grey-text {
   color: var(--accent-color);
+  font-weight: 500;
 }
+
 @media screen and (min-width: 375px) {
   .exercises-gallery {
     row-gap: 20px;
@@ -149,11 +158,6 @@
     padding: 16px;
     border-radius: 15px;
     background: #fff;
-  }
-  .ex-no-elements {
-    width: 295px;
-    padding-top: 164px;
-    padding-bottom: 320px;
   }
 }
 
@@ -190,8 +194,11 @@
   }
   .ex-no-elements {
     width: 536px;
-    padding-top: 222px;
+    padding-top: 188px;
     padding-bottom: 585px;
+    font-size: 18px;
+    line-height: 1.33;
+    letter-spacing: -0.18px;
   }
 }
 
@@ -211,7 +218,7 @@
 
   .ex-no-elements {
     width: 684px;
-    padding-top: 227px;
+    padding-top: 185px;
     padding-bottom: 350px;
   }
 }
