@@ -12,7 +12,7 @@ import getRemovButton from './favorites-button-remove';
 const favoriteslistExercises = document.querySelector(
   '.favorites-list-exercises-likes'
 );
-console.log(exercisesGalleryMarkup);
+// console.log(exercisesGalleryMarkup);
 const instance = axios.create({
   baseURL: 'https://energyflow.b.goit.study/api',
 });
@@ -24,12 +24,12 @@ const newArrLocalStorage = [];
 if (localStorage.length > 2) {
   try {
     newArrLocalStorage.push(JSON.parse(localStorage.getItem('favorites')));
-    console.log(exercisesGalleryMarkup);
+    // console.log(exercisesGalleryMarkup);
 
     const newArr = newArrLocalStorage.flatMap(res => res);
     console.log(newArr);
 
-    console.log(exercisesGalleryMarkup(newArr));
+    console.log(exercisesGalleryMarkup(newArr, getRemovButton));
 
     const renderListFavoriteExercises = exercisesGalleryMarkup(
       newArr,
