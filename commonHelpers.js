@@ -1,7 +1,7 @@
-import"./assets/styles-c3ebc9ef.js";import{a as l}from"./assets/vendor-0a7943b3.js";const d=document.querySelector(".favorites-quote-day-title"),f=l.create({baseURL:"https://energyflow.b.goit.study/api"});f.get("/quote ").then(e=>{d.insertAdjacentHTML("beforeend",` <p class="favorites-quote-day-text">
+import{m as l,a as g}from"./assets/handle-menu-buttons-aa7c4817.js";import{a as d}from"./assets/vendor-0a7943b3.js";const p=document.querySelector(".favorites-quote-day-title"),y=d.create({baseURL:"https://energyflow.b.goit.study/api"});y.get("/quote ").then(e=>{p.insertAdjacentHTML("beforeend",` <p class="favorites-quote-day-text">
                 ${e.data.quote}
                 </p>
-                    <p class="favorites-quote-day-text-autor">${e.data.author}</p>`)}).catch(e=>console.log(e));const i=document.querySelector(".favorites-list-exercises-likes");l.create({baseURL:"https://energyflow.b.goit.study/api"});const n=[];if(localStorage.length>2)try{n.push(JSON.parse(localStorage.getItem("favorites")));const e=n.flatMap(s=>s),c=u(e);i.insertAdjacentHTML("beforeend",c),e.map(s=>console.log(s._id)),i.addEventListener("click",s=>{const t=s.target.id;t&&(document.querySelector(`.list-exercises-favorites[data-listId="${t}"]`).remove(),e.map(a=>{if(a._id===t){const o=e.indexOf(a);e.splice(o,1),localStorage.setItem("favorites",JSON.stringify(e)),e.length||(localStorage.removeItem("favorites"),i.insertAdjacentHTML("beforeend",`<div class="favortes-no-exercises">
+                    <p class="favorites-quote-day-text-autor">${e.data.author}</p>`)}).catch(e=>console.log(e));const i=document.querySelector(".favorites-list-exercises-likes");d.create({baseURL:"https://energyflow.b.goit.study/api"});const n=[];if(localStorage.length>2)try{n.push(JSON.parse(localStorage.getItem("favorites")));const e=n.flatMap(s=>s),o=m(e);i.insertAdjacentHTML("beforeend",o),e.map(s=>console.log(s._id)),i.addEventListener("click",s=>{const t=s.target.id;t&&(document.querySelector(`.list-exercises-favorites[data-listId="${t}"]`).remove(),e.map(a=>{if(a._id===t){const c=e.indexOf(a);e.splice(c,1),localStorage.setItem("favorites",JSON.stringify(e)),e.length||(localStorage.removeItem("favorites"),i.insertAdjacentHTML("beforeend",`<div class="favortes-no-exercises">
                   <div class="favortes-no-exercises-found-img">
                   
                       </div>
@@ -21,7 +21,7 @@ import"./assets/styles-c3ebc9ef.js";import{a as l}from"./assets/vendor-0a7943b3.
       yet. To get started, you can add exercises that you like to your
       favorites for easier access in the future.
     </p>
-  </div>`);function u(e){return e.reduce((s,{bodyPart:t,burnedCalories:a,name:o,target:v,_id:r})=>s+` <li data-listId="${r}" class="list-exercises-favorites">
+  </div>`);function m(e){return e.reduce((s,{bodyPart:t,burnedCalories:a,name:c,target:u,_id:r})=>s+` <li data-listId="${r}" class="list-exercises-favorites">
             <div class="list-exercises-favorites-category">
                 <div>
                     <p class="exercises-favorites-name-category">WORKOUT</p>
@@ -51,7 +51,7 @@ import"./assets/styles-c3ebc9ef.js";import{a as l}from"./assets/vendor-0a7943b3.
                 href="./img/icons/symbols.svg#favorites=icon-run-exercises"
             ></use>
                 </svg>
-                <p class="exercises-favorites-name">${o}</p>
+                <p class="exercises-favorites-name">${c}</p>
             </div>
             <div class="list-exercises-favorites-conteiner">
                 <ul class="list-exercises-favorites-characteristic">
@@ -68,9 +68,9 @@ import"./assets/styles-c3ebc9ef.js";import{a as l}from"./assets/vendor-0a7943b3.
                     <li class="favorites-list-characteristic">
                         <span class="favorites-characteristic-criteria"
                             >Target: </span
-                        >${v}
+                        >${u}
                     </li>
                 </ul>
             </div>
-        </li>`,"")}
+        </li>`,"")}const v=document.querySelectorAll(".button-home"),f=document.querySelectorAll(".button-favorites");l(f,v);f.forEach(e=>{e.addEventListener("click",o=>{l([e],v)})});g();
 //# sourceMappingURL=commonHelpers.js.map
