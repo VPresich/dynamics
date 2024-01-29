@@ -111,6 +111,7 @@
 .form-for-searching-input {
   width: 295px;
   position: relative;
+  margin-top: 20px;
 }
 
 .searching-input {
@@ -162,7 +163,7 @@
   margin-bottom: 40px;
 }
 
-.return-to-the-top-btn { 
+.return-to-the-top-btn {
   padding: 0;
   background-color: var(--accent-color);
   border-radius: 50%;
@@ -172,18 +173,18 @@
   z-index: 999;
 }
 
-.return-to-the-top-small-btn { 
+.return-to-the-top-small-btn {
   width: 40px;
   height: 40px;
 }
 
 .return-to-the-top-big-btn {
   width: 100px;
-  height: 100px; 
+  height: 100px;
 }
 
 .return-to-the-top-btn:hover,
-.return-to-the-top-btn:focus { 
+.return-to-the-top-btn:focus {
   background-color: rgba(95, 101, 96, 1);
 }
 
@@ -216,6 +217,7 @@
   .form-for-searching-input {
     width: 246px;
     margin-left: 35px;
+    margin-top: 0;
   }
 
   .wrapper-for-buttons-and-form {
