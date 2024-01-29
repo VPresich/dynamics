@@ -35,7 +35,7 @@ function exercisesGalleryMarkup(filters = [], yourPart) {
     ) =>
       strMarkup +
       `
-       <li class="exercise-card data-id="${_id}">
+       <li class="exercise-card" data-id="${_id}">
           <div class="exercice-card-top-line">
             <div class="ex-card-top-left-part">
               <p class="ex-card-workout exercise-param">workout</p>

@@ -1,56 +1,36 @@
-import axios from 'axios';
-import iziToast from 'izitoast';
-import 'izitoast/dist/css/iziToast.min.css';
-
 import exercisesGalleryMarkup from '../exercises-gallery/exercises-gallery-markup';
 import iconURL from '../../img/icons/symbols.svg';
 import getRemovButton from './favorites-button-remove';
-
-// import galleryCreate from '../common/gallery-create';
-// import getRemovButton from './favorites-button-remove';
+import getFavortesNoExercises from './favorites-not-exercises';
 
 const favoriteslistExercises = document.querySelector(
   '.favorites-list-exercises-likes'
 );
-// console.log(exercisesGalleryMarkup);
-const instance = axios.create({
-  baseURL: 'https://energyflow.b.goit.study/api',
-});
-
-// console.log(getRemovButton);
 
 const newArrLocalStorage = [];
 
 if (localStorage.length > 2) {
   try {
     newArrLocalStorage.push(JSON.parse(localStorage.getItem('favorites')));
-    // console.log(exercisesGalleryMarkup);
 
     const newArr = newArrLocalStorage.flatMap(res => res);
-    console.log(newArr);
-
-    console.log(exercisesGalleryMarkup(newArr, getRemovButton));
 
     const renderListFavoriteExercises = exercisesGalleryMarkup(
       newArr,
       getRemovButton
     );
 
-    console.log(getRemovButton());
-
     favoriteslistExercises.insertAdjacentHTML(
       'beforeend',
       renderListFavoriteExercises
     );
 
-    newArr.map(res => console.log(res._id));
-
     favoriteslistExercises.addEventListener('click', event => {
-      const deleteId = event.target.id;
+      const deleteId = event.target.dataset.id;
 
       if (deleteId) {
         document
-          .querySelector(`.list-exercises-favorites[data-listId="${deleteId}"]`)
+          .querySelector(`.exercise-card[data-id="${deleteId}"]`)
           .remove();
         newArr.map(res => {
           if (res._id === deleteId) {
@@ -65,17 +45,7 @@ if (localStorage.length > 2) {
 
               favoriteslistExercises.insertAdjacentHTML(
                 'beforeend',
-                `<div class="favortes-no-exercises">
-                  <div class="favortes-no-exercises-found-img">
-                  
-                      </div>
-                  
-                  <p class="favortes-no-exercises-found-text">
-                    It appears that you haven't added any exercises to your favorites
-                    yet. To get started, you can add exercises that you like to your
-                    favorites for easier access in the future.
-                  </p>
-                </div>`
+                getFavortesNoExercises()
               );
             }
           }
@@ -83,24 +53,26 @@ if (localStorage.length > 2) {
       }
     });
   } catch (error) {
-    console.log('Parse form storage error');
+    console.log(error.message);
   }
 } else {
   favoriteslistExercises.insertAdjacentHTML(
     'beforeend',
-    `<div class="favortes-no-exercises">
-    <div class="favortes-no-exercises-found-img">
-    
-        </div>
-    
-    <p class="favortes-no-exercises-found-text">
-      It appears that you haven't added any exercises to your favorites
-      yet. To get started, you can add exercises that you like to your
-      favorites for easier access in the future.
-    </p>
-  </div>`
+    getFavortesNoExercises()
   );
 }
+
+// const buttonMenuRef = document.querySelector('.js-open-menu-btn');
+// const mobileMenuRef = document.querySelector('.js-mobile-menu');
+// const buttonCloseMenuRef = document.querySelector('.js-mobile-menu-close-btn');
+
+// buttonMenuRef.addEventListener('click', () => {
+//   mobileMenuRef.classList.add('is-open');
+// });
+
+// buttonCloseMenuRef.addEventListener('click', () => {
+//   mobileMenuRef.classList.remove('is-open');
+// });
 
 // function renderElement(params) {
 //   const render = params.reduce(
