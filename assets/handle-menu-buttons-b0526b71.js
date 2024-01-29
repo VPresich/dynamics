@@ -7,4 +7,4 @@
             </a>
         </li>
       `,"")}function l(o,n,t=[]){const c=L(n,t);o.innerHTML="",o.insertAdjacentHTML("beforeend",c)}const v=()=>{const o={iconURL:a,iconContainerClass:"social-list-item",iconLinkClass:"social-list-link",iconClass:"social-list-icon"},n=document.querySelector(".social-list-header");l(n,o,r);const t={iconURL:a,iconContainerClass:"social-list-item",iconLinkClass:"social-list-link-menu",iconClass:"social-list-icon-menu"},c=document.querySelector(".social-list-menu");l(c,t,r)},p=document.querySelector(".js-open-menu-btn"),u=document.querySelector(".js-mobile-menu"),g=document.querySelector(".js-mobile-menu-close-btn"),d="is-open";p.addEventListener("click",()=>{u.classList.add(d)});g.addEventListener("click",()=>{u.classList.remove(d)});function h(o){o.classList.add("active-btn"),o.classList.remove("btn")}function k(o){o.classList.remove("active-btn"),o.classList.add("btn")}function C(o,n){Array.from(o).forEach(t=>{h(t)}),Array.from(n).forEach(t=>{k(t)})}export{v as a,l as c,a as i,C as m,r as s};
-//# sourceMappingURL=handle-menu-buttons-aa7c4817.js.map
+//# sourceMappingURL=handle-menu-buttons-b0526b71.js.map
