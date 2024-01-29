@@ -9,7 +9,6 @@ function makeUsual(btn) {
 
 export function makeActiveAndUsual(btn1, btn2) {
     Array.from(btn1).forEach(btn => {
-        console.log(btn);
         makeActive(btn);
     });
    Array.from(btn2).forEach(btn => {
