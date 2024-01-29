@@ -15,6 +15,7 @@ import getExerciseById from './exercise-modal-get-id';
 import checkFavoriteStatus from './check-button-status.js';
 import addOrRemoveFromFavorites from './add-remove-to-favorites.js';
 import renderRatingStars from './render-stars.js';
+import { onRatingBtnClick } from '../rating-form/rating-form-handles.js';
 
 let closeBtn;
 let favoritsBtn;
@@ -61,7 +62,7 @@ function openModalWindow() {
   renderRatingStars(ratingContRef);
 
   ratingBtn = document.querySelector(SELECTOR_RATING);
-  ratingBtn && ratingBtn.addEventListener('click', onFavoritsBtn);
+  ratingBtn && ratingBtn.addEventListener('click', onRatingBtn);
 }
 
 function onWindowKeydown(event) {
@@ -80,4 +81,6 @@ function onFavoritsBtn(event) {
   addOrRemoveFromFavorites(exerciseId, favoritsBtn);
 }
 
-function onRatingBtn(event) {}
+function onRatingBtn(event) {
+  onRatingBtnClick(event, exerciseId);
+}
