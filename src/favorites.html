@@ -14,61 +14,11 @@
   </head>
   <body>
     <load src="partials/header.html" />
-
-    <section>
-      <div class="container favorites-motivation-ports">
-        <div class="favorites-quote-day">
-          <div class="favorites-quote-day-expression">
-            <svg class="favorites-social-icon-run-titel" width="34" height="32">
-              <use
-                href="./img/icons/symbols.svg#favorites-icon-run-man-quote"
-              ></use>
-            </svg>
-          </div>
-          <div>
-            <h2 class="favorites-quote-day-title">Quote of the day</h2>
-          </div>
-          <div class="favorites-motivation-inverted-commas">
-            <svg class="favorites-icon-inverted favorites-icon-inverted-commas">
-              <use
-                xlink:href="./img/icons/symbols.svg#icon-inverted-commas"
-              ></use>
-            </svg>
-          </div>
-        </div>
-        <div class="favorites-motivation-image-cont"></div>
-        <div class="favorites-motivation-block">
-          <div class="favorites-motivation-conteiner">
-            <p class="favorites-motivation-block-img">
-              <img
-                src="./img/favorite/fluent-food-24-filled.jpg"
-                alt="img-dumbbell"
-              />
-            </p>
-            <p class="favorites-motivation-block-time">110 min</p>
-            <p class="favorites-motivation-block-inform">
-              Daily norm of sports
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container conteiner-favorites-exercises">
-        <h2 class="favorites-exercises-titel">Favorites</h2>
-        <ul class="favorites-list-exercises-likes"></ul>
-      </div>
-    </section>
+    <load src="./partials/favorites-quote.html" />
+    <load src="partials/favorites-exercises.html" />
     <load src="partials/burger-modal-menu.html" />
-    <script
-      type="module"
-      src="./js/favorites/favorites-quote-section.js"
-    ></script>
-    <script
-      type="module"
-      src="./js/favorites/favorites-exercises-section.js"
-    ></script>
+
+    <script type="module" src="./favorites.js"></script>
     <script type="module" src="./js/header/header-favourites.js"></script>
   </body>
 </html>
