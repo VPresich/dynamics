@@ -3,6 +3,7 @@ import { KEY_LOCALSTORAGE } from '../common/localstorage/constants';
 import { REMOVEBTN_CAPTION, ADDBTN_CAPTION } from './constants';
 
 import getInfoFromForm from './get-form-info';
+import changeCaption from './change-caption';
 
 function addOrRemoveFromFavorites(exerciseId, btn) {
   const exerciseInfo = getInfoFromForm(exerciseId);
@@ -12,10 +13,10 @@ function addOrRemoveFromFavorites(exerciseId, btn) {
 
   if (index !== -1) {
     favorites.splice(index, 1);
-    btn.textContent = ADDBTN_CAPTION;
+    changeCaption(ADDBTN_CAPTION, btn);
   } else {
     favorites.push(exerciseInfo);
-    btn.textContent = REMOVEBTN_CAPTION;
+    changeCaption(REMOVEBTN_CAPTION, btn);
   }
 
   localStorage.setItem(KEY_LOCALSTORAGE, JSON.stringify(favorites));
