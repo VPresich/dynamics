@@ -168,7 +168,7 @@
   .favortes-no-exercises {
     width: 554px;
     margin-top: 208px;
-    margin-bottom: 437px;
+    margin-bottom: 343px;
   }
 
   .favortes-no-exercises-found-img {
@@ -193,24 +193,25 @@
     column-gap: 14px;
 
     max-height: 720px;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
-  /* .favorites-list-exercises-likes::-webkit-scrollbar {
-  width: 8px;
-  margin-left: 16px;
-  overflow: overlay;
-} */
 
-  /* .favorites-list-exercises-likes::-webkit-scrollbar-track {
-  background: rgb(27, 27, 27, 0.1);
-  border-radius: 12px;
-} */
+  .favorites-list-exercises-likes::-webkit-scrollbar {
+    width: 8px;
+    margin-left: 16px;
+    overflow: overlay;
+  }
 
-  /* .favorites-list-exercises-likes::-webkit-scrollbar-thumb {
-  background: #7e847f;
-  border-radius: 12px;
-  border: 2px solid rgb(27, 27, 27, 0.1);
-} */
+  .favorites-list-exercises-likes::-webkit-scrollbar-track {
+    background: rgb(27, 27, 27, 0.1);
+    border-radius: 12px;
+  }
+
+  .favorites-list-exercises-likes::-webkit-scrollbar-thumb {
+    background: #7e847f;
+    border-radius: 12px;
+    border: 2px solid rgb(27, 27, 27, 0.1);
+  }
 
   .list-exercises-favorites {
     width: calc((100% - 14px) / 2);
@@ -256,7 +257,7 @@
   /* =============== favortes-no-exercises-found ======================*/
   .favortes-no-exercises {
     margin-top: 146px;
-    margin-bottom: 258px;
+    margin-bottom: 150px;
   }
 
   /* =============== favorites-list-exercises-likes ======================*/
@@ -265,22 +266,6 @@
     column-gap: 20px;
     max-height: 487px;
   }
-  /* .favorites-list-exercises-likes::-webkit-scrollbar {
-    width: 8px;
-    margin-left: 16px;
-    overflow: overlay;
-  }
-  
-  .favorites-list-exercises-likes::-webkit-scrollbar-track {
-    background: rgb(27, 27, 27, 0.1);
-    border-radius: 12px;
-  }
-  
-  .favorites-list-exercises-likes::-webkit-scrollbar-thumb {
-    background: #7e847f;
-    border-radius: 12px;
-    border: 2px solid rgb(27, 27, 27, 0.1);
-  } */
 
   .list-exercises-favorites {
     width: calc((100% - 40px) / 3);
