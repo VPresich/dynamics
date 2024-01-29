@@ -2,23 +2,42 @@ import axios from 'axios';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
+import exercisesGalleryMarkup from '../exercises-gallery/exercises-gallery-markup';
+import iconURL from '../../img/icons/symbols.svg';
+import getRemovButton from './favorites-button-remove';
+
+// import galleryCreate from '../common/gallery-create';
+// import getRemovButton from './favorites-button-remove';
+
 const favoriteslistExercises = document.querySelector(
   '.favorites-list-exercises-likes'
 );
-
+console.log(exercisesGalleryMarkup);
 const instance = axios.create({
   baseURL: 'https://energyflow.b.goit.study/api',
 });
+
+// console.log(getRemovButton);
 
 const newArrLocalStorage = [];
 
 if (localStorage.length > 2) {
   try {
     newArrLocalStorage.push(JSON.parse(localStorage.getItem('favorites')));
+    console.log(exercisesGalleryMarkup);
 
     const newArr = newArrLocalStorage.flatMap(res => res);
+    console.log(newArr);
 
-    const renderListFavoriteExercises = renderElement(newArr);
+    console.log(exercisesGalleryMarkup(newArr));
+
+    const renderListFavoriteExercises = exercisesGalleryMarkup(
+      newArr,
+      getRemovButton
+    );
+
+    console.log(getRemovButton());
+
     favoriteslistExercises.insertAdjacentHTML(
       'beforeend',
       renderListFavoriteExercises
@@ -83,67 +102,67 @@ if (localStorage.length > 2) {
   );
 }
 
-function renderElement(params) {
-  const render = params.reduce(
-    (html, { bodyPart, burnedCalories, name, target, _id }) =>
-      html +
-      ` <li data-listId="${_id}" class="list-exercises-favorites">
-            <div class="list-exercises-favorites-category">
-                <div>
-                    <p class="exercises-favorites-name-category">WORKOUT</p>
-                    <button id="${_id}" class="favorites-button-remove" type="button">
-                    <svg id="${_id}" class="favorites-icon-trash">
-                    <use id="${_id}"
-                        xlink:href="./img/icons/symbols.svg#icon-trash-favotites"
-                    ></use>
-                </svg>
-                    </button>
-                </div>
+// function renderElement(params) {
+//   const render = params.reduce(
+//     (html, { bodyPart, burnedCalories, name, target, _id }) =>
+//       html +
+//       ` <li data-listId="${_id}" class="list-exercises-favorites">
+//             <div class="list-exercises-favorites-category">
+//                 <div>
+//                     <p class="exercises-favorites-name-category">WORKOUT</p>
+//                     <button id="${_id}" class="favorites-button-remove" type="button">
+//                     <svg id="${_id}" class="favorites-icon-trash">
+//                     <use id="${_id}"
+//                         xlink:href="./img/icons/symbols.svg#icon-trash-favotites"
+//                     ></use>
+//                 </svg>
+//                     </button>
+//                 </div>
 
-                <button
-                    type="submit"
-                    class="exercises-favorites-but-start"
-                >
-                Start<svg class="favorites-icon-arrow">
-                <use
-                    xlink:href="./img/icons/symbols.svg#icon-arrow"
-                ></use>
-            </svg>
-                </button>
-            </div>
-            <div class="list-exercises-favorites-name">
-                <svg class="favorites-social-icon-run" width="24" height="24">
-                <use
-                href="./img/icons/symbols.svg#favorites=icon-run-exercises"
-            ></use>
-                </svg>
-                <p class="exercises-favorites-name">${name}</p>
-            </div>
-            <div class="list-exercises-favorites-conteiner">
-                <ul class="list-exercises-favorites-characteristic">
-                    <li class="favorites-list-characteristic">
-                        <span class="favorites-characteristic-criteria"
-                            >Burned calories: </span
-                        >${burnedCalories} / 3 min
-                    </li>
-                    <li class="favorites-list-characteristic">
-                        <span class="favorites-characteristic-criteria"
-                            >Body part: </span
-                        >${bodyPart}
-                    </li>
-                    <li class="favorites-list-characteristic">
-                        <span class="favorites-characteristic-criteria"
-                            >Target: </span
-                        >${target}
-                    </li>
-                </ul>
-            </div>
-        </li>`,
-    ''
-  );
-  return render;
-}
+//                 <button
+//                     type="submit"
+//                     class="exercises-favorites-but-start"
+//                 >
+//                 Start<svg class="favorites-icon-arrow">
+//                 <use
+//                     xlink:href="./img/icons/symbols.svg#icon-arrow"
+//                 ></use>
+//             </svg>
+//                 </button>
+//             </div>
+//             <div class="list-exercises-favorites-name">
+//                 <svg class="favorites-social-icon-run" width="24" height="24">
+//                 <use
+//                 href="./img/icons/symbols.svg#favorites=icon-run-exercises"
+//             ></use>
+//                 </svg>
+//                 <p class="exercises-favorites-name">${name}</p>
+//             </div>
+//             <div class="list-exercises-favorites-conteiner">
+//                 <ul class="list-exercises-favorites-characteristic">
+//                     <li class="favorites-list-characteristic">
+//                         <span class="favorites-characteristic-criteria"
+//                             >Burned calories: </span
+//                         >${burnedCalories} / 3 min
+//                     </li>
+//                     <li class="favorites-list-characteristic">
+//                         <span class="favorites-characteristic-criteria"
+//                             >Body part: </span
+//                         >${bodyPart}
+//                     </li>
+//                     <li class="favorites-list-characteristic">
+//                         <span class="favorites-characteristic-criteria"
+//                             >Target: </span
+//                         >${target}
+//                     </li>
+//                 </ul>
+//             </div>
+//         </li>`,
+//     ''
+//   );
+//   return render;
+// }
 
-// const renderListFavoriteExercises = renderElement(newArr);
+// const renderListFavoriteExercises = exercisesGalleryMarkup((filters = [], getRemovButton));
 
 // listExercises.insertAdjacentHTML('beforeend', renderListFavoriteExercises);

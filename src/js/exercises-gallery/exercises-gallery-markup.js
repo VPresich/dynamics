@@ -39,7 +39,7 @@ function exercisesGalleryMarkup(filters = [], yourPart) {
           <div class="exercice-card-top-line">
             <div class="ex-card-top-left-part">
               <p class="ex-card-workout exercise-param">workout</p>
-              ${yourPart(rating, iconURL)}
+              ${yourPart(rating, iconURL, _id)}
             </div>
             <button type="submit" class="ex-card-start-btn" data-id="${_id}">
               Start
