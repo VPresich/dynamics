@@ -1,14 +1,11 @@
-import axios from 'axios';
-import iziToast from 'izitoast';
-import 'izitoast/dist/css/iziToast.min.css';
+import exercisesGalleryMarkup from '../exercises-gallery/exercises-gallery-markup';
+import iconURL from '../../img/icons/symbols.svg';
+import getRemovButton from './favorites-button-remove';
+import getFavortesNoExercises from './favorites-not-exercises';
 
 const favoriteslistExercises = document.querySelector(
   '.favorites-list-exercises-likes'
 );
-
-const instance = axios.create({
-  baseURL: 'https://energyflow.b.goit.study/api',
-});
 
 const newArrLocalStorage = [];
 
@@ -18,20 +15,22 @@ if (localStorage.length > 2) {
 
     const newArr = newArrLocalStorage.flatMap(res => res);
 
-    const renderListFavoriteExercises = renderElement(newArr);
+    const renderListFavoriteExercises = exercisesGalleryMarkup(
+      newArr,
+      getRemovButton
+    );
+
     favoriteslistExercises.insertAdjacentHTML(
       'beforeend',
       renderListFavoriteExercises
     );
 
-    newArr.map(res => console.log(res._id));
-
     favoriteslistExercises.addEventListener('click', event => {
-      const deleteId = event.target.id;
+      const deleteId = event.target.dataset.id;
 
       if (deleteId) {
         document
-          .querySelector(`.list-exercises-favorites[data-listId="${deleteId}"]`)
+          .querySelector(`.exercise-card[data-id="${deleteId}"]`)
           .remove();
         newArr.map(res => {
           if (res._id === deleteId) {
@@ -46,17 +45,7 @@ if (localStorage.length > 2) {
 
               favoriteslistExercises.insertAdjacentHTML(
                 'beforeend',
-                `<div class="favortes-no-exercises">
-                  <div class="favortes-no-exercises-found-img">
-                  
-                      </div>
-                  
-                  <p class="favortes-no-exercises-found-text">
-                    It appears that you haven't added any exercises to your favorites
-                    yet. To get started, you can add exercises that you like to your
-                    favorites for easier access in the future.
-                  </p>
-                </div>`
+                getFavortesNoExercises()
               );
             }
           }
@@ -64,86 +53,88 @@ if (localStorage.length > 2) {
       }
     });
   } catch (error) {
-    console.log('Parse form storage error');
+    console.log(error.message);
   }
 } else {
   favoriteslistExercises.insertAdjacentHTML(
     'beforeend',
-    `<div class="favortes-no-exercises">
-    <div class="favortes-no-exercises-found-img">
-    
-        </div>
-    
-    <p class="favortes-no-exercises-found-text">
-      It appears that you haven't added any exercises to your favorites
-      yet. To get started, you can add exercises that you like to your
-      favorites for easier access in the future.
-    </p>
-  </div>`
+    getFavortesNoExercises()
   );
 }
 
-function renderElement(params) {
-  const render = params.reduce(
-    (html, { bodyPart, burnedCalories, name, target, _id }) =>
-      html +
-      ` <li data-listId="${_id}" class="list-exercises-favorites">
-            <div class="list-exercises-favorites-category">
-                <div>
-                    <p class="exercises-favorites-name-category">WORKOUT</p>
-                    <button id="${_id}" class="favorites-button-remove" type="button">
-                    <svg id="${_id}" class="favorites-icon-trash">
-                    <use id="${_id}"
-                        xlink:href="./img/icons/symbols.svg#icon-trash-favotites"
-                    ></use>
-                </svg>
-                    </button>
-                </div>
+// const buttonMenuRef = document.querySelector('.js-open-menu-btn');
+// const mobileMenuRef = document.querySelector('.js-mobile-menu');
+// const buttonCloseMenuRef = document.querySelector('.js-mobile-menu-close-btn');
 
-                <button
-                    type="submit"
-                    class="exercises-favorites-but-start"
-                >
-                Start<svg class="favorites-icon-arrow">
-                <use
-                    xlink:href="./img/icons/symbols.svg#icon-arrow"
-                ></use>
-            </svg>
-                </button>
-            </div>
-            <div class="list-exercises-favorites-name">
-                <svg class="favorites-social-icon-run" width="24" height="24">
-                <use
-                href="./img/icons/symbols.svg#favorites=icon-run-exercises"
-            ></use>
-                </svg>
-                <p class="exercises-favorites-name">${name}</p>
-            </div>
-            <div class="list-exercises-favorites-conteiner">
-                <ul class="list-exercises-favorites-characteristic">
-                    <li class="favorites-list-characteristic">
-                        <span class="favorites-characteristic-criteria"
-                            >Burned calories: </span
-                        >${burnedCalories} / 3 min
-                    </li>
-                    <li class="favorites-list-characteristic">
-                        <span class="favorites-characteristic-criteria"
-                            >Body part: </span
-                        >${bodyPart}
-                    </li>
-                    <li class="favorites-list-characteristic">
-                        <span class="favorites-characteristic-criteria"
-                            >Target: </span
-                        >${target}
-                    </li>
-                </ul>
-            </div>
-        </li>`,
-    ''
-  );
-  return render;
-}
+// buttonMenuRef.addEventListener('click', () => {
+//   mobileMenuRef.classList.add('is-open');
+// });
 
-// const renderListFavoriteExercises = renderElement(newArr);
+// buttonCloseMenuRef.addEventListener('click', () => {
+//   mobileMenuRef.classList.remove('is-open');
+// });
+
+// function renderElement(params) {
+//   const render = params.reduce(
+//     (html, { bodyPart, burnedCalories, name, target, _id }) =>
+//       html +
+//       ` <li data-listId="${_id}" class="list-exercises-favorites">
+//             <div class="list-exercises-favorites-category">
+//                 <div>
+//                     <p class="exercises-favorites-name-category">WORKOUT</p>
+//                     <button id="${_id}" class="favorites-button-remove" type="button">
+//                     <svg id="${_id}" class="favorites-icon-trash">
+//                     <use id="${_id}"
+//                         xlink:href="./img/icons/symbols.svg#icon-trash-favotites"
+//                     ></use>
+//                 </svg>
+//                     </button>
+//                 </div>
+
+//                 <button
+//                     type="submit"
+//                     class="exercises-favorites-but-start"
+//                 >
+//                 Start<svg class="favorites-icon-arrow">
+//                 <use
+//                     xlink:href="./img/icons/symbols.svg#icon-arrow"
+//                 ></use>
+//             </svg>
+//                 </button>
+//             </div>
+//             <div class="list-exercises-favorites-name">
+//                 <svg class="favorites-social-icon-run" width="24" height="24">
+//                 <use
+//                 href="./img/icons/symbols.svg#favorites=icon-run-exercises"
+//             ></use>
+//                 </svg>
+//                 <p class="exercises-favorites-name">${name}</p>
+//             </div>
+//             <div class="list-exercises-favorites-conteiner">
+//                 <ul class="list-exercises-favorites-characteristic">
+//                     <li class="favorites-list-characteristic">
+//                         <span class="favorites-characteristic-criteria"
+//                             >Burned calories: </span
+//                         >${burnedCalories} / 3 min
+//                     </li>
+//                     <li class="favorites-list-characteristic">
+//                         <span class="favorites-characteristic-criteria"
+//                             >Body part: </span
+//                         >${bodyPart}
+//                     </li>
+//                     <li class="favorites-list-characteristic">
+//                         <span class="favorites-characteristic-criteria"
+//                             >Target: </span
+//                         >${target}
+//                     </li>
+//                 </ul>
+//             </div>
+//         </li>`,
+//     ''
+//   );
+//   return render;
+// }
+
+// const renderListFavoriteExercises = exercisesGalleryMarkup((filters = [], getRemovButton));
 
 // listExercises.insertAdjacentHTML('beforeend', renderListFavoriteExercises);
