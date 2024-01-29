@@ -26,7 +26,6 @@
   }
 
   .favortes-no-exercises-found-img {
-    border-radius: 30px;
     background: url(/img/favorite/dumbbell-mobile.png) no-repeat;
     background-size: cover;
     width: 85px;
@@ -151,7 +150,100 @@
   }
 }
 
+/*====================================== screen 768px =======================================*/
+
 @media screen and (min-width: 768px) {
+  .conteiner-favorites-exercises {
+    margin-top: 16px;
+    padding: 64px 48px;
+    border-radius: 50px;
+  }
+
+  .favorites-exercises-titel {
+    font-size: 44px;
+    line-height: 1.09;
+  }
+
+  /* =============== favortes-no-exercises-found ======================*/
+  .favortes-no-exercises {
+    width: 554px;
+    margin-top: 208px;
+    margin-bottom: 437px;
+  }
+
+  .favortes-no-exercises-found-img {
+    width: 115px;
+    height: 71px;
+    background: url(/img/favorite/dumbbell-desktop.png) no-repeat;
+  }
+
+  .favortes-no-exercises-found-text {
+    font-size: 18px;
+    line-height: 1.3;
+  }
+
+  /* =============== favorites-list-exercises-likes ======================*/
+  .favorites-list-exercises-likes {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: space-between;
+
+    row-gap: 20px;
+    column-gap: 14px;
+
+    max-height: 720px;
+    overflow-y: scroll;
+  }
+  /* .favorites-list-exercises-likes::-webkit-scrollbar {
+  width: 8px;
+  margin-left: 16px;
+  overflow: overlay;
+} */
+
+  /* .favorites-list-exercises-likes::-webkit-scrollbar-track {
+  background: rgb(27, 27, 27, 0.1);
+  border-radius: 12px;
+} */
+
+  /* .favorites-list-exercises-likes::-webkit-scrollbar-thumb {
+  background: #7e847f;
+  border-radius: 12px;
+  border: 2px solid rgb(27, 27, 27, 0.1);
+} */
+
+  .list-exercises-favorites {
+    width: calc((100% - 14px) / 2);
+    margin-bottom: 0px;
+  }
+
+  .exercises-favorites-but-start {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .favorites-icon-arrow {
+    width: 16px;
+    height: 16px;
+    transform: translateY(+25%);
+  }
+
+  .list-exercises-favorites-name {
+    margin-bottom: 8px;
+  }
+
+  .exercises-favorites-name {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+
+  .favorites-list-characteristic {
+    color: rgb(27, 27, 27);
+  }
+
+  .favorites-characteristic-criteria {
+    color: rgb(27, 27, 27, 0.4);
+  }
 }
 
 @media screen and (min-width: 1440px) {
