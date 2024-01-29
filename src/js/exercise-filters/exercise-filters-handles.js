@@ -126,15 +126,19 @@ function formReset() {
 function onSearchSubmit(event) {
   event.preventDefault();
   const searchQuery = getSearch();
+  if (searchQuery === '')
+  {
+    createOkMsg(`Please fill in the search field`);
+    return;
+  };
   const filter = getFilter();
-  // formReset();
   searchHandler(filter, searchQuery);
 }
 
 function searchHandler(filterParam, searchQuery) {
   getExercisesData(filterParam, pagination.currentPage, searchQuery)
     .then(data => {
-      if (data.results.length===0) {
+      if (data.results.length === 0) {
         galleryCreate([], galleryRef, handleNoElements);
       }
       else
