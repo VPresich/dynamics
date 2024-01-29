@@ -7,12 +7,14 @@ import {
   MODAL_VISIBILITY,
   SELECTOR_FAVORITS,
   SELECTOR_RATING,
+  SELECTOR_RATING_STARS,
 } from './constants.js';
 
 import exerciseModalCreate from './exercise-modal-create';
 import getExerciseById from './exercise-modal-get-id';
 import checkFavoriteStatus from './check-button-status.js';
 import addOrRemoveFromFavorites from './add-remove-to-favorites.js';
+import renderRatingStars from './exercise-modal-render-stars.js';
 
 let closeBtn;
 let favoritsBtn;
@@ -48,17 +50,18 @@ function onCloseBtn(event) {
 
 function openModalWindow() {
   modalBackdrop.classList.add(MODAL_VISIBILITY);
+  window.addEventListener('keydown', onWindowKeydown);
   closeBtn = document.querySelector(SELECTOR_CLOSEBTN);
   closeBtn && closeBtn.addEventListener('click', onCloseBtn);
 
   favoritsBtn = document.querySelector(SELECTOR_FAVORITS);
   favoritsBtn && favoritsBtn.addEventListener('click', onFavoritsBtn);
   checkFavoriteStatus(exerciseId, favoritsBtn);
+  const ratingContRef = document.querySelector(SELECTOR_RATING_STARS);
+  renderRatingStars(ratingContRef);
 
   ratingBtn = document.querySelector(SELECTOR_RATING);
   ratingBtn && ratingBtn.addEventListener('click', onFavoritsBtn);
-
-  window.addEventListener('keydown', onWindowKeydown);
 }
 
 function onWindowKeydown(event) {

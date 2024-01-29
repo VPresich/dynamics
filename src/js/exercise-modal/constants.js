@@ -9,3 +9,4 @@ export const SELECTOR_FAVORITS = '.exercise-favorite-btn';
 export const SELECTOR_RATING = '.exercise-raiting-btn';
 export const REMOVEBTN_CAPTION = 'Remove from';
 export const ADDBTN_CAPTION = 'Add to favorites';
+export const SELECTOR_RATING_STARS = '.modal-rating';

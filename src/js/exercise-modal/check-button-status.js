@@ -1,4 +1,5 @@
 import { ADDBTN_CAPTION, REMOVEBTN_CAPTION } from './constants';
+import changeCaption from './change-caption';
 
 function checkFavoriteStatus(exerciseId, btn) {
   const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
@@ -6,9 +7,9 @@ function checkFavoriteStatus(exerciseId, btn) {
   const isFavorite = favorites.some(item => item._id === exerciseId);
 
   if (isFavorite) {
-    btn.textContent = REMOVEBTN_CAPTION;
+    changeCaption(REMOVEBTN_CAPTION, btn);
   } else {
-    btn.textContent = ADDBTN_CAPTION;
+    changeCaption(ADDBTN_CAPTION, btn);
   }
 }
 
