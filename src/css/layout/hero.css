@@ -73,6 +73,9 @@
 }
 
 @media screen and (min-width: 768px) {
+  .hero-section {
+    padding-top: 16px;
+  }
   .hero {
     height: 900px;
     display: grid;
@@ -129,7 +132,6 @@
   screen and (min-device-pixel-ratio: 2) and (min-width: 768px) {
   .hero-banner {
     background-image: url(/img/hero/hero-tablet@2x.jpg);
-    
   }
 }
 
@@ -143,7 +145,7 @@
     width: 100%;
   }
 
-  .hero-text{
+  .hero-text {
     height: auto;
     margin-bottom: 0;
   }
@@ -185,10 +187,3 @@
     background-image: url(/img/hero/hero-desktop@2x.jpg);
   }
 }
-
-
-
-
-
-
-
