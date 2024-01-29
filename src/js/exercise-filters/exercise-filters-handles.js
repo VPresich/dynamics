@@ -8,6 +8,7 @@ import Pagination from '../common/pagination/pagination';
 import galleryDelete from '../common/gallery-delete';
 import galleryCreate from '../common/gallery-create';
 import handleNoElements from '../exercises-gallery/exercises-gallery-noelements-markup';
+import exercisesGalleryMarkup from '../exercises-gallery/exercises-gallery-markup';
 
 const activeBtnClass = 'filter-button-active';
 let activeBtn = {};
@@ -133,16 +134,11 @@ function onSearchSubmit(event) {
 function searchHandler(filterParam, searchQuery) {
   getExercisesData(filterParam, pagination.currentPage, searchQuery)
     .then(data => {
-      if (!data.results) {
-        console.log(data.results);
+      if (data.results.length===0) {
         galleryCreate([], galleryRef, handleNoElements);
-        return;
       }
-      return data;
-    })
-    .then(data => {
-      galleryDelete(galleryRef);
-      exercisesGalleryCreate(galleryRef, data.results);
+      else
+        galleryCreate(data.results, galleryRef, exercisesGalleryMarkup);
     })
     .catch(error => {
       console.log(error.message);
