@@ -1,7 +1,4 @@
-var ye=Object.defineProperty;var xe=(t,e,s)=>e in t?ye(t,e,{enumerable:!0,configurable:!0,writable:!0,value:s}):t[e]=s;var m=(t,e,s)=>(xe(t,typeof e!="symbol"?e+"":e,s),s),P=(t,e,s)=>{if(!e.has(t))throw TypeError("Cannot "+s)};var o=(t,e,s)=>(P(t,e,"read from private field"),s?s.call(t):e.get(t)),c=(t,e,s)=>{if(e.has(t))throw TypeError("Cannot add the same private member more than once");e instanceof WeakSet?e.add(t):e.set(t,s)},x=(t,e,s,r)=>(P(t,e,"write to private field"),r?r.call(t,s):e.set(t,s),s);var l=(t,e,s)=>(P(t,e,"access private method"),s);import{i as p,m as se,a as ve,c as Se,s as be}from"./assets/handle-menu-buttons-b0526b71.js";import{i as re}from"./assets/vendor-0a7943b3.js";const A="https://energyflow.b.goit.study/api/";var C,u,v;class D{constructor(e){c(this,u);c(this,C,"");x(this,C,e)}async objectGetRequest(e){return l(this,u,v).call(this,e)}async objectCreateRequest(e,s){return l(this,u,v).call(this,e,{method:"POST",body:JSON.stringify(s),headers:{"Content-Type":"application/json"}})}async objectDeleteRequest(e,s){return l(this,u,v).call(this,`${e}/${s}`,{method:"DELETE"})}async ojectUpdateRequest(e,s){return l(this,u,v).call(this,`${e}/${s.id}`,{method:"PUT",body:JSON.stringify(s),headers:{"Content-Type":"application/json"}})}}C=new WeakMap,u=new WeakSet,v=async function(e,s={}){try{const r=await fetch(o(this,C)+e,s);if(!r.ok)throw new Error(`HTTP error, status: ${r.status}`);return r.json()}catch(r){console.log(r.message)}};const Le=document.querySelector(".js-quote"),X="quote",Z="date",Ee=new D(A);Ce();async function Ce(){try{const{quote:t,author:e}=await we();qe({quote:t,author:e})}catch(t){console.error("Error fetching or displaying quote:",t)}}async function we(){const t=localStorage.getItem(Z),e=localStorage.getItem(X),r=new Date().toISOString().split("T")[0];if(t===r&&e){const n=JSON.parse(e);if(n.quote&&n.author)return n}const a=await Te();return localStorage.setItem(Z,r),localStorage.setItem(X,JSON.stringify(a)),a}async function Te(){const{quote:t,author:e}=await Ee.objectGetRequest("quote");return{quote:t,author:e}}function qe({quote:t,author:e}){Le.innerHTML=`
-    <p class="quote-text">${t}</p>
-    <h3 class="quote-author">${e}</h3>
-  `}const ke="Muscles",ae="filters",U="exercises",$e=t=>{let e=8;const s=window.innerWidth;if(s>=1440)e=12;else if(s>=768)switch(t){case ae:e=12;break;case U:e=6;break;default:e=8;break}return e},ne=(t,e={},s=1,r="")=>{let a={};return e&&(a={...e}),t===U&&r&&(a={...a,keyword:r}),a={...a,page:s,limit:$e(ae)},`${t}?${new URLSearchParams(a).toString()}`};async function Re(t,e){const s=new D(A),r=ne("filters",t,e);try{return await s.objectGetRequest(r)}catch{}}function Ae(t=[]){return t.reduce((e,{imgUrl:s,name:r,filter:a})=>e+`
+var pe=Object.defineProperty;var fe=(e,t,s)=>t in e?pe(e,t,{enumerable:!0,configurable:!0,writable:!0,value:s}):e[t]=s;var f=(e,t,s)=>(fe(e,typeof t!="symbol"?t+"":t,s),s),A=(e,t,s)=>{if(!t.has(e))throw TypeError("Cannot "+s)};var i=(e,t,s)=>(A(e,t,"read from private field"),s?s.call(e):t.get(e)),c=(e,t,s)=>{if(t.has(e))throw TypeError("Cannot add the same private member more than once");t instanceof WeakSet?t.add(e):t.set(e,s)},L=(e,t,s,r)=>(A(e,t,"write to private field"),r?r.call(e,s):t.set(e,s),s);var C=(e,t,s)=>(A(e,t,"access private method"),s);import{D as M,B as F,i as d,m as Q,a as me,c as ge,s as he}from"./assets/handle-menu-buttons-ea95ff4c.js";import{i as X}from"./assets/vendor-0a7943b3.js";const xe="Muscles",Z="filters",H="exercises",ve=e=>{let t=8;const s=window.innerWidth;if(s>=1440)t=12;else if(s>=768)switch(e){case Z:t=12;break;case H:t=6;break;default:t=8;break}return t},ee=(e,t={},s=1,r="")=>{let a={};return t&&(a={...t}),e===H&&r&&(a={...a,keyword:r}),a={...a,page:s,limit:ve(Z)},`${e}?${new URLSearchParams(a).toString()}`};async function ye(e,t){const s=new M(F),r=ee("filters",e,t);try{return await s.objectGetRequest(r)}catch{}}function Se(e=[]){return e.reduce((t,{imgUrl:s,name:r,filter:a})=>t+`
       <li class="filter-card" data-filter">
           <img src="${s}" alt="Image of: ${a}"/>
           <div class="filter-label">
@@ -9,13 +6,13 @@ var ye=Object.defineProperty;var xe=(t,e,s)=>e in t?ye(t,e,{enumerable:!0,config
           <p class="filter-type">${a}</p>            
           </div>
       </li>
-      `,"")}const De=document.querySelector(".return-to-the-top-btn"),Ie=document.querySelector(".return-to-the-top-small-btn"),Oe=document.querySelector(".return-to-the-top-big-btn");function Pe(){window.innerWidth<=1440?Ie.classList.remove("visually-hidden"):Oe.classList.remove("visually-hidden")}Pe();De.addEventListener("click",t=>{t.preventDefault(),window.scrollTo({top:0,behavior:"smooth"})});const j=(t,e,s)=>{e.innerHTML="",t.length||console.log("Sorry, there are no data matching your search query. Please, try again!");const r=s(t);e.innerHTML="",e.insertAdjacentHTML("beforeend",r),e.classList.remove("visually-hidden")},Be=(t,e)=>j(e,t,Ae),Me="/dynamics/assets/bi-x-octagon-73f29380.svg",Ne="/dynamics/assets/bi_check-45de7d45.svg";function N(t){re.show({message:t,messageColor:"#fafafb",messageSize:"16px",backgroundColor:"#fc5a5a",position:"topRight",closeOnEscape:!0,close:!0,icon:"Icomoon",iconUrl:`${Me}`,iconColor:"#fafafb"})}function Fe(t){re.show({message:t,messageColor:"#fafafb",messageSize:"16px",backgroundColor:"#82C43C",position:"topRight",closeOnEscape:!0,close:!0,icon:"Icomoon",iconUrl:`${Ne}`,iconColor:"#fafafb"})}async function oe(t={},e=1,s=""){const r=new D(A),a=ne(U,t,e,s);try{return await r.objectGetRequest(a)}catch{}}function He(t=[]){return t.reduce((e,{_id:s,bodyPart:r,equipment:a,time:n,target:g,burnedCalories:I,gifUrl:J,name:K,filter:V,popularity:z,rating:O})=>e+`
+      `,"")}const be=document.querySelector(".return-to-the-top-btn"),Le=document.querySelector(".return-to-the-top-small-btn"),Ce=document.querySelector(".return-to-the-top-big-btn");function Ee(){window.innerWidth<=1440?Le.classList.remove("visually-hidden"):Ce.classList.remove("visually-hidden")}Ee();be.addEventListener("click",e=>{e.preventDefault(),window.scrollTo({top:0,behavior:"smooth"})});const N=(e,t,s)=>{t.innerHTML="",e.length||console.log("Sorry, there are no data matching your search query. Please, try again!");const r=s(e);t.innerHTML="",t.insertAdjacentHTML("beforeend",r),t.classList.remove("visually-hidden")},we=(e,t)=>N(t,e,Se),Te="/dynamics/assets/bi-x-octagon-73f29380.svg",ke="/dynamics/assets/bi_check-45de7d45.svg";function P(e){X.show({message:e,messageColor:"#fafafb",messageSize:"16px",backgroundColor:"#fc5a5a",position:"topRight",closeOnEscape:!0,close:!0,icon:"Icomoon",iconUrl:`${Te}`,iconColor:"#fafafb"})}function qe(e){X.show({message:e,messageColor:"#fafafb",messageSize:"16px",backgroundColor:"#82C43C",position:"topRight",closeOnEscape:!0,close:!0,icon:"Icomoon",iconUrl:`${ke}`,iconColor:"#fafafb"})}async function te(e={},t=1,s=""){const r=new M(F),a=ee(H,e,t,s);try{return await r.objectGetRequest(a)}catch{}}function $e(e=[]){return e.reduce((t,{_id:s,bodyPart:r,equipment:a,time:n,target:p,burnedCalories:q,gifUrl:j,name:Y,filter:V,popularity:J,rating:$})=>t+`
        <li class="exercise-card data-id="${s}">
           <div class="exercice-card-top-line">
             <div class="ex-card-top-left-part">
               <p class="ex-card-workout exercise-param">workout</p>
               <div class="rating-container">
-                <p class="ex-card-rating">${O}</p>
+                <p class="ex-card-rating">${$}</p>
                 <svg
                   class="rating-star-icon"
                   width="18"
@@ -23,7 +20,7 @@ var ye=Object.defineProperty;var xe=(t,e,s)=>e in t?ye(t,e,{enumerable:!0,config
                   aria-label="star icon"
                   fill = "#EEA10C";
                 >
-                  <use href="${p}#icon-star"></use>
+                  <use href="${d}#icon-star"></use>
                 </svg>
               </div>
             </div>
@@ -37,7 +34,7 @@ var ye=Object.defineProperty;var xe=(t,e,s)=>e in t?ye(t,e,{enumerable:!0,config
                   aria-label="arrow icon"
                   stroke="black"
                 >
-                  <use href="${p}#icon-arrow"></use></svg
+                  <use href="${d}#icon-arrow"></use></svg
               ></span>
             </button>
           </div>
@@ -45,10 +42,10 @@ var ye=Object.defineProperty;var xe=(t,e,s)=>e in t?ye(t,e,{enumerable:!0,config
           <div class="ex-card-name-container">
             <div class="runner-icon-container">
               <svg class="runner-icon" width="24" height="24" aria-label="runner icon">
-                <use href="${p}#icon-running-man"></use>
+                <use href="${d}#icon-running-man"></use>
               </svg>
             </div>
-            <h3 class="ex-card-name exercise-param">${K}</h3>
+            <h3 class="ex-card-name exercise-param">${Y}</h3>
           </div>
 
           <div class="ex-card-details">
@@ -56,7 +53,7 @@ var ye=Object.defineProperty;var xe=(t,e,s)=>e in t?ye(t,e,{enumerable:!0,config
               <li class="ex-card-details-item">
                 <p class="ex-card-details-text exercise-param">
                   Burned calories:
-                  <span class="ex-card-text-part">${I}</span>
+                  <span class="ex-card-text-part">${q}</span>
                 </p>
               </li>
               <li class="ex-card-details-item exercise-param">
@@ -68,15 +65,15 @@ var ye=Object.defineProperty;var xe=(t,e,s)=>e in t?ye(t,e,{enumerable:!0,config
               <li class="ex-card-details-item exercise-param">
                 <p class="ex-card-details-text">
                   Target:
-                  <span class="ex-card-text-part">${g}</span>
+                  <span class="ex-card-text-part">${p}</span>
                 </p>
               </li>
             </ul>
           </div>
         </li>
-      `,"")}const ie=(t,e)=>j(e,t,He);var i,w,y,d,R,ce,T,F;class _e{constructor({galleryHandle:e,filter:s,dotsSelector:r,dotDefaultClass:a,dotActiveClass:n}){c(this,R);c(this,T);m(this,"currentPage",1);m(this,"totalPages",0);c(this,i,void 0);c(this,w,10);c(this,y,"pagination-dot");c(this,d,"active-paggination-dot");m(this,"galleryHandle");m(this,"filter",{filter:""});m(this,"keyWord","");this.galleryHandle=e,this.filter=s,x(this,d,n),x(this,y,a),x(this,i,document.querySelector(r)),o(this,i).addEventListener("click",this.onDotsClick.bind(this))}init(e,s,r=0){this.galleryHandle=e,this.totalPages=r>o(this,w)?o(this,w):r,this.filter=s,l(this,R,ce).call(this)}reset(e,s,r=1,a="",n=0){this.galleryHandle=e,this.totalPages=n,this.currentPage=r,this.filter=s,this.keyWord=a,l(this,T,F).call(this)}destroy(){o(this,i).removeEventListener("click",this.onDotsClick.bind(this)),l(this,T,F).call(this)}async updateGallery(){try{await this.galleryHandle(this.filter,this.currentPage,this.keyWord,this.totalPages)}catch(e){console.log(e.message)}}onDotsClick(e){const s=e.target;if(!s.classList.contains(o(this,y)))return;const r=parseInt(s.dataset.ind,10);this.currentPage=r,this.updateDisplayDots(),this.updateGallery()}updateDisplayDots(){const e=o(this,i).querySelectorAll("li");e.forEach(s=>{s.classList.remove(o(this,d))}),e[this.currentPage-1].classList.add(o(this,d))}}i=new WeakMap,w=new WeakMap,y=new WeakMap,d=new WeakMap,R=new WeakSet,ce=function(){o(this,i).innerHTML="";let e="";for(let s=0;s<this.totalPages;s+=1)e+=`
-       <li class="${o(this,y)}" data-ind="${s+1}">${s+1}</li>
-      `;o(this,i).innerHTML=e,o(this,i).children[this.currentPage-1].classList.add(o(this,d))},T=new WeakSet,F=function(){o(this,i).innerHTML=""};const G=t=>{t.innerHTML="",t.classList.add("visually-hidden")};function Ue(t){return`
+      `,"")}const se=(e,t)=>N(t,e,$e);var o,S,g,l,k,re,b,B;class Ae{constructor({galleryHandle:t,filter:s,dotsSelector:r,dotDefaultClass:a,dotActiveClass:n}){c(this,k);c(this,b);f(this,"currentPage",1);f(this,"totalPages",0);c(this,o,void 0);c(this,S,10);c(this,g,"pagination-dot");c(this,l,"active-paggination-dot");f(this,"galleryHandle");f(this,"filter",{filter:""});f(this,"keyWord","");this.galleryHandle=t,this.filter=s,L(this,l,n),L(this,g,a),L(this,o,document.querySelector(r)),i(this,o).addEventListener("click",this.onDotsClick.bind(this))}init(t,s,r=0){this.galleryHandle=t,this.totalPages=r>i(this,S)?i(this,S):r,this.filter=s,C(this,k,re).call(this)}reset(t,s,r=1,a="",n=0){this.galleryHandle=t,this.totalPages=n,this.currentPage=r,this.filter=s,this.keyWord=a,C(this,b,B).call(this)}destroy(){i(this,o).removeEventListener("click",this.onDotsClick.bind(this)),C(this,b,B).call(this)}async updateGallery(){try{await this.galleryHandle(this.filter,this.currentPage,this.keyWord,this.totalPages)}catch(t){console.log(t.message)}}onDotsClick(t){const s=t.target;if(!s.classList.contains(i(this,g)))return;const r=parseInt(s.dataset.ind,10);this.currentPage=r,this.updateDisplayDots(),this.updateGallery()}updateDisplayDots(){const t=i(this,o).querySelectorAll("li");t.forEach(s=>{s.classList.remove(i(this,l))}),t[this.currentPage-1].classList.add(i(this,l))}}o=new WeakMap,S=new WeakMap,g=new WeakMap,l=new WeakMap,k=new WeakSet,re=function(){i(this,o).innerHTML="";let t="";for(let s=0;s<this.totalPages;s+=1)t+=`
+       <li class="${i(this,g)}" data-ind="${s+1}">${s+1}</li>
+      `;i(this,o).innerHTML=t,i(this,o).children[this.currentPage-1].classList.add(i(this,l))},b=new WeakSet,B=function(){i(this,o).innerHTML=""};const _=e=>{e.innerHTML="",e.classList.add("visually-hidden")};function Re(e){return`
   <li class="error-message">
             <p class="ex-no-elements">
               Unfortunately, no <span class="grey-text">results</span> were
@@ -85,8 +82,8 @@ var ye=Object.defineProperty;var xe=(t,e,s)=>e in t?ye(t,e,{enumerable:!0,config
               opportunity to find more options that suit your needs.
             </p>
           </li> 
-  `}const H="filter-button-active";let h={};const q=document.querySelector(".exercise-filter-title"),le=document.querySelector(".filters-buttons"),W=document.querySelector(".exercise-filters-list"),b=document.querySelector(".exercises-gallery"),Y=document.querySelector(".form-for-searching-input"),je=document.querySelector(".searching-input");le.addEventListener("click",Ge);W.addEventListener("click",We);Y.addEventListener("submit",Ve);const f=new _e({galleryHandle:L,dotsSelector:".pagination-dots",dotDefaultClass:"pagination-dot",dotActiveClass:"active-pagination-dot"});function Ge(t){if(t.target.tagName!=="BUTTON")return;t.preventDefault();const e=t.target.dataset.filter;Y.classList.add("visually-hidden"),f.reset(L,e,1,0),Xe(),L({filter:e}),Qe(t.target)}function L(t={filter:ke}){Re(t,f.currentPage).then(e=>{const s=e.results;G(b),Be(W,s),f.init(L,t,e.totalPages)}).catch(e=>{console.log(e.message)})}function We(t){t.preventDefault(),t.target;const e=t.target.closest("li");if(!e)return;const s={},r=e.querySelector(".filter-name"),a=e.querySelector(".filter-type");if(Y.classList.remove("visually-hidden"),a&&a){const n=r.textContent.toLowerCase(),g=a.textContent.toLowerCase();if(g==="")return;s[g]=n}Ze(r.textContent),f.reset(_,s,1,0),_(s)}function _(t){oe(t,f.currentPage).then(e=>{G(W),ie(b,e.results),f.init(_,t,e.totalPages)}).catch(e=>{console.log(e.message),N(`Error fetching images: ${e.message}`)})}function Ye(){h=le.querySelector("BUTTON"),h&&h.classList.add(H)}function Qe(t){h&&h.classList.remove(H),t&&t.classList.add(H),h=t}function Je(){const t=document.querySelector(".filter-button-active"),e=document.querySelector(".chapter-text"),s={};return s[t.dataset.filter.toLowerCase()]=e.textContent.toLowerCase(),s}function Ke(){return je.value.trim().toLowerCase()}function Ve(t){t.preventDefault();const e=Ke(),s=Je();ze(s,e)}function ze(t,e){oe(t,f.currentPage,e).then(s=>{if(!s.results){console.log(s.results),j([],b,Ue);return}return s}).then(s=>{G(b),ie(b,s.results)}).catch(s=>{console.log(s.message)})}function Xe(){q.textContent.indexOf("/")!==-1&&(q.textContent=q.textContent.split("/")[0])}function Ze(t){const e=` / 
-  <span class="chapter-text">${t}</span>`;q.insertAdjacentHTML("beforeend",e)}Ye();L();const et="Escape",tt="modal-backdrop",st=".exercise-close-btn",rt=".exercises-gallery",at="ex-card-start-btn",ue="is-open",nt=".exercise-favorite-btn",ot=".exercise-raiting-btn",de="Remove from",pe="Add to favorites",it=".modal-rating";function ct(t={}){const{_id:e,bodyPart:s,equipment:r,time:a,target:n,burnedCalories:g,gifUrl:I,name:J,filter:K,popularity:V,rating:z,description:O}=t;return`
+  `}const D="filter-button-active";let m={};const E=document.querySelector(".exercise-filter-title"),ae=document.querySelector(".filters-buttons"),U=document.querySelector(".exercise-filters-list"),x=document.querySelector(".exercises-gallery"),G=document.querySelector(".form-for-searching-input"),Ie=document.querySelector(".searching-input");ae.addEventListener("click",Pe);U.addEventListener("click",Be);G.addEventListener("submit",He);const u=new Ae({galleryHandle:v,dotsSelector:".pagination-dots",dotDefaultClass:"pagination-dot",dotActiveClass:"active-pagination-dot"});function Pe(e){if(e.target.tagName!=="BUTTON")return;e.preventDefault();const t=e.target.dataset.filter;G.classList.add("visually-hidden"),u.reset(v,t,1,0),_e(),v({filter:t}),Oe(e.target)}function v(e={filter:xe}){ye(e,u.currentPage).then(t=>{const s=t.results;_(x),we(U,s),u.init(v,e,t.totalPages)}).catch(t=>{console.log(t.message)})}function Be(e){e.preventDefault(),e.target;const t=e.target.closest("li");if(!t)return;const s={},r=t.querySelector(".filter-name"),a=t.querySelector(".filter-type");if(G.classList.remove("visually-hidden"),a&&a){const n=r.textContent.toLowerCase(),p=a.textContent.toLowerCase();if(p==="")return;s[p]=n}Ue(r.textContent),u.reset(O,s,1,0),O(s)}function O(e){te(e,u.currentPage).then(t=>{_(U),se(x,t.results),u.init(O,e,t.totalPages)}).catch(t=>{console.log(t.message),P(`Error fetching images: ${t.message}`)})}function De(){m=ae.querySelector("BUTTON"),m&&m.classList.add(D)}function Oe(e){m&&m.classList.remove(D),e&&e.classList.add(D),m=e}function Me(){const e=document.querySelector(".filter-button-active"),t=document.querySelector(".chapter-text"),s={};return s[e.dataset.filter.toLowerCase()]=t.textContent.toLowerCase(),s}function Fe(){return Ie.value.trim().toLowerCase()}function He(e){e.preventDefault();const t=Fe(),s=Me();Ne(s,t)}function Ne(e,t){te(e,u.currentPage,t).then(s=>{if(!s.results){console.log(s.results),N([],x,Re);return}return s}).then(s=>{_(x),se(x,s.results)}).catch(s=>{console.log(s.message)})}function _e(){E.textContent.indexOf("/")!==-1&&(E.textContent=E.textContent.split("/")[0])}function Ue(e){const t=` / 
+  <span class="chapter-text">${e}</span>`;E.insertAdjacentHTML("beforeend",t)}De();v();const Ge="Escape",We="modal-backdrop",je=".exercise-close-btn",Ye=".exercises-gallery",Ve="ex-card-start-btn",ie="is-open",Je=".exercise-favorite-btn",Ke=".exercise-raiting-btn",ne="Remove from",oe="Add to favorites",ze=".modal-rating";function Qe(e={}){const{_id:t,bodyPart:s,equipment:r,time:a,target:n,burnedCalories:p,gifUrl:q,name:j,filter:Y,popularity:V,rating:J,description:$}=e;return`
         <div class="exercise-window">
           <div class="exercise-container">
             <button class="exercise-close-btn" type="button">
@@ -96,20 +93,20 @@ var ye=Object.defineProperty;var xe=(t,e,s)=>e in t?ye(t,e,{enumerable:!0,config
                 height="28"
                 aria-label="Close icon"
               >
-                <use href="${p}#con-close"></use>
+                <use href="${d}#con-close"></use>
               </svg>
             </button>
             <div class="exercise-image-wrapper">
               <img
-                src="${I}"
+                src="${q}"
                 alt=""
                 class="exercise-image-modal"
               />
             </div>
             <div class="exercise-info-wrapper">
               <div class="exercise-name-and-rating-container">
-                <p class="exercise-name">${J}</p>
-                <p class="modal-rating">${z}</p>
+                <p class="exercise-name">${j}</p>
+                <p class="modal-rating">${J}</p>
               </div>
               <div class="exercise-params-container">
                 <ul class="exercise-params">
@@ -131,24 +128,24 @@ var ye=Object.defineProperty;var xe=(t,e,s)=>e in t?ye(t,e,{enumerable:!0,config
                   </li>
                 </ul>
                 <p class="exercise-calories">Burned calories</p>
-                <p class="exercise-calories-value">${g}/${a} m</p>
+                <p class="exercise-calories-value">${p}/${a} m</p>
               </div>
-              <p class="exercise-description">${O}</p>
+              <p class="exercise-description">${$}</p>
               <div class="exercise-buttons">
                 <button
                   class="exercise-favorite-btn"
                   type="submit"
-                  data="${e}"
+                  data="${t}"
                 >
                   Add to favorites
                   <svg
                   class="exercise-fav-icon"
                   aria-label="Heart icon"
                   >
-                  <use href="${p}#icon-heart"></use>
+                  <use href="${d}#icon-heart"></use>
                   </svg>
                 </button>
-                <button class="exercise-raiting-btn" type="submit" data="${e}">
+                <button class="exercise-raiting-btn" type="submit" data="${t}">
                   Give a rating
                 </button>
               </div>
@@ -156,14 +153,14 @@ var ye=Object.defineProperty;var xe=(t,e,s)=>e in t?ye(t,e,{enumerable:!0,config
           </div>
         </div>   
 
-      `}const lt=(t,e)=>{const s=ct(t);e.innerHTML="",e.insertAdjacentHTML("beforeend",s)};async function ut(t){const e=new D(A);try{return await e.objectGetRequest(`exercises/${t}`)}catch(s){console.log("Error fetching exercise data:",s.message)}}function k(t,e){const s=e.childNodes[0];s.nodeValue=t}function dt(t,e){const r=(JSON.parse(localStorage.getItem("favorites"))||[]).some(a=>a._id===t);k(r?de:pe,e)}const pt="favorites";function ft(t){return{_id:t,name:document.querySelector(".exercise-name").textContent,bodyPart:document.querySelector(".exercise-param-bodypart").textContent,burnedCalories:document.querySelector(".exercise-calories-value").textContent.split("/")[0],target:document.querySelector(".exercise-param-target").textContent}}function gt(t,e){const s=ft(t),r=JSON.parse(localStorage.getItem("favorites"))||[],a=r.findIndex(n=>n.name===s.name);a!==-1?(r.splice(a,1),k(pe,e)):(r.push(s),k(de,e)),localStorage.setItem(pt,JSON.stringify(r))}const mt=(t,e)=>t<e?"#EEA10C":"#7E847F",ht=t=>{const e=parseInt(t.textContent);let s="";for(let r=0;r<5;r++)s+=`
+      `}const Xe=(e,t)=>{const s=Qe(e);t.innerHTML="",t.insertAdjacentHTML("beforeend",s)};async function Ze(e){const t=new M(F);try{return await t.objectGetRequest(`exercises/${e}`)}catch(s){console.log("Error fetching exercise data:",s.message)}}function w(e,t){const s=t.childNodes[0];s.nodeValue=e}function et(e,t){const r=(JSON.parse(localStorage.getItem("favorites"))||[]).some(a=>a._id===e);w(r?ne:oe,t)}const tt="favorites";function st(e){return{_id:e,name:document.querySelector(".exercise-name").textContent,bodyPart:document.querySelector(".exercise-param-bodypart").textContent,burnedCalories:document.querySelector(".exercise-calories-value").textContent.split("/")[0],target:document.querySelector(".exercise-param-target").textContent}}function rt(e,t){const s=st(e),r=JSON.parse(localStorage.getItem("favorites"))||[],a=r.findIndex(n=>n.name===s.name);a!==-1?(r.splice(a,1),w(oe,t)):(r.push(s),w(ne,t)),localStorage.setItem(tt,JSON.stringify(r))}const at=(e,t)=>e<t?"#EEA10C":"#7E847F",it=e=>{const t=parseInt(e.textContent);let s="";for(let r=0;r<5;r++)s+=`
       <svg
         class="exercise-star"
         width="18"
         height="18"
         aria-label="Star icon"
-        fill="${mt(r,e)}"
+        fill="${at(r,t)}"
       >
-        <use href="${p}#icon-star"></use>
-      </svg>`;t.insertAdjacentHTML("beforeend",s)};let B,S,M,$,E=document.querySelector("."+tt);E&&E.addEventListener("click",vt);const ee=document.querySelector(rt);ee&&ee.addEventListener("click",yt);async function yt(t){t.preventDefault();const e=t.target;if(e.classList.contains(at)){$=e.dataset.id;try{const s=await ut($);s&&(lt(s,E),xt())}catch(s){console.log(s.message)}}}function Q(t){window.removeEventListener("keydown",fe),E.classList.remove(ue)}function xt(){E.classList.add(ue),window.addEventListener("keydown",fe),B=document.querySelector(st),B&&B.addEventListener("click",Q),S=document.querySelector(nt),S&&S.addEventListener("click",te),dt($,S);const t=document.querySelector(it);ht(t),M=document.querySelector(ot),M&&M.addEventListener("click",te)}function fe(t){t.code===et&&Q()}function vt(t){t.currentTarget===t.target&&Q()}function te(t){gt($,S)}const ge=document.querySelector(".footer-subscription"),St=ge.querySelector(".input-footer");ge.addEventListener("submit",bt);function bt(t){t.preventDefault();const e=St.value.trim(),s={method:"POST",body:JSON.stringify({email:e}),headers:{"Content-Type":"application/json"}};fetch("https://energyflow.b.goit.study/api/subscription",s).then(r=>{r.status>=200&&r.status<300&&Fe("We're excited to have you on board! 🎉 Thank you for subscribing to new exercises on Energy Flow. You've just taken a significant step towards improving your fitness and well-being."),r.status===409&&N("Subscription already exists")}).catch(r=>{console.log(r),N("Sorry! Something is wrong")})}const me=document.querySelectorAll(".button-home"),he=document.querySelectorAll(".button-favorites");se(me,he);he.forEach(t=>{t.addEventListener("click",e=>{se([t],me)})});ve();const Lt={iconURL:p,iconContainerClass:"social-item-footer",iconLinkClass:"social-link-footer",iconClass:"social-icon"},Et=document.querySelector(".social-list");Se(Et,Lt,be);
+        <use href="${d}#icon-star"></use>
+      </svg>`;e.insertAdjacentHTML("beforeend",s)};let R,h,I,T,y=document.querySelector("."+We);y&&y.addEventListener("click",ct);const K=document.querySelector(Ye);K&&K.addEventListener("click",nt);async function nt(e){e.preventDefault();const t=e.target;if(t.classList.contains(Ve)){T=t.dataset.id;try{const s=await Ze(T);s&&(Xe(s,y),ot())}catch(s){console.log(s.message)}}}function W(e){window.removeEventListener("keydown",ce),y.classList.remove(ie)}function ot(){y.classList.add(ie),window.addEventListener("keydown",ce),R=document.querySelector(je),R&&R.addEventListener("click",W),h=document.querySelector(Je),h&&h.addEventListener("click",z),et(T,h);const e=document.querySelector(ze);it(e),I=document.querySelector(Ke),I&&I.addEventListener("click",z)}function ce(e){e.code===Ge&&W()}function ct(e){e.currentTarget===e.target&&W()}function z(e){rt(T,h)}const le=document.querySelector(".footer-subscription"),lt=le.querySelector(".input-footer");le.addEventListener("submit",dt);function dt(e){e.preventDefault();const t=lt.value.trim(),s={method:"POST",body:JSON.stringify({email:t}),headers:{"Content-Type":"application/json"}};fetch("https://energyflow.b.goit.study/api/subscription",s).then(r=>{r.status>=200&&r.status<300&&qe("We're excited to have you on board! 🎉 Thank you for subscribing to new exercises on Energy Flow. You've just taken a significant step towards improving your fitness and well-being."),r.status===409&&P("Subscription already exists")}).catch(r=>{console.log(r),P("Sorry! Something is wrong")})}const de=document.querySelectorAll(".button-home"),ue=document.querySelectorAll(".button-favorites");Q(de,ue);ue.forEach(e=>{e.addEventListener("click",t=>{Q([e],de)})});me();const ut={iconURL:d,iconContainerClass:"social-item-footer",iconLinkClass:"social-link-footer",iconClass:"social-icon"},pt=document.querySelector(".social-list");ge(pt,ut,he);
 //# sourceMappingURL=commonHelpers2.js.map

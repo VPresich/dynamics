@@ -1,7 +1,4 @@
-import{m as l,a as g}from"./assets/handle-menu-buttons-b0526b71.js";import{a as d}from"./assets/vendor-0a7943b3.js";const p=document.querySelector(".favorites-quote-day-title"),y=d.create({baseURL:"https://energyflow.b.goit.study/api"});y.get("/quote ").then(e=>{p.insertAdjacentHTML("beforeend",` <p class="favorites-quote-day-text">
-                ${e.data.quote}
-                </p>
-                    <p class="favorites-quote-day-text-autor">${e.data.author}</p>`)}).catch(e=>console.log(e));const i=document.querySelector(".favorites-list-exercises-likes");d.create({baseURL:"https://energyflow.b.goit.study/api"});const n=[];if(localStorage.length>2)try{n.push(JSON.parse(localStorage.getItem("favorites")));const e=n.flatMap(s=>s),o=m(e);i.insertAdjacentHTML("beforeend",o),e.map(s=>console.log(s._id)),i.addEventListener("click",s=>{const t=s.target.id;t&&(document.querySelector(`.list-exercises-favorites[data-listId="${t}"]`).remove(),e.map(a=>{if(a._id===t){const c=e.indexOf(a);e.splice(c,1),localStorage.setItem("favorites",JSON.stringify(e)),e.length||(localStorage.removeItem("favorites"),i.insertAdjacentHTML("beforeend",`<div class="favortes-no-exercises">
+import{m as l,a as u}from"./assets/handle-menu-buttons-ea95ff4c.js";import{a as g}from"./assets/vendor-0a7943b3.js";const a=document.querySelector(".favorites-list-exercises-likes");g.create({baseURL:"https://energyflow.b.goit.study/api"});const n=[];if(localStorage.length>2)try{n.push(JSON.parse(localStorage.getItem("favorites")));const e=n.flatMap(s=>s),o=m(e);a.insertAdjacentHTML("beforeend",o),e.map(s=>console.log(s._id)),a.addEventListener("click",s=>{const t=s.target.id;t&&(document.querySelector(`.list-exercises-favorites[data-listId="${t}"]`).remove(),e.map(r=>{if(r._id===t){const c=e.indexOf(r);e.splice(c,1),localStorage.setItem("favorites",JSON.stringify(e)),e.length||(localStorage.removeItem("favorites"),a.insertAdjacentHTML("beforeend",`<div class="favortes-no-exercises">
                   <div class="favortes-no-exercises-found-img">
                   
                       </div>
@@ -11,7 +8,7 @@ import{m as l,a as g}from"./assets/handle-menu-buttons-b0526b71.js";import{a as 
                     yet. To get started, you can add exercises that you like to your
                     favorites for easier access in the future.
                   </p>
-                </div>`))}}))})}catch{console.log("Parse form storage error")}else i.insertAdjacentHTML("beforeend",`<div class="favortes-no-exercises">
+                </div>`))}}))})}catch{console.log("Parse form storage error")}else a.insertAdjacentHTML("beforeend",`<div class="favortes-no-exercises">
     <div class="favortes-no-exercises-found-img">
     
         </div>
@@ -21,13 +18,13 @@ import{m as l,a as g}from"./assets/handle-menu-buttons-b0526b71.js";import{a as 
       yet. To get started, you can add exercises that you like to your
       favorites for easier access in the future.
     </p>
-  </div>`);function m(e){return e.reduce((s,{bodyPart:t,burnedCalories:a,name:c,target:u,_id:r})=>s+` <li data-listId="${r}" class="list-exercises-favorites">
+  </div>`);function m(e){return e.reduce((s,{bodyPart:t,burnedCalories:r,name:c,target:f,_id:i})=>s+` <li data-listId="${i}" class="list-exercises-favorites">
             <div class="list-exercises-favorites-category">
                 <div>
                     <p class="exercises-favorites-name-category">WORKOUT</p>
-                    <button id="${r}" class="favorites-button-remove" type="button">
-                    <svg id="${r}" class="favorites-icon-trash">
-                    <use id="${r}"
+                    <button id="${i}" class="favorites-button-remove" type="button">
+                    <svg id="${i}" class="favorites-icon-trash">
+                    <use id="${i}"
                         xlink:href="./img/icons/symbols.svg#icon-trash-favotites"
                     ></use>
                 </svg>
@@ -58,7 +55,7 @@ import{m as l,a as g}from"./assets/handle-menu-buttons-b0526b71.js";import{a as 
                     <li class="favorites-list-characteristic">
                         <span class="favorites-characteristic-criteria"
                             >Burned calories: </span
-                        >${a} / 3 min
+                        >${r} / 3 min
                     </li>
                     <li class="favorites-list-characteristic">
                         <span class="favorites-characteristic-criteria"
@@ -68,9 +65,9 @@ import{m as l,a as g}from"./assets/handle-menu-buttons-b0526b71.js";import{a as 
                     <li class="favorites-list-characteristic">
                         <span class="favorites-characteristic-criteria"
                             >Target: </span
-                        >${u}
+                        >${f}
                     </li>
                 </ul>
             </div>
-        </li>`,"")}const v=document.querySelectorAll(".button-home"),f=document.querySelectorAll(".button-favorites");l(f,v);f.forEach(e=>{e.addEventListener("click",o=>{l([e],v)})});g();
+        </li>`,"")}const v=document.querySelectorAll(".button-home"),d=document.querySelectorAll(".button-favorites");l(d,v);d.forEach(e=>{e.addEventListener("click",o=>{l([e],v)})});u();
 //# sourceMappingURL=commonHelpers.js.map
