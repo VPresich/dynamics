@@ -8,18 +8,3 @@ function createIconsList(iconsContainer, iconAttr, icons = []) {
 
 export default createIconsList;
 
-//example
-// import socialIconsArr from '../icons/icons-list';
-// import iconURL from '../../img/icons/symbols.svg';
-// import createIconsList
-// const iconAttr = { //ваші класи прописати
-//     iconURL: iconURL,
-//     iconContainerClass:'social-item-footer',
-//     iconLinkClass:'social-link-footer',
-//     iconClass:'social-icon',
-// }
-
-// const container = document.querySelector('.social-list-header');
-// console.log(container);
-// createIconsList(container, iconAttr, socialIconsArr);
-
