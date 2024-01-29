@@ -15,7 +15,7 @@
 // ];
 import iconURL from '../../img/icons/symbols.svg';
 
-function exercisesGalleryMarkup(filters = []) {
+function exercisesGalleryMarkup(filters = [], yourPart) {
   return filters.reduce(
     (
       strMarkup,
@@ -39,18 +39,7 @@ function exercisesGalleryMarkup(filters = []) {
           <div class="exercice-card-top-line">
             <div class="ex-card-top-left-part">
               <p class="ex-card-workout exercise-param">workout</p>
-              <div class="rating-container">
-                <p class="ex-card-rating">${rating}</p>
-                <svg
-                  class="rating-star-icon"
-                  width="18"
-                  height="18"
-                  aria-label="star icon"
-                  fill = "#EEA10C";
-                >
-                  <use href="${iconURL}#icon-star"></use>
-                </svg>
-              </div>
+              ${yourPart(rating, iconURL)}
             </div>
             <button type="submit" class="ex-card-start-btn" data-id="${_id}">
               Start
