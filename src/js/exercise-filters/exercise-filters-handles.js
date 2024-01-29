@@ -128,6 +128,11 @@ function formReset() {
 function onSearchSubmit(event) {
   event.preventDefault();
   const searchQuery = getSearch();
+  if (searchQuery === '')
+  {
+    createOkMsg(`Please fill in the search field`);
+    return;
+  };
   const filter = getFilter();
   pagination.reset(exercisesHandler, filter, 1, searchQuery, 0);
   searchHandler(filter, searchQuery);
