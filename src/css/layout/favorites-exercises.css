@@ -154,7 +154,7 @@
 @media screen and (min-width: 768px) {
   .conteiner-favorites-exercises {
     margin-top: 16px;
-    padding: 64px 48px;
+    padding: 64px 16px 64px 48px;
     border-radius: 50px;
   }
 
@@ -193,6 +193,7 @@
 
     max-height: 720px;
     overflow-y: auto;
+    padding-right: 16px;
   }
 
   .favorites-list-exercises-likes::-webkit-scrollbar {
