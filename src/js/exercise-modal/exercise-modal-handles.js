@@ -61,7 +61,7 @@ function openModalWindow() {
   renderRatingStars(ratingContRef);
 
   ratingBtn = document.querySelector(SELECTOR_RATING);
-  ratingBtn && ratingBtn.addEventListener('click', onFavoritsBtn);
+  // ratingBtn && ratingBtn.addEventListener('click', onFavoritsBtn);
 }
 
 function onWindowKeydown(event) {
