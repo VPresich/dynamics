@@ -51,7 +51,8 @@ function filtersHandler(filterValue = { filter: DEFAULT_FILTER }) {
       const filters = data.results;
       galleryDelete(galleryRef);
       exerciseFiltersCreate(filtersListRef, filters);
-      pagination.init(filtersHandler, filterValue, data.totalPages);
+      const totalPages = data.totalPages ? data.totalPages : 0;
+      pagination.init(filtersHandler, filterValue, totalPages);
     })
     .catch(error => {
       console.log(error.message);
@@ -86,7 +87,8 @@ function exercisesHandler(filterParam) {
     .then(data => {
       galleryDelete(filtersListRef);
       exercisesGalleryCreate(galleryRef, data.results);
-      pagination.init(exercisesHandler, filterParam, data.totalPages);
+      const totalPages = data.totalPages ? data.totalPages : 0;
+      pagination.init(exercisesHandler, filterParam, totalPages);
     })
     .catch(error => {
       console.log(error.message);
@@ -127,19 +129,20 @@ function onSearchSubmit(event) {
   event.preventDefault();
   const searchQuery = getSearch();
   const filter = getFilter();
-  // formReset();
+  pagination.reset(exercisesHandler, filter, 1, searchQuery, 0);
   searchHandler(filter, searchQuery);
 }
 
 function searchHandler(filterParam, searchQuery) {
   getExercisesData(filterParam, pagination.currentPage, searchQuery)
     .then(data => {
-      if (data.results.length===0) {
+      if (data.results.length === 0) {
         galleryCreate([], galleryRef, handleNoElements);
-      }
-      else
-        galleryCreate(data.results, galleryRef, exercisesGalleryMarkup);
+      } else galleryCreate(data.results, galleryRef, exercisesGalleryMarkup);
+      const totalPages = data.totalPages ? data.totalPages : 0;
+      pagination.init(exercisesHandler, filterParam, totalPages);
     })
+
     .catch(error => {
       console.log(error.message);
     });
