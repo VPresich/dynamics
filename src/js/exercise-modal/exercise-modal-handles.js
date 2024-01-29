@@ -14,7 +14,7 @@ import exerciseModalCreate from './exercise-modal-create';
 import getExerciseById from './exercise-modal-get-id';
 import checkFavoriteStatus from './check-button-status.js';
 import addOrRemoveFromFavorites from './add-remove-to-favorites.js';
-import renderRatingStars from './exercise-modal-render-stars.js';
+import renderRatingStars from './render-stars.js';
 
 let closeBtn;
 let favoritsBtn;
