@@ -1,4 +1,4 @@
-import{e as f,m as c,a as u}from"./assets/handle-menu-buttons-6a804bbc.js";function m(e,s,t){return`<div><button data-id="${t}" class="favorites-button-remove" type="button">
+import{e as f,m as c,a as u}from"./assets/handle-menu-buttons-ce4740b3.js";function m(e,s,t){return`<div><button data-id="${t}" class="favorites-button-remove" type="button">
   <svg data-id="${t}" class="favorites-icon-trash">
   <use href="${s}#icon-trash-favotites"></use>
 </svg>
