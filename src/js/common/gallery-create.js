@@ -1,14 +1,15 @@
 import scrollingDown from './scroll-window';
 const galleryCreate = (data, galleryRef, markupFn) => {
-  galleryRef.innerHTML = '';
+  galleryRef.textContent = "";
+  console.log(`111`);
+  galleryRef.classList.add('visually-hidden');
+  let strMarkup = '';
   if (!data.length) {
-    //TODO Default image
-    console.log(
-      'Sorry, there are no data matching your search query. Please, try again!'
-    );
+    strMarkup = markupFn();
   }
-  const strMarkup = markupFn(data);
-  galleryRef.innerHTML = '';
+  else {
+    strMarkup = markupFn(data);   
+  }
   galleryRef.insertAdjacentHTML('beforeend', strMarkup);
   galleryRef.classList.remove('visually-hidden');
   //   scrollingDown('.exercise-filters-list', '.filter-card', 40);
