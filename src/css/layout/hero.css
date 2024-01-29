@@ -1,3 +1,7 @@
+.hero{
+  margin-bottom: 20px;
+}
+
 .hero-section {
   padding-top: 8px;
 }
@@ -77,6 +81,7 @@
     padding-top: 16px;
   }
   .hero {
+    margin-bottom: 16px;
     height: 900px;
     display: grid;
     grid-template-columns: 30% 70%;
