@@ -1,8 +1,8 @@
-import{e as f,m as c,a as u}from"./assets/handle-menu-buttons-ce4740b3.js";function m(e,s,t){return`<div><button data-id="${t}" class="favorites-button-remove" type="button">
+import{K as v,e as u,m as i,a as f}from"./assets/handle-menu-buttons-6e1c0738.js";function g(e,s,t){return`<div><button data-id="${t}" class="favorites-button-remove" type="button">
   <svg data-id="${t}" class="favorites-icon-trash">
   <use href="${s}#icon-trash-favotites"></use>
 </svg>
-  </button></div>`}function i(){return`<div class="favortes-no-exercises">
+  </button></div>`}function m(){return`<div class="favortes-no-exercises">
   <div class="favortes-no-exercises-found-img">
       </div>
   <p class="favortes-no-exercises-found-text">
@@ -10,5 +10,5 @@ import{e as f,m as c,a as u}from"./assets/handle-menu-buttons-ce4740b3.js";funct
     yet. To get started, you can add exercises that you like to your
     favorites for easier access in the future.
   </p>
-</div>`}const o=document.querySelector(".favorites-list-exercises-likes"),n=[];if(localStorage.length>2)try{n.push(JSON.parse(localStorage.getItem("favorites")));const e=n.flatMap(t=>t),s=f(e,m);o.insertAdjacentHTML("beforeend",s),o.addEventListener("click",t=>{const r=t.target.dataset.id;r&&(document.querySelector(`.exercise-card[data-id="${r}"]`).remove(),e.map(a=>{if(a._id===r){const v=e.indexOf(a);e.splice(v,1),localStorage.setItem("favorites",JSON.stringify(e)),e.length||(localStorage.removeItem("favorites"),o.insertAdjacentHTML("beforeend",i()))}}))})}catch(e){console.log(e.message)}else o.insertAdjacentHTML("beforeend",i());const d=document.querySelectorAll(".button-home"),l=document.querySelectorAll(".button-favorites");c(l,d);l.forEach(e=>{e.addEventListener("click",s=>{c([e],d)})});u();
+</div>`}function x(e,s){document.querySelector(`.exercise-card[data-id="${s}"]`).remove(),e.map(t=>{if(t._id===s){const o=e.indexOf(t);e.splice(o,1),localStorage.setItem("favorites",JSON.stringify(e)),e.length||(localStorage.removeItem(KEY_LOCALSTORAGE),favoriteslistExercises.insertAdjacentHTML("beforeend",getFavortesNoExercises()))}})}const a=document.querySelector(".favorites-list-exercises-likes"),r=[];if(localStorage.length>2)try{r.push(JSON.parse(localStorage.getItem(v)));const e=r.flatMap(t=>t),s=u(e,g);a.insertAdjacentHTML("beforeend",s),a.addEventListener("click",t=>{const o="favorites-icon-trash",l=t.target,d=t.target.dataset.id;l.getAttribute("class")===o&&x(e,d)})}catch(e){console.log(e.message)}else a.insertAdjacentHTML("beforeend",m());const c=document.querySelectorAll(".button-home"),n=document.querySelectorAll(".button-favorites");i(n,c);n.forEach(e=>{e.addEventListener("click",s=>{i([e],c)})});f();
 //# sourceMappingURL=commonHelpers.js.map
