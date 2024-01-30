@@ -146,19 +146,17 @@
   color: var(--accent-color);
   font-weight: 500;
 }
-
+.exercises-gallery {
+  row-gap: 20px;
+}
+.exercise-card {
+  width: 295px;
+  height: 165px;
+  padding: 16px;
+  border-radius: 15px;
+  background: #fff;
+}
 @media screen and (min-width: 375px) {
-  .exercises-gallery {
-    row-gap: 20px;
-  }
-
-  .exercise-card {
-    width: 295px;
-    height: 165px;
-    padding: 16px;
-    border-radius: 15px;
-    background: #fff;
-  }
 }
 
 @media screen and (min-width: 768px) {
