@@ -8,10 +8,16 @@ footerForm.addEventListener('submit', handleSubscription);
 function handleSubscription(event) {
   event.preventDefault();
 
+  const emailPattern = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
   const footerEmailValue = footerInput.value.trim();
-  const emailPattern = '[w-]+(.[w-]+)*@([w-]+.)+[a-zA-Z]{2,7}';
-  if (!emailPattern) {
+  if (!footerEmailValue) {
+    createErrMsg('Please enter email');
+    return;
+  }
+  if (!emailPattern.test(footerEmailValue)) {
     createErrMsg('Please enter a valid email');
+    footerForm.reset();
+    return;
   }
 
   const options = {
@@ -36,5 +42,8 @@ function handleSubscription(event) {
     .catch(error => {
       console.log(error);
       createErrMsg('Sorry! Something is wrong');
+    })
+    .finally(() => {
+      footerForm.reset();
     });
 }
