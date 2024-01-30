@@ -7,6 +7,11 @@ import {
   SELECTOR_RATING_FORM_INPUT_COMMENT,
 } from './constants';
 
+import {
+  onCloseBtn,
+  onGalleryClick,
+} from '../exercise-modal/exercise-modal-handles';
+
 import ratingFormCreate from './rating-form-create';
 import ratingFormCreateStars from './rating-form-create-stars';
 import patchExerciseRating from './patch-exercise-rating';
@@ -79,42 +84,53 @@ function onSendRating(event) {
   event.preventDefault();
 
   if (!exerciseRating) {
-    createErrMsg("Please select a rating");
-    return
+    createErrMsg('Please select a rating');
+    return;
   }
 
   if (!email) {
-    createErrMsg("Please enter a email");
-    return
-  } 
+    createErrMsg('Please enter a email');
+    return;
+  }
 
   if (!validateEmail(email)) {
-    createErrMsg("please enter a valid email address");
-    return
-  } 
+    createErrMsg('please enter a valid email address');
+    return;
+  }
 
   let data = {
     id: exerciseId,
     rate: Number(exerciseRating),
     email,
   };
+
   patchExerciseRating(data)
     .then(res => {
-      console.log(res);
       createOkMsg('Success');
+      clearFormData();
+      onCloseBtn();
+      console.log(res);
+      galleryRef &&
+        galleryRef
+          .querySelectorAll(`button,[data-id="${exerciseId}"]`)[0]
+          .click();
     })
     .catch(error => {
       console.log(error);
-      createErrMsg('err');
+      return createErrMsg('err');
     });
-  galleryRef &&
-    galleryRef.querySelectorAll(`[data-id="${exerciseId}"]`)[0].click();
 }
 
-const validateEmail = (email) => {
+const validateEmail = email => {
   return String(email)
     .toLowerCase()
     .match(
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     );
 };
+
+function clearFormData() {
+  exerciseRating = 0;
+  email = '';
+  comment = '';
+}
