@@ -142,9 +142,8 @@ var R=(e,t,s)=>{if(!t.has(e))throw TypeError("Cannot "+s)};var B=(e,t,s)=>(R(e,t
       width="24"
       height="24"
       aria-label="close icon"
-      stroke="rgba(27, 27, 27, 1)"
     >
-      <use href="${o}#icon-close"></use>
+      <use href="${o}"></use>
     </svg>
   </button>
   <div class="rating-stars-container">
@@ -251,4 +250,4 @@ var R=(e,t,s)=>{if(!t.has(e))throw TypeError("Cannot "+s)};var B=(e,t,s)=>(R(e,t
             </a>
         </li>
       `,"")}function H(e,t,s=[]){const a=We(t,s);e.innerHTML="",e.insertAdjacentHTML("beforeend",a)}const nt=()=>{const e={iconURL:o,iconContainerClass:"social-list-item",iconLinkClass:"social-list-link",iconClass:"social-list-icon"},t=document.querySelector(".social-list-header");H(t,e,G);const s={iconURL:o,iconContainerClass:"social-list-item",iconLinkClass:"social-list-link-menu",iconClass:"social-list-icon-menu"},a=document.querySelector(".social-list-menu");H(a,s,G)},Ze=document.querySelector(".js-open-menu-btn"),ee=document.querySelector(".js-mobile-menu"),Xe=document.querySelector(".js-mobile-menu-close-btn"),te="is-open";Ze.addEventListener("click",()=>{ee.classList.add(te)});Xe.addEventListener("click",()=>{ee.classList.remove(te)});function et(e){e.classList.add("active-btn"),e.classList.remove("btn")}function tt(e){e.classList.remove("active-btn"),e.classList.add("btn")}function ot(e,t){Array.from(e).forEach(s=>{et(s)}),Array.from(t).forEach(s=>{tt(s)})}export{I as B,_ as D,le as K,nt as a,Ne as b,x as c,H as d,rt as e,o as i,ot as m,Ke as o,G as s};
-//# sourceMappingURL=handle-menu-buttons-cdac8411.js.map
+//# sourceMappingURL=handle-menu-buttons-ddf528a5.js.map
