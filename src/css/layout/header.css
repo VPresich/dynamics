@@ -32,37 +32,37 @@
   z-index: 999;
   top: 40px;
 }
+.logotype {
+  color: var(--secondary-color);
+  font-size: 16px;
+  letter-spacing: -0.32px;
+  font-weight: 700;
+  line-height: 1.13;
+}
+
+.nav {
+  display: none;
+}
+
+.social-list-header {
+  display: none;
+}
+
+.button-align-justify {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  height: fit-content;
+}
+
+.header-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
 
 @media screen and (min-width: 375px) {
-  .logotype {
-    color: var(--secondary-color);
-    font-size: 16px;
-    letter-spacing: -0.32px;
-    font-weight: 700;
-    line-height: 1.13;
-  }
-
-  .nav {
-    display: none;
-  }
-
-  .social-list-header {
-    display: none;
-  }
-
-  .button-align-justify {
-    border: none;
-    background-color: transparent;
-    padding: 0;
-    height: fit-content;
-  }
-
-  .header-page {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-  }
 }
 
 @media screen and (min-width: 768px) {
