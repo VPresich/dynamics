@@ -4,7 +4,6 @@ function ratingFormMarkup(filters = {}) {
   const { exerciseRating } = filters;
 
   return `
-  <div class="rating-form-container">
   <div class="rating-form-content">
   <button type="button" class="close-rating-form-btn rating-form-btn">
     <svg
@@ -12,9 +11,8 @@ function ratingFormMarkup(filters = {}) {
       width="24"
       height="24"
       aria-label="close icon"
-      stroke="rgba(27, 27, 27, 1)"
     >
-      <use href="${iconURL}#icon-x"></use>
+      <use href="${iconURL}"></use>
     </svg>
   </button>
   <div class="rating-stars-container">
@@ -38,7 +36,6 @@ function ratingFormMarkup(filters = {}) {
     ></textarea>
     <button class="rating-form-send-btn">Send</button>
   </form>
-</div>
 </div>
       `;
 }
