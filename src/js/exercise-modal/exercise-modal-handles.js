@@ -28,7 +28,7 @@ modalBackdrop && modalBackdrop.addEventListener('click', onBackdropClick);
 const galleryRef = document.querySelector(SELECTOR_GALLERY);
 galleryRef && galleryRef.addEventListener('click', onGalleryClick);
 
-async function onGalleryClick(event) {
+export async function onGalleryClick(event) {
   event.preventDefault();
   const targetRef = event.target;
   if (!targetRef.classList.contains(CLASS_GALLERYSTART)) return;
@@ -48,7 +48,7 @@ async function onGalleryClick(event) {
   }
 }
 
-function onCloseBtn(event) {
+export function onCloseBtn(event) {
   window.removeEventListener('keydown', onWindowKeydown);
   modalBackdrop.classList.remove(MODAL_VISIBILITY);
 }
@@ -69,7 +69,7 @@ function openModalWindow() {
   ratingBtn && ratingBtn.addEventListener('click', onRatingBtn);
 }
 
-export function onWindowKeydown(event) {
+function onWindowKeydown(event) {
   if (event.code === KEY_CODE_ESC) {
     onCloseBtn(event);
   }
