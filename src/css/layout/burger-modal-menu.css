@@ -41,13 +41,11 @@
 
 .nav-menu {
   display: flex;
-  /* padding-top: 400px; */
   align-items: center;
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
   width: 96px;
-  /* height: 76px; */
   gap: 16px;
 }
 .nav-item {
