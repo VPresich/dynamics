@@ -1,3 +1,5 @@
+import icon from '../../img/icons/symbols.svg';
+
 function ratingFormMarkupStars(filters = {}) {
   const { exerciseRating } = filters;
 
@@ -15,9 +17,9 @@ function ratingFormMarkupStars(filters = {}) {
       height="24"
       aria-label="star icon"
     >
-      <use href="../img/icons/symbols.svg#icon-star" fill="${
-        exerciseRating >= 1 && '#EEA10C'
-      }"></use>
+      <use href="${icon}#icon-star" fill="${
+    exerciseRating >= 1 && '#EEA10C'
+  }"></use>
     </svg>
   </button>
   <button
@@ -31,9 +33,9 @@ function ratingFormMarkupStars(filters = {}) {
       height="24"
       aria-label="star icon"
     >
-      <use href="../img/icons/symbols.svg#icon-star" fill="${
-        exerciseRating >= 2 && '#EEA10C'
-      }"></use>
+      <use href="${icon}#icon-star"  fill="${
+    exerciseRating >= 2 && '#EEA10C'
+  }"></use>
     </svg>
   </button>
   <button
@@ -47,9 +49,9 @@ function ratingFormMarkupStars(filters = {}) {
       height="24"
       aria-label="star icon"
     >
-      <use href="../img/icons/symbols.svg#icon-star" fill="${
-        exerciseRating >= 3 && '#EEA10C'
-      }"></use>
+      <use href="${icon}#icon-star"  fill="${
+    exerciseRating >= 3 && '#EEA10C'
+  }"></use>
     </svg>
   </button>
   <button
@@ -63,9 +65,9 @@ function ratingFormMarkupStars(filters = {}) {
       height="24"
       aria-label="star icon"
     >
-      <use href="../img/icons/symbols.svg#icon-star" fill="${
-        exerciseRating >= 4 && '#EEA10C'
-      }"></use>
+      <use href="${icon}#icon-star" fill="${
+    exerciseRating >= 4 && '#EEA10C'
+  }"></use>
     </svg>
   </button>
   <button
@@ -79,9 +81,9 @@ function ratingFormMarkupStars(filters = {}) {
       height="24"
       aria-label="star icon"
     >
-      <use href="../img/icons/symbols.svg#icon-star" fill="${
-        exerciseRating >= 5 && '#EEA10C'
-      }"></use>
+      <use href="${icon}#icon-star" fill="${
+    exerciseRating >= 5 && '#EEA10C'
+  }"></use>
     </svg>
   </button>
       `;
