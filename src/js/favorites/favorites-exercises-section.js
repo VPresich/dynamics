@@ -3,6 +3,7 @@ import iconURL from '../../img/icons/symbols.svg';
 import getRemovButton from './favorites-button-remove';
 import getFavortesNoExercises from './favorites-not-exercises';
 import { KEY_LOCALSTORAGE } from '../common/localstorage/constants';
+import removFavoritExsercises from './favorites-remove-exercises';
 
 const favoriteslistExercises = document.querySelector(
   '.favorites-list-exercises-likes'
@@ -35,27 +36,7 @@ if (localStorage.length > 2) {
       const srcClassDelete = attributeDelete.getAttribute('class');
 
       if (srcClassDelete === classDelet) {
-        document
-          .querySelector(`.exercise-card[data-id="${deleteId}"]`)
-          .remove();
-        newArr.map(res => {
-          if (res._id === deleteId) {
-            const csdvs = newArr.indexOf(res);
-
-            newArr.splice(csdvs, 1);
-
-            localStorage.setItem('favorites', JSON.stringify(newArr));
-
-            if (!newArr.length) {
-              localStorage.removeItem(KEY_LOCALSTORAGE);
-
-              favoriteslistExercises.insertAdjacentHTML(
-                'beforeend',
-                getFavortesNoExercises()
-              );
-            }
-          }
-        });
+        removFavoritExsercises(newArr, deleteId);
       }
     });
   } catch (error) {
