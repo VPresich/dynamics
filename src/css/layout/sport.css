@@ -144,6 +144,6 @@
   screen and (min-resolution: 2dppx) and (min-width: 1440px),
   screen and (min-device-pixel-ratio: 2) and (min-width: 1440px) {
   .sport-img {
-    background-image: url(../../img/sport/sport-desktop@2x.jpg) no-repeat;
+    background-image: url(../../img/sport/sport-desktop@2x.jpg);
   }
 }
