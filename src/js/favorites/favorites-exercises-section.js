@@ -4,6 +4,7 @@ import getRemovButton from './favorites-button-remove';
 import getFavortesNoExercises from './favorites-not-exercises';
 import { KEY_LOCALSTORAGE } from '../common/localstorage/constants';
 import removFavoritExsercises from './favorites-remove-exercises';
+import { onGalleryClick } from '../exercise-modal/exercise-modal-handles';
 
 const favoriteslistExercises = document.querySelector(
   '.favorites-list-exercises-likes'
@@ -28,6 +29,10 @@ if (localStorage.length > 2) {
     );
 
     favoriteslistExercises.addEventListener('click', event => {
+      if (event.target.classList.contains('gallery-start')) {
+        onGalleryClick(event);
+        return;
+      }
       const classDelet = 'favorites-icon-trash';
 
       const attributeDelete = event.target;
