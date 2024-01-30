@@ -1,4 +1,4 @@
-import{K as r,e as u,o as f,m as c,a as v}from"./assets/handle-menu-buttons-c0652192.js";import"./assets/vendor-32231325.js";function g(e,s,t){return`<div><button data-id="${t}" class="favorites-button-remove" type="button">
+import{K as r,e as u,o as f,m as c,a as v}from"./assets/handle-menu-buttons-ddf528a5.js";import"./assets/vendor-32231325.js";function g(e,s,t){return`<div><button data-id="${t}" class="favorites-button-remove" type="button">
   <svg data-id="${t}" class="favorites-icon-trash">
   <use href="${s}#icon-trash-favotites"></use>
 </svg>
