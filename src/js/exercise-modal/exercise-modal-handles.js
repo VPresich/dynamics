@@ -33,11 +33,6 @@ export async function onGalleryClick(event) {
   const targetRef = event.target;
   if (!targetRef.classList.contains(CLASS_GALLERYSTART)) return;
   exerciseId = targetRef.dataset.id;
-  if (targetRef.nodeName !== 'BUTTON') {
-    let closestBtn = targetRef.closest('button');
-    console.log(closestBtn.dataset.id);
-    exerciseId = closestBtn.dataset.id;
-  }
   try {
     const formData = await getExerciseById(exerciseId);
     if (formData) {
