@@ -2,6 +2,7 @@ import exercisesGalleryMarkup from '../exercises-gallery/exercises-gallery-marku
 import iconURL from '../../img/icons/symbols.svg';
 import getRemovButton from './favorites-button-remove';
 import getFavortesNoExercises from './favorites-not-exercises';
+import { KEY_LOCALSTORAGE } from '../common/localstorage/constants';
 
 const favoriteslistExercises = document.querySelector(
   '.favorites-list-exercises-likes'
@@ -11,7 +12,7 @@ const newArrLocalStorage = [];
 
 if (localStorage.length > 2) {
   try {
-    newArrLocalStorage.push(JSON.parse(localStorage.getItem('favorites')));
+    newArrLocalStorage.push(JSON.parse(localStorage.getItem(KEY_LOCALSTORAGE)));
 
     const newArr = newArrLocalStorage.flatMap(res => res);
 
@@ -26,9 +27,14 @@ if (localStorage.length > 2) {
     );
 
     favoriteslistExercises.addEventListener('click', event => {
+      const classDelet = 'favorites-icon-trash';
+
+      const attributeDelete = event.target;
       const deleteId = event.target.dataset.id;
 
-      if (deleteId) {
+      const srcClassDelete = attributeDelete.getAttribute('class');
+
+      if (srcClassDelete === classDelet) {
         document
           .querySelector(`.exercise-card[data-id="${deleteId}"]`)
           .remove();
@@ -41,7 +47,7 @@ if (localStorage.length > 2) {
             localStorage.setItem('favorites', JSON.stringify(newArr));
 
             if (!newArr.length) {
-              localStorage.removeItem('favorites');
+              localStorage.removeItem(KEY_LOCALSTORAGE);
 
               favoriteslistExercises.insertAdjacentHTML(
                 'beforeend',
@@ -73,68 +79,3 @@ if (localStorage.length > 2) {
 // buttonCloseMenuRef.addEventListener('click', () => {
 //   mobileMenuRef.classList.remove('is-open');
 // });
-
-// function renderElement(params) {
-//   const render = params.reduce(
-//     (html, { bodyPart, burnedCalories, name, target, _id }) =>
-//       html +
-//       ` <li data-listId="${_id}" class="list-exercises-favorites">
-//             <div class="list-exercises-favorites-category">
-//                 <div>
-//                     <p class="exercises-favorites-name-category">WORKOUT</p>
-//                     <button id="${_id}" class="favorites-button-remove" type="button">
-//                     <svg id="${_id}" class="favorites-icon-trash">
-//                     <use id="${_id}"
-//                         xlink:href="./img/icons/symbols.svg#icon-trash-favotites"
-//                     ></use>
-//                 </svg>
-//                     </button>
-//                 </div>
-
-//                 <button
-//                     type="submit"
-//                     class="exercises-favorites-but-start"
-//                 >
-//                 Start<svg class="favorites-icon-arrow">
-//                 <use
-//                     xlink:href="./img/icons/symbols.svg#icon-arrow"
-//                 ></use>
-//             </svg>
-//                 </button>
-//             </div>
-//             <div class="list-exercises-favorites-name">
-//                 <svg class="favorites-social-icon-run" width="24" height="24">
-//                 <use
-//                 href="./img/icons/symbols.svg#favorites=icon-run-exercises"
-//             ></use>
-//                 </svg>
-//                 <p class="exercises-favorites-name">${name}</p>
-//             </div>
-//             <div class="list-exercises-favorites-conteiner">
-//                 <ul class="list-exercises-favorites-characteristic">
-//                     <li class="favorites-list-characteristic">
-//                         <span class="favorites-characteristic-criteria"
-//                             >Burned calories: </span
-//                         >${burnedCalories} / 3 min
-//                     </li>
-//                     <li class="favorites-list-characteristic">
-//                         <span class="favorites-characteristic-criteria"
-//                             >Body part: </span
-//                         >${bodyPart}
-//                     </li>
-//                     <li class="favorites-list-characteristic">
-//                         <span class="favorites-characteristic-criteria"
-//                             >Target: </span
-//                         >${target}
-//                     </li>
-//                 </ul>
-//             </div>
-//         </li>`,
-//     ''
-//   );
-//   return render;
-// }
-
-// const renderListFavoriteExercises = exercisesGalleryMarkup((filters = [], getRemovButton));
-
-// listExercises.insertAdjacentHTML('beforeend', renderListFavoriteExercises);
