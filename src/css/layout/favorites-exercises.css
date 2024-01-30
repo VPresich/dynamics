@@ -42,36 +42,10 @@
   }
   /* =============== favorites-list-exercises-likes ======================*/
   .favorites-list-exercises-likes {
-    margin-left: auto;
-    margin-right: auto;
     position: relative;
-  }
-
-  .list-exercises-favorites {
-    background-color: var(--section-white-bgr-color);
-    margin-bottom: 20px;
-    padding: 16px;
-    border-radius: 15px;
-  }
-
-  .list-exercises-favorites-category {
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-  }
-
-  .exercises-favorites-name-category {
-    display: inline;
-
-    font-weight: 500;
-    font-size: 12px;
-
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-
-    padding: 5px 8px;
-    border-radius: 15px;
-    margin-right: 8px;
+    flex-wrap: wrap;
+    row-gap: 20px;
   }
 
   .favorites-button-remove {
@@ -90,62 +64,6 @@
     stroke: var(--secondary-color);
     fill: var(--primary-color);
     transform: translateY(+25%);
-  }
-
-  .exercises-favorites-but-start {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.28;
-
-    align-items: center;
-
-    padding: 0;
-    border: none;
-    font: inherit;
-    color: inherit;
-    background-color: transparent;
-  }
-
-  .favorites-icon-arrow {
-    display: inline-block;
-    width: 14px;
-    height: 14px;
-    stroke-width: 0;
-    stroke: var(--secondary-color);
-    fill: var(--secondary-color);
-    transform: translateY(+20%);
-    margin-left: 8px;
-  }
-
-  .list-exercises-favorites-name {
-    display: flex;
-    align-items: center;
-    margin-top: 25px;
-    margin-bottom: 16px;
-  }
-
-  .exercises-favorites-name {
-    display: inline;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 1;
-
-    margin-left: 16px;
-  }
-
-  .list-exercises-favorites-characteristic {
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 16px;
-  }
-
-  .favorites-list-characteristic {
-    font-size: 12px;
-    line-height: 1.5;
-  }
-
-  .favorites-characteristic-criteria {
-    color: rgb(27, 27, 27, 0.4);
   }
 }
 
@@ -181,16 +99,10 @@
     line-height: 1.3;
   }
 
-  /* =============== favorites-list-exercises-likes ======================*/
+  /* ===============  scroll-favorites-list-exercises-likes ======================*/
   .favorites-list-exercises-likes {
-    display: flex;
-    flex-wrap: wrap;
-
     justify-content: space-between;
-
-    row-gap: 20px;
     column-gap: 14px;
-
     max-height: 720px;
     overflow-y: auto;
     padding-right: 16px;
@@ -212,49 +124,11 @@
     border-radius: 12px;
     border: 2px solid rgb(27, 27, 27, 0.1);
   }
-
-  .list-exercises-favorites {
-    width: calc((100% - 14px) / 2);
-    margin-bottom: 0px;
-  }
-
-  .exercises-favorites-but-start {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-
-  .favorites-icon-arrow {
-    width: 16px;
-    height: 16px;
-    transform: translateY(+25%);
-  }
-
-  .list-exercises-favorites-name {
-    margin-bottom: 8px;
-  }
-
-  .exercises-favorites-name {
-    font-size: 24px;
-    line-height: 1.3;
-  }
-
-  .favorites-list-characteristic {
-    color: rgb(27, 27, 27);
-  }
-
-  .favorites-characteristic-criteria {
-    color: rgb(27, 27, 27, 0.4);
-  }
 }
 
 /*================================ screen  1440px ============================*/
 
 @media screen and (min-width: 1440px) {
-  .conteiner-favorites-exercises {
-    background-color: var(--section-bgr-color);
-  }
-
-  /* =============== favortes-no-exercises-found ======================*/
   .favortes-no-exercises {
     margin-top: 146px;
     margin-bottom: 150px;
@@ -265,18 +139,5 @@
     row-gap: 28px;
     column-gap: 20px;
     max-height: 487px;
-  }
-
-  .list-exercises-favorites {
-    width: calc((100% - 40px) / 3);
-  }
-
-  .exercises-favorites-name {
-    display: inline;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 1.3;
-
-    margin-left: 16px;
   }
 }
