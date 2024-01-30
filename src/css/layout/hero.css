@@ -1,5 +1,6 @@
 .hero {
   margin-bottom: 20px;
+  padding: 0;
 }
 
 .hero-section {
@@ -63,6 +64,7 @@
   font-size: 56px;
   font-weight: 400;
   line-height: 0.9;
+  letter-spacing: -.02em;
 }
 
 .hero-body {
