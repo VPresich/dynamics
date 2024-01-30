@@ -1,70 +1,71 @@
-.conteiner-favorites-exercises {
-  margin-top: 20px;
-  padding: 40px 20px;
 
-  background-color: var(--section-bgr-color);
-  border-radius: 30px;
-}
-
-.favorites-exercises-titel {
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 1;
-  letter-spacing: -2px;
-  margin-bottom: 32px;
-}
-
-/* =============== favortes-no-exercises-found ======================*/
-.favortes-no-exercises {
-  width: 247px;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 80px;
-  margin-bottom: 128px;
-}
-
-.favortes-no-exercises-found-img {
-  background: url(/img/favorite/dumbbell-mobile.png) no-repeat;
-  background-size: cover;
-  width: 85px;
-  height: 52px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 28px;
-}
-
-.favortes-no-exercises-found-text {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.28;
-}
-/* =============== favorites-list-exercises-likes ======================*/
-.favorites-list-exercises-likes {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  row-gap: 20px;
-}
-
-.favorites-button-remove {
-  padding: 0;
-  border: none;
-  font: inherit;
-  color: inherit;
-  background-color: transparent;
-}
-
-.favorites-icon-trash {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  stroke-width: 0;
-  stroke: var(--secondary-color);
-  fill: var(--primary-color);
-  transform: translateY(+25%);
-}
 @media screen and (min-width: 375px) {
+  .conteiner-favorites-exercises {
+    margin-top: 20px;
+    padding: 40px 20px;
+  
+    background-color: var(--section-bgr-color);
+    border-radius: 30px;
+  }
+  
+  .favorites-exercises-titel {
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1;
+    letter-spacing: -2px;
+    margin-bottom: 32px;
+  }
+  
+  /* =============== favortes-no-exercises-found ======================*/
+  .favortes-no-exercises {
+    width: 247px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+    margin-bottom: 128px;
+  }
+  
+  .favortes-no-exercises-found-img {
+    background: url(/img/favorite/dumbbell-mobile.png) no-repeat;
+    background-size: cover;
+    width: 85px;
+    height: 52px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 28px;
+  }
+  
+  .favortes-no-exercises-found-text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.28;
+  }
+  /* =============== favorites-list-exercises-likes ======================*/
+  .favorites-list-exercises-likes {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 20px;
+  }
+  
+  .favorites-button-remove {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+  }
+  
+  .favorites-icon-trash {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    stroke-width: 0;
+    stroke: var(--secondary-color);
+    fill: var(--primary-color);
+    transform: translateY(+25%);
+  }
 }
 
 /*====================================== screen 768px =======================================*/
