@@ -26,6 +26,8 @@ if (localStorage.length > 2) {
     );
 
     favoriteslistExercises.addEventListener('click', event => {
+      if (event.target.classList.contains('gallery-start')) return;
+      // if (!event.target.classList.contains('favorites-button-remove')) return;
       const deleteId = event.target.dataset.id;
 
       if (deleteId) {
