@@ -28,7 +28,7 @@ modalBackdrop && modalBackdrop.addEventListener('click', onBackdropClick);
 const galleryRef = document.querySelector(SELECTOR_GALLERY);
 galleryRef && galleryRef.addEventListener('click', onGalleryClick);
 
-async function onGalleryClick(event) {
+export async function onGalleryClick(event) {
   event.preventDefault();
   const targetRef = event.target;
   if (!targetRef.classList.contains(CLASS_GALLERYSTART)) return;
