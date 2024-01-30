@@ -12,6 +12,7 @@ function ratingFormMarkup(filters = {}) {
       width="24"
       height="24"
       aria-label="close icon"
+      stroke="rgba(27, 27, 27, 1)"
     >
       <use href="${iconURL}#icon-x"></use>
     </svg>
