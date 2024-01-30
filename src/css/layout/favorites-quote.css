@@ -1,60 +1,61 @@
+.favorites-motivation-ports {
+  margin-top: 96px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+/*================== favorites-motivation-image ==================== */
+
+.favorites-motivation-image-cont {
+  border-radius: 30px;
+  background: url(/img/favorite/favorite-mobile@1x.jpg) no-repeat;
+  background-size: cover;
+  height: 272px;
+}
+
+/*================== favorites-motivation-inform ==================== */
+
+.favorites-motivation-block {
+  border-radius: 30px;
+  position: relative;
+  background-color: var(--section-white-bgr-color);
+
+  width: 335px;
+  height: 272px;
+}
+
+.favorites-motivation-conteiner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 132px;
+  height: 91px;
+}
+
+.favorites-motivation-block-img {
+  width: 20px;
+  height: 20px;
+}
+
+.favorites-motivation-block-time {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1;
+  color: var(--secondary-color);
+
+  margin-top: 15px;
+  margin-bottom: 6px;
+}
+
+.favorites-motivation-block-inform {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.28;
+  color: rgb(27, 27, 27, 0.6);
+}
+
 @media screen and (min-width: 375px) {
-  .favorites-motivation-ports {
-    margin-top: 96px;
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-
-  /*================== favorites-motivation-image ==================== */
-
-  .favorites-motivation-image-cont {
-    border-radius: 30px;
-    background: url(/img/favorite/favorite-mobile@1x.jpg) no-repeat;
-    background-size: cover;
-    height: 272px;
-  }
-
-  /*================== favorites-motivation-inform ==================== */
-
-  .favorites-motivation-block {
-    border-radius: 30px;
-    position: relative;
-    background-color: var(--section-white-bgr-color);
-
-    width: 335px;
-    height: 272px;
-  }
-
-  .favorites-motivation-conteiner {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 132px;
-    height: 91px;
-  }
-
-  .favorites-motivation-block-img {
-    width: 20px;
-    height: 20px;
-  }
-
-  .favorites-motivation-block-time {
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 1;
-    color: var(--secondary-color);
-
-    margin-top: 15px;
-    margin-bottom: 6px;
-  }
-
-  .favorites-motivation-block-inform {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.28;
-    color: rgb(27, 27, 27, 0.6);
-  }
 }
 
 /*======================== screen 768 =========================== */
