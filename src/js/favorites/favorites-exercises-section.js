@@ -6,7 +6,7 @@ import { KEY_LOCALSTORAGE } from '../common/localstorage/constants';
 import removFavoritExsercises from './favorites-remove-exercises';
 import { onGalleryClick } from '../exercise-modal/exercise-modal-handles';
 
-const favoriteslistExercises = document.querySelector(
+export const favoriteslistExercises = document.querySelector(
   '.favorites-list-exercises-likes'
 );
 
