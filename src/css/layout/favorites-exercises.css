@@ -102,11 +102,12 @@
 
   /* ===============  scroll-favorites-list-exercises-likes ======================*/
   .favorites-list-exercises-likes {
-    justify-content: space-between;
+    /* justify-content: space-between; */
     column-gap: 14px;
     max-height: 720px;
     overflow-y: auto;
     padding-right: 16px;
+    justify-content: left;
   }
 
   .favorites-list-exercises-likes::-webkit-scrollbar {

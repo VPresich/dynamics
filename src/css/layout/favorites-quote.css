@@ -1,7 +1,5 @@
 .favorites-motivation-ports {
   margin-top: 96px;
-  padding-left: 0px;
-  padding-right: 0px;
 }
 
 /*================== favorites-motivation-image ==================== */
@@ -55,6 +53,11 @@
 }
 
 @media screen and (min-width: 375px) {
+  .favorites-motivation-ports {
+    margin-top: 96px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }
 
 /*======================== screen 768 =========================== */
