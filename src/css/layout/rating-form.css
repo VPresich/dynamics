@@ -1,5 +1,5 @@
 .rating-form-container {
-  height: 100%;
+  background-color: rgba(27, 27, 27, 0.6);
 }
 .rating-form-content {
   border-radius: 20px;
@@ -72,7 +72,6 @@
 .rating-form-email-input {
   border-radius: 30px;
   border: 1px solid rgba(27, 27, 27, 0.4);
-  width: 100%;
   height: 42px;
   padding-left: 14px;
   color: rgba(27, 27, 27, 0.6);
@@ -92,6 +91,7 @@
   font-size: 14px;
   line-height: 1.28;
   outline: none;
+  resize: none;
 }
 @media screen and (min-width: 375px) {
   .rating-form-content {
@@ -146,8 +146,4 @@
     margin-bottom: 16px;
     margin-top: 32px;
   }
-}
-
-.exercise-container.hide {
-  display: none;
 }

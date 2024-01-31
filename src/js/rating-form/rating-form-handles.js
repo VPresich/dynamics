@@ -1,29 +1,26 @@
-import { CLASS_BACKDROP, KEY_CODE_ESC } from '../exercise-modal/constants';
+import { CLASS_BACKDROP, SELECTOR_GALLERY } from '../exercise-modal/constants';
 import {
   SELECTOR_RATING_FORM_SEND_BTN,
   SELECTOR_RATING_FORM_STAR,
   SELECTOR_RATING_FORM_STARS_CONTAINER,
   SELECTOR_RATING_FORM_INPUT_EMAIL,
   SELECTOR_RATING_FORM_INPUT_COMMENT,
-  SELECTOR_EXERCISE_CONTAINER,
-  SELECTOR_RATING_FROM_CONTAINER,
-  SELECTOR_RATING_FORM_CLOSE_BTN
+  SELECTOR_RATING_FORM_CLOSE_BTN,
 } from './constants';
-
-import { onWindowKeydown } from '../exercise-modal/exercise-modal-handles';
 
 import ratingFormCreate from './rating-form-create';
 import ratingFormCreateStars from './rating-form-create-stars';
 import patchExerciseRating from './patch-exercise-rating';
 
 import { createErrMsg, createOkMsg } from '../common/create-msg';
+import getExerciseById from '../exercise-modal/exercise-modal-get-id';
+import { openModalWindow } from '../exercise-modal/exercise-modal-handles';
+import exerciseModalCreate from '../exercise-modal/exercise-modal-create';
 
 let starsContainer;
 let ratingFormSendBtn;
 let inputEmailRef;
 let inputCommentRef;
-let exerciseContainerRef;
-let ratingFormContainerRef;
 let exerciseId;
 let exerciseRating = 0;
 let email;
@@ -35,21 +32,9 @@ export function onRatingBtnClick(event, id) {
   event.preventDefault();
   if (!id) return;
   exerciseId = id;
-  exerciseContainerRef = document.querySelector(SELECTOR_EXERCISE_CONTAINER);
-
-  toggleExerciseModalVisibility(false);
   ratingFormCreate({ exerciseRating }, modalBackdrop);
   starsContainer = document.querySelector(SELECTOR_RATING_FORM_STARS_CONTAINER);
-  ratingFormContainerRef = document.querySelector(
-    SELECTOR_RATING_FROM_CONTAINER
-  );
   ratingFormCreateStars({ exerciseRating }, starsContainer);
-  const closeBtnRef = document.querySelector(SELECTOR_RATING_FORM_CLOSE_BTN);
-  ratingFormContainerRef.addEventListener('click', onBackdropClickRatingForm);
-  closeBtnRef.addEventListener('click', () => toggleExerciseModalVisibility(true));
-  
-  window.removeEventListener('keydown', onWindowKeydown);
-  window.addEventListener('keydown', onWindowKeydownRatingFrom);
   onRatingModalOpen();
 }
 
@@ -57,10 +42,16 @@ function onRatingModalOpen() {
   ratingFormSendBtn = document.querySelector(SELECTOR_RATING_FORM_SEND_BTN);
   ratingFormSendBtn &&
     ratingFormSendBtn.addEventListener('click', onSendRating);
+
   inputEmailRef = document.querySelector(SELECTOR_RATING_FORM_INPUT_EMAIL);
   inputEmailRef && inputEmailRef.addEventListener('input', onInputEmail);
+
   inputCommentRef = document.querySelector(SELECTOR_RATING_FORM_INPUT_COMMENT);
   inputCommentRef && inputCommentRef.addEventListener('input', onInputComment);
+
+  const closeBtnRef = document.querySelector(SELECTOR_RATING_FORM_CLOSE_BTN);
+  closeBtnRef && closeBtnRef.addEventListener('click', onRatingCloseBtn);
+
   starsAddListeners();
 }
 
@@ -120,10 +111,10 @@ function onSendRating(event) {
     .then(res => {
       createOkMsg('Success');
       clearFormData();
-      toggleExerciseModalVisibility(true);
-
+      onRatingCloseBtn();
     })
     .catch(error => {
+      console.log(error);
       return createErrMsg('err');
     });
 }
@@ -136,31 +127,20 @@ const validateEmail = email => {
     );
 };
 
+function onRatingCloseBtn(event) {
+  clearFormData();
+  getExerciseById(exerciseId)
+    .then(formData => {
+      exerciseModalCreate(formData, modalBackdrop);
+      openModalWindow();
+    })
+    .catch(error => {
+      console.log(error.message);
+    });
+}
+
 function clearFormData() {
   exerciseRating = 0;
   email = '';
   comment = '';
-}
-
-function toggleExerciseModalVisibility(boolean) {
-  if (exerciseContainerRef && boolean && ratingFormContainerRef) {
-    exerciseContainerRef.classList.remove('hide');
-    ratingFormContainerRef.remove();
-    window.removeEventListener('keydown', onWindowKeydownRatingFrom);
-    window.addEventListener('keydown', onWindowKeydown);
-  } else {
-    exerciseContainerRef.classList.add('hide');
-  }
-}
-
-export function onWindowKeydownRatingFrom(event) {
-  if (event.code === KEY_CODE_ESC) {
-    toggleExerciseModalVisibility(true)
-  }
-}
-
-export function onBackdropClickRatingForm(event) {
-  if (event.currentTarget === event.target) {
-    toggleExerciseModalVisibility(true)
-  }
 }
