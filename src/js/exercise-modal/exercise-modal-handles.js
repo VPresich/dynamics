@@ -53,7 +53,7 @@ export function onCloseBtn(event) {
   modalBackdrop.classList.remove(MODAL_VISIBILITY);
 }
 
-function openModalWindow() {
+export function openModalWindow() {
   modalBackdrop.classList.add(MODAL_VISIBILITY);
   window.addEventListener('keydown', onWindowKeydown);
   closeBtn = document.querySelector(SELECTOR_CLOSEBTN);

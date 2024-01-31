@@ -44,6 +44,7 @@
   position: relative;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   row-gap: 20px;
 }
 
@@ -64,6 +65,7 @@
   fill: var(--primary-color);
   transform: translateY(+25%);
 }
+
 @media screen and (min-width: 375px) {
 }
 
@@ -106,6 +108,7 @@
     max-height: 720px;
     overflow-y: auto;
     padding-right: 16px;
+    justify-content: left;
   }
 
   .favorites-list-exercises-likes::-webkit-scrollbar {

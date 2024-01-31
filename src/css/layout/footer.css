@@ -10,7 +10,6 @@
   background-image: url(/img/footer/footer-mobile@1x.jpg);
   background-size: cover;
   border-radius: 30px;
-  width: 335px;
   height: 471px;
 }
 
@@ -161,7 +160,11 @@
   opacity: 0.9;
   margin-bottom: 10px;
 }
-
+@media (min-width: 375px) {
+  .footer {
+    width: 335px;
+  }
+}
 /* ____________Tablet version_______________ */
 
 @media (min-width: 768px) {

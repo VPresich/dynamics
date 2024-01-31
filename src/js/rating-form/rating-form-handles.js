@@ -5,18 +5,19 @@ import {
   SELECTOR_RATING_FORM_STARS_CONTAINER,
   SELECTOR_RATING_FORM_INPUT_EMAIL,
   SELECTOR_RATING_FORM_INPUT_COMMENT,
+  SELECTOR_RATING_FORM_CLOSE_BTN,
 } from './constants';
 
-import {
-  onCloseBtn,
-  onGalleryClick,
-} from '../exercise-modal/exercise-modal-handles';
+import validateEmail from '../api/validate-email';
 
 import ratingFormCreate from './rating-form-create';
 import ratingFormCreateStars from './rating-form-create-stars';
 import patchExerciseRating from './patch-exercise-rating';
 
 import { createErrMsg, createOkMsg } from '../common/create-msg';
+import getExerciseById from '../exercise-modal/exercise-modal-get-id';
+import { openModalWindow } from '../exercise-modal/exercise-modal-handles';
+import exerciseModalCreate from '../exercise-modal/exercise-modal-create';
 
 let starsContainer;
 let ratingFormSendBtn;
@@ -28,8 +29,6 @@ let email;
 let comment;
 
 let modalBackdrop = document.querySelector('.' + CLASS_BACKDROP);
-
-const galleryRef = document.querySelector(SELECTOR_GALLERY);
 
 export function onRatingBtnClick(event, id) {
   event.preventDefault();
@@ -45,10 +44,16 @@ function onRatingModalOpen() {
   ratingFormSendBtn = document.querySelector(SELECTOR_RATING_FORM_SEND_BTN);
   ratingFormSendBtn &&
     ratingFormSendBtn.addEventListener('click', onSendRating);
+
   inputEmailRef = document.querySelector(SELECTOR_RATING_FORM_INPUT_EMAIL);
   inputEmailRef && inputEmailRef.addEventListener('input', onInputEmail);
+
   inputCommentRef = document.querySelector(SELECTOR_RATING_FORM_INPUT_COMMENT);
   inputCommentRef && inputCommentRef.addEventListener('input', onInputComment);
+
+  const closeBtnRef = document.querySelector(SELECTOR_RATING_FORM_CLOSE_BTN);
+  closeBtnRef && closeBtnRef.addEventListener('click', onRatingCloseBtn);
+
   starsAddListeners();
 }
 
@@ -108,26 +113,24 @@ function onSendRating(event) {
     .then(res => {
       createOkMsg('Success');
       clearFormData();
-      onCloseBtn();
-      console.log(res);
-      galleryRef &&
-        galleryRef
-          .querySelectorAll(`button,[data-id="${exerciseId}"]`)[0]
-          .click();
+      onRatingCloseBtn();
     })
     .catch(error => {
-      console.log(error);
-      return createErrMsg('err');
+      createErrMsg('err: ', error.message);
     });
 }
 
-const validateEmail = email => {
-  return String(email)
-    .toLowerCase()
-    .match(
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    );
-};
+function onRatingCloseBtn(event) {
+  clearFormData();
+  getExerciseById(exerciseId)
+    .then(formData => {
+      exerciseModalCreate(formData, modalBackdrop);
+      openModalWindow();
+    })
+    .catch(error => {
+      createErrMsg('err: ', error.message);
+    });
+}
 
 function clearFormData() {
   exerciseRating = 0;
