@@ -1,8 +1,8 @@
-import{K as u,e as f,o as v,m as i,a as g}from"./assets/handle-menu-buttons-7a861eef.js";import"./assets/vendor-32231325.js";function m(e,s,t){return`<div><button data-id="${t}" class="favorites-button-remove" type="button">
+import{K as r,e as u,o as f,m as c,a as v}from"./assets/handle-menu-buttons-5cc0534b.js";import"./assets/vendor-32231325.js";function g(e,s,t){return`<div><button data-id="${t}" class="favorites-button-remove" type="button">
   <svg data-id="${t}" class="favorites-icon-trash">
   <use href="${s}#icon-trash-favotites"></use>
 </svg>
-  </button></div>`}function y(){return`<div class="favortes-no-exercises">
+  </button></div>`}function n(){return`<div class="favortes-no-exercises">
   <div class="favortes-no-exercises-found-img">
       </div>
   <p class="favortes-no-exercises-found-text">
@@ -10,5 +10,5 @@ import{K as u,e as f,o as v,m as i,a as g}from"./assets/handle-menu-buttons-7a86
     yet. To get started, you can add exercises that you like to your
     favorites for easier access in the future.
   </p>
-</div>`}function x(e,s){document.querySelector(`.exercise-card[data-id="${s}"]`).remove(),e.map(t=>{if(t._id===s){const o=e.indexOf(t);e.splice(o,1),localStorage.setItem("favorites",JSON.stringify(e)),e.length||(localStorage.removeItem(KEY_LOCALSTORAGE),favoriteslistExercises.insertAdjacentHTML("beforeend",getFavortesNoExercises()))}})}const a=document.querySelector(".favorites-list-exercises-likes"),r=[];if(localStorage.length>2)try{r.push(JSON.parse(localStorage.getItem(u)));const e=r.flatMap(t=>t),s=f(e,m);a.insertAdjacentHTML("beforeend",s),a.addEventListener("click",t=>{if(t.target.classList.contains("gallery-start")){v(t);return}const o="favorites-icon-trash",l=t.target,d=t.target.dataset.id;l.getAttribute("class")===o&&x(e,d)})}catch(e){console.log(e.message)}else a.insertAdjacentHTML("beforeend",y());const c=document.querySelectorAll(".button-home"),n=document.querySelectorAll(".button-favorites");i(n,c);n.forEach(e=>{e.addEventListener("click",s=>{i([e],c)})});g();
+</div>`}function m(e,s){document.querySelector(`.exercise-card[data-id="${s}"]`).remove(),e.map(t=>{if(t._id===s){const a=e.indexOf(t);e.splice(a,1),localStorage.setItem(r,JSON.stringify(e)),e.length||(localStorage.removeItem(r),o.insertAdjacentHTML("beforeend",n()))}})}const o=document.querySelector(".favorites-list-exercises-likes"),i=[];if(localStorage.length>2)try{i.push(JSON.parse(localStorage.getItem(r)));const e=i.flatMap(t=>t),s=u(e,g);o.insertAdjacentHTML("beforeend",s),o.addEventListener("click",t=>{if(t.target.classList.contains("gallery-start")){f(t);return}const a=t.target.dataset.id;t.target.classList.contains("favorites-icon-trash")&&m(e,a)})}catch(e){console.log(e.message)}else o.insertAdjacentHTML("beforeend",n());const l=document.querySelectorAll(".button-home"),d=document.querySelectorAll(".button-favorites");c(d,l);d.forEach(e=>{e.addEventListener("click",s=>{c([e],l)})});v();
 //# sourceMappingURL=commonHelpers.js.map
