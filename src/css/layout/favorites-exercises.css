@@ -44,6 +44,7 @@
   position: relative;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   row-gap: 20px;
 }
 
@@ -102,7 +103,7 @@
 
   /* ===============  scroll-favorites-list-exercises-likes ======================*/
   .favorites-list-exercises-likes {
-    /* justify-content: space-between; */
+    justify-content: space-between;
     column-gap: 14px;
     max-height: 720px;
     overflow-y: auto;
