@@ -8,6 +8,8 @@ import {
   SELECTOR_RATING_FORM_CLOSE_BTN,
 } from './constants';
 
+import validateEmail from '../api/validate-email';
+
 import ratingFormCreate from './rating-form-create';
 import ratingFormCreateStars from './rating-form-create-stars';
 import patchExerciseRating from './patch-exercise-rating';
@@ -114,18 +116,9 @@ function onSendRating(event) {
       onRatingCloseBtn();
     })
     .catch(error => {
-      console.log(error);
-      return createErrMsg('err');
+      createErrMsg('err: ', error.message);
     });
 }
-
-const validateEmail = email => {
-  return String(email)
-    .toLowerCase()
-    .match(
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    );
-};
 
 function onRatingCloseBtn(event) {
   clearFormData();
@@ -135,7 +128,7 @@ function onRatingCloseBtn(event) {
       openModalWindow();
     })
     .catch(error => {
-      console.log(error.message);
+      createErrMsg('err: ', error.message);
     });
 }
 

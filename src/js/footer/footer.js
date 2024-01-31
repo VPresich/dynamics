@@ -1,4 +1,12 @@
 import { createErrMsg, createOkMsg } from '../common/create-msg';
+import validateEmail from '../api/validate-email';
+import { BASE_URL } from '../api/api-constants';
+import {
+  ERROR409_MSG,
+  ERROR_FETCH,
+  SUCCESS_MSG,
+  WRONG_EMAIL,
+} from './messages';
 
 const footerForm = document.querySelector('.footer-subscription');
 const footerInput = footerForm.querySelector('.input-footer');
@@ -8,14 +16,14 @@ footerForm.addEventListener('submit', handleSubscription);
 function handleSubscription(event) {
   event.preventDefault();
 
-  const emailPattern = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
   const footerEmailValue = footerInput.value.trim();
   if (!footerEmailValue) {
-    createErrMsg('Please enter email');
+    createErrMsg(NO_EMAIL);
     return;
   }
-  if (!emailPattern.test(footerEmailValue)) {
-    createErrMsg('Please enter a valid email');
+
+  if (!validateEmail(footerEmailValue)) {
+    createErrMsg(WRONG_EMAIL);
     footerForm.reset();
     return;
   }
@@ -28,20 +36,18 @@ function handleSubscription(event) {
     },
   };
 
-  fetch('https://energyflow.b.goit.study/api/subscription', options)
+  fetch(`${BASE_URL}subscription`, options)
     .then(response => {
       if (response.status >= 200 && response.status < 300) {
-        createOkMsg(
-          "We're excited to have you on board! 🎉 Thank you for subscribing to new exercises on Energy Flow. You've just taken a significant step towards improving your fitness and well-being."
-        );
+        createOkMsg(SUCCESS_MSG);
       }
       if (response.status === 409) {
-        createErrMsg('Subscription already exists');
+        createErrMsg(ERROR409_MSG);
       }
     })
     .catch(error => {
       console.log(error);
-      createErrMsg('Sorry! Something is wrong');
+      createErrMsg(ERROR_FETCH);
     })
     .finally(() => {
       footerForm.reset();

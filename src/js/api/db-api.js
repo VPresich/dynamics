@@ -13,7 +13,7 @@ class DbApi {
       }
       return response.json();
     } catch (error) {
-      console.log(error.message);
+      throw error;
     }
   }
 
@@ -35,7 +35,7 @@ class DbApi {
     });
   }
 
-  async ojectUpdateRequest(endPoint, obj) {
+  async objectUpdateRequest(endPoint, obj) {
     return this.#dbRequest(`${endPoint}/${obj.id}`, {
       method: 'PUT',
       body: JSON.stringify(obj),
