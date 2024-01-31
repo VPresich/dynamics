@@ -34,7 +34,7 @@
   line-height: 1.5;
 }
 .rating-number {
-  color: rgba(27, 27, 27, 0.2);
+  color: var(--secondary-color);
   font-feature-settings: 'clig' off, 'liga' off;
   font-size: 12px;
   line-height: 1.5;
