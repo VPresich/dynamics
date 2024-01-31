@@ -34,7 +34,7 @@
   line-height: 1.5;
 }
 .rating-number {
-  color: var(--secondary-color);
+  color: rgba(27, 27, 27, 0.2);
   font-feature-settings: 'clig' off, 'liga' off;
   font-size: 12px;
   line-height: 1.5;
@@ -108,6 +108,7 @@
   .star-btn-icon {
     width: 24px;
     height: 24px;
+    fill: rgba(27, 27, 27, 0.2);
   }
   .rating-form-comment {
     height: 93px;
