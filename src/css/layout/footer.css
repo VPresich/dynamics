@@ -132,7 +132,6 @@
   gap: 8px;
   align-self: stretch;
   border: none;
-  cursor: pointer;
   border-radius: 30px;
   background: var(--accent-color);
   color: var(--primary-color);
@@ -147,6 +146,10 @@
 .footer-button:hover,
 .footer-button:focus {
   background: var(--btn-accent-color);
+}
+
+.footer-button:disabled {
+  cursor: not-allowed;
 }
 
 .security-text {

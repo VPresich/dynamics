@@ -1,13 +1,18 @@
 .rating-form-container {
   background-color: rgba(27, 27, 27, 0.6);
 }
+
 .rating-form-content {
+  min-width: 200px;
+  width: calc(100vw - 20px);
   border-radius: 20px;
-  background: #f6f6f6;
+  background: var(--primary-color);
   position: absolute;
+  padding: 40px 20px;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 0%;
+  height: 357px;
+  transform: translate(0, -50%);
 }
 
 .close-rating-form-icon {
@@ -20,12 +25,22 @@
   border: none;
   background-color: transparent;
   padding: 0;
+  width: 24px;
+  height: 24px;
 }
+
+.star-btn-icon {
+  width: 24px;
+  height: 24px;
+  fill: rgba(27, 27, 27, 0.2);
+}
+
 .close-rating-form-btn {
   position: absolute;
   top: 14px;
   right: 14px;
 }
+
 .rating-label {
   color: rgba(27, 27, 27, 0.4);
   font-feature-settings: 'clig' off, 'liga' off;
@@ -33,21 +48,25 @@
   font-weight: 400;
   line-height: 1.5;
 }
+
 .rating-number {
   color: var(--secondary-color);
   font-feature-settings: 'clig' off, 'liga' off;
   font-size: 12px;
   line-height: 1.5;
 }
+
 .stars-container {
   display: flex;
   gap: 2px;
   align-items: center;
   margin-top: 8px;
 }
+
 .rating-form-send-btn {
   display: flex;
-  padding: 12px 131px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   width: 100%;
   justify-content: center;
   align-items: center;
@@ -60,17 +79,21 @@
   font-size: 14px;
   line-height: 1.28;
 }
+
 .rating-form-send-btn:hover {
   background: var(--btn-accent-color);
 }
+
 .rating-form-email-input:active,
 .rating-form-email-input:hover,
 .rating-form-comment:active,
 .rating-form-comment:hover {
   border: 1px solid var(--btn-accent-color);
 }
+
 .rating-form-email-input {
   border-radius: 30px;
+  width: 100%;
   border: 1px solid rgba(27, 27, 27, 0.4);
   height: 42px;
   padding-left: 14px;
@@ -79,6 +102,7 @@
   line-height: 1.28;
   outline: none;
 }
+
 .rating-form-comment {
   border-radius: 15px;
   border: 1px solid rgba(27, 27, 27, 0.4);
@@ -93,27 +117,32 @@
   outline: none;
   resize: none;
 }
+
+.rating-form-comment {
+  height: 93px;
+  margin-bottom: 20px;
+}
+
+.rating-form-email-input {
+  height: 42px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
 @media screen and (min-width: 375px) {
   .rating-form-content {
     width: 335px;
-    height: 357px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
-  .rating-form-btn {
-    width: 24px;
-    height: 24px;
-  }
-  .rating-form-content {
-    padding: 40px 20px;
-  }
-  .star-btn-icon {
-    width: 24px;
-    height: 24px;
-    fill: rgba(27, 27, 27, 0.2);
-  }
+
   .rating-form-comment {
     height: 93px;
     margin-bottom: 20px;
   }
+
   .rating-form-email-input {
     height: 42px;
     margin-bottom: 10px;
@@ -125,23 +154,25 @@
   .rating-form-content {
     width: 450px;
     height: 432px;
+    padding: 50px;
   }
 
   .rating-form-btn {
     width: 28px;
     height: 28px;
   }
-  .rating-form-content {
-    padding: 50px;
-  }
+
   .star-btn-icon {
     width: 28px;
     height: 28px;
+    fill: rgba(27, 27, 27, 0.2);
   }
+
   .rating-form-comment {
     height: 106px;
     margin-bottom: 32px;
   }
+
   .rating-form-email-input {
     height: 48px;
     margin-bottom: 16px;

@@ -10,8 +10,10 @@ import {
 
 const footerForm = document.querySelector('.footer-subscription');
 const footerInput = footerForm.querySelector('.input-footer');
+const footerBtn = document.querySelector('.footer-button');
 
-footerForm.addEventListener('submit', handleSubscription);
+footerForm && footerForm.addEventListener('submit', handleSubscription);
+footerInput && footerInput.addEventListener('input', changeBtnStatus);
 
 function handleSubscription(event) {
   event.preventDefault();
@@ -25,6 +27,7 @@ function handleSubscription(event) {
   if (!validateEmail(footerEmailValue)) {
     createErrMsg(WRONG_EMAIL);
     footerForm.reset();
+    changeBtnStatus();
     return;
   }
 
@@ -51,5 +54,12 @@ function handleSubscription(event) {
     })
     .finally(() => {
       footerForm.reset();
+      changeBtnStatus();
     });
 }
+
+function changeBtnStatus(event) {
+  footerBtn.disabled = !footerInput.value.trim();
+}
+
+changeBtnStatus();
