@@ -6,9 +6,12 @@
   height: 100%;
   background: rgba(46, 47, 66, 0.8);
   z-index: 9999;
+  padding-top: 100px;
+  padding-bottom: 40px;
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
+  overflow-y: auto;
   transition: opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -25,9 +28,9 @@
 .exercise-window {
   position: absolute;
   color: var(--secondary-color);
-  top: 50%;
+  top: 0;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0%);
   width: 335px;
   border-radius: 20px;
   background-color: var(--primary-color);
@@ -69,6 +72,8 @@
 
 .exercise-container {
   padding: 40px;
+  position: relative;
+  overflow-y: auto;
 }
 
 .exercise-image-wrapper {
@@ -248,9 +253,6 @@
 .exercise-raiting-btn:hover,
 .exercise-raiting-btn:focus {
   border: 1px solid #7e847f;
-}
-
-@media screen and (min-width: 375px) {
 }
 
 @media screen and (min-width: 768px) {
